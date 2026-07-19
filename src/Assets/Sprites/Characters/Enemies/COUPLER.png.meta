@@ -1,0 +1,704 @@
+fileFormatVersion: 2
+guid: 32637e8a9f64c5d48a946cb961bfa2fa
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7243521685324255732
+    second: COUPLER_0
+  - first:
+      213: 5855067016878468456
+    second: COUPLER_1
+  - first:
+      213: -3107466596959527140
+    second: COUPLER_2
+  - first:
+      213: 3472903665569553234
+    second: COUPLER_3
+  - first:
+      213: 623398575853412573
+    second: COUPLER_4
+  - first:
+      213: -9060285635754380700
+    second: COUPLER_5
+  - first:
+      213: 6798151917152537377
+    second: COUPLER_6
+  - first:
+      213: -7330355388261458643
+    second: COUPLER_7
+  - first:
+      213: 5566351420858334609
+    second: COUPLER_8
+  - first:
+      213: 8161568790442334655
+    second: COUPLER_9
+  - first:
+      213: -1180204844092681381
+    second: COUPLER_10
+  - first:
+      213: -857096194223994266
+    second: COUPLER_11
+  - first:
+      213: 617840865768672823
+    second: COUPLER_12
+  - first:
+      213: -6067749490092443107
+    second: COUPLER_13
+  - first:
+      213: -427394088889649595
+    second: COUPLER_14
+  - first:
+      213: 7983814410543538781
+    second: COUPLER_15
+  - first:
+      213: -6759204291461231452
+    second: COUPLER_16
+  - first:
+      213: -9068699379997638055
+    second: COUPLER_17
+  - first:
+      213: 9199991365502566738
+    second: COUPLER_18
+  - first:
+      213: 3973850561456696111
+    second: COUPLER_19
+  - first:
+      213: 6257009636877775837
+    second: COUPLER_20
+  - first:
+      213: -2932360226382733458
+    second: COUPLER_21
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: COUPLER_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dd01c2ab95994d34399e2953b47e2252
+      internalID: -1860381540
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_1
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c076a31ecde3f7f47a1587a9a7ecc168
+      internalID: 967744321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_2
+      rect:
+        serializedVersion: 2
+        x: 548
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d8da52aa363fce146adaba9985a01e4f
+      internalID: 1031503820
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 84de87e7698c6ec48810af5c9eea2e92
+      internalID: 592217151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_4
+      rect:
+        serializedVersion: 2
+        x: 1096
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b27014c6f994bae4597156b05fc53271
+      internalID: 1549399252
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_5
+      rect:
+        serializedVersion: 2
+        x: 1370
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63e40def5767c24593afac0e0052e6e
+      internalID: 115326372
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_6
+      rect:
+        serializedVersion: 2
+        x: 1644
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 732b7fde91939f147ad38446b5c497dd
+      internalID: 23946994
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_7
+      rect:
+        serializedVersion: 2
+        x: 1918
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 81c5577d193f4ad46a7ed978f8aebb09
+      internalID: 71924248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_8
+      rect:
+        serializedVersion: 2
+        x: 2192
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 847cbd08b5ef8bf42961ccaabc7b4847
+      internalID: -784590134
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_9
+      rect:
+        serializedVersion: 2
+        x: 2466
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 570a56134e776d9499387b1a883e28c8
+      internalID: 581365600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_10
+      rect:
+        serializedVersion: 2
+        x: 2740
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c47b179b404c5c94bae3f17a412e881b
+      internalID: 1421242019
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_11
+      rect:
+        serializedVersion: 2
+        x: 3014
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50d39b9213ac2eb4d96011a3e21efc73
+      internalID: 1675984231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_12
+      rect:
+        serializedVersion: 2
+        x: 3288
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f0dd689721a6a544f95bde843f48ed93
+      internalID: -844885527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_13
+      rect:
+        serializedVersion: 2
+        x: 3562
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f44b15355013544792af65b58ac28d5
+      internalID: -770599508
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_14
+      rect:
+        serializedVersion: 2
+        x: 3836
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ddd8c0aa11c7ad744acf4c195697ba9b
+      internalID: -356395431
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_15
+      rect:
+        serializedVersion: 2
+        x: 4110
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c63e6815b7af07b438375be30c31d04a
+      internalID: -709545288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_16
+      rect:
+        serializedVersion: 2
+        x: 4384
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e6e994fec018de2459c411e397b93ab3
+      internalID: -1876757918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_17
+      rect:
+        serializedVersion: 2
+        x: 4658
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 78e1bf569b3f5cf438d32df1d7861292
+      internalID: 1854549336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_18
+      rect:
+        serializedVersion: 2
+        x: 4932
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bb656b2255ad841419b67ffbf9987bf3
+      internalID: -1903296632
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_19
+      rect:
+        serializedVersion: 2
+        x: 5206
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f5fa1c227557adf4e8e3e23777140b97
+      internalID: -1067854331
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_20
+      rect:
+        serializedVersion: 2
+        x: 5480
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3e76f37f51299a14da504b10f765d5eb
+      internalID: 1550920036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: COUPLER_21
+      rect:
+        serializedVersion: 2
+        x: 5754
+        y: 0
+        width: 274
+        height: 270
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ee24a3990b8288d40b9233481c2b1b83
+      internalID: 1579956103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: d345eddb0b500a04f8de4be89d01e4de
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":22.0,"y":1.0},"gridSpriteSize":{"x":274.0,"y":270.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      COUPLER_0: -1860381540
+      COUPLER_1: 967744321
+      COUPLER_10: 1421242019
+      COUPLER_11: 1675984231
+      COUPLER_12: -844885527
+      COUPLER_13: -770599508
+      COUPLER_14: -356395431
+      COUPLER_15: -709545288
+      COUPLER_16: -1876757918
+      COUPLER_17: 1854549336
+      COUPLER_18: -1903296632
+      COUPLER_19: -1067854331
+      COUPLER_2: 1031503820
+      COUPLER_20: 1550920036
+      COUPLER_21: 1579956103
+      COUPLER_3: 592217151
+      COUPLER_4: 1549399252
+      COUPLER_5: 115326372
+      COUPLER_6: 23946994
+      COUPLER_7: 71924248
+      COUPLER_8: -784590134
+      COUPLER_9: 581365600
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
