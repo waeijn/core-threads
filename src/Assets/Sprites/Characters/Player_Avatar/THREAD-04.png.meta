@@ -3,101 +3,101 @@ guid: 1e10bef77a20a9247a9333c4c5ae2221
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1801218424476711151
-    second: THREAD-04_0
+      213: -6237985322533983068
+    second: thread-04_0
   - first:
-      213: 7015022170442091382
-    second: THREAD-04_1
+      213: -5261711418140751183
+    second: thread-04_1
   - first:
-      213: -6153706150452879198
-    second: THREAD-04_2
+      213: -8336868774516606817
+    second: thread-04_2
   - first:
-      213: -8899318139818133387
-    second: THREAD-04_3
+      213: 6894514164753149694
+    second: thread-04_3
   - first:
-      213: 6896537945776842084
-    second: THREAD-04_4
+      213: 6705325798162413315
+    second: thread-04_4
   - first:
-      213: 3231165962504439611
-    second: THREAD-04_5
+      213: -3284208968420628086
+    second: thread-04_5
   - first:
-      213: -2511898212177545241
-    second: THREAD-04_6
+      213: -9208652360788628394
+    second: thread-04_6
   - first:
-      213: -5018426700983002306
-    second: THREAD-04_7
+      213: 775128273502424491
+    second: thread-04_7
   - first:
-      213: -72483182587613070
-    second: THREAD-04_8
+      213: -2501472809781973456
+    second: thread-04_8
   - first:
-      213: 8975652389293914477
-    second: THREAD-04_9
+      213: -7348023990648895357
+    second: thread-04_9
   - first:
-      213: -2363870290190074918
-    second: THREAD-04_10
+      213: -2115060792767718223
+    second: thread-04_10
   - first:
-      213: 4563315545346745453
-    second: THREAD-04_11
+      213: 6189268886320978139
+    second: thread-04_11
   - first:
-      213: -4324964918654554007
-    second: THREAD-04_12
+      213: 7949009849557340948
+    second: thread-04_12
   - first:
-      213: 850307194255397317
-    second: THREAD-04_13
+      213: 7029697518618157400
+    second: thread-04_13
   - first:
-      213: -4972221460499441762
-    second: THREAD-04_14
+      213: 6640813795651787033
+    second: thread-04_14
   - first:
-      213: -4330236851569708476
-    second: THREAD-04_15
+      213: -6443596562432769387
+    second: thread-04_15
   - first:
-      213: 1820921435844130906
-    second: THREAD-04_16
+      213: 53506024641673632
+    second: thread-04_16
   - first:
-      213: -424509773520152031
-    second: THREAD-04_17
+      213: 6325211510131044436
+    second: thread-04_17
   - first:
-      213: -7125698946237336475
-    second: THREAD-04_18
+      213: 3323025320115203516
+    second: thread-04_18
   - first:
-      213: 3757811633224388180
-    second: THREAD-04_19
+      213: -5673807588206120701
+    second: thread-04_19
   - first:
-      213: -3698832447188668922
-    second: THREAD-04_20
+      213: -6416484787645429136
+    second: thread-04_20
   - first:
-      213: 1033898072701061722
-    second: THREAD-04_21
+      213: -4994592566617894519
+    second: thread-04_21
   - first:
-      213: -7695772465876612305
-    second: THREAD-04_22
+      213: 5694465284321230655
+    second: thread-04_22
   - first:
-      213: -255817194156820475
-    second: THREAD-04_23
+      213: -3650141688892302656
+    second: thread-04_23
   - first:
-      213: -376234002584508189
-    second: THREAD-04_24
+      213: 4308851845820744523
+    second: thread-04_24
   - first:
-      213: 786233395656212566
-    second: THREAD-04_25
+      213: -7530458742657145677
+    second: thread-04_25
   - first:
-      213: 3936752091117375978
-    second: THREAD-04_26
+      213: -3854501187677483514
+    second: thread-04_26
   - first:
-      213: -6832715912608765401
-    second: THREAD-04_27
+      213: 7829808381348201048
+    second: thread-04_27
   - first:
-      213: -8718470703988967874
-    second: THREAD-04_28
+      213: -518283585598777305
+    second: thread-04_28
   - first:
-      213: 4741809063796700625
-    second: THREAD-04_29
+      213: -6784038872894204530
+    second: thread-04_29
   - first:
-      213: 3710932478061843124
-    second: THREAD-04_30
+      213: 2062293658811440082
+    second: thread-04_30
   - first:
-      213: 2105561289624032799
-    second: THREAD-04_31
+      213: -2575698680865359409
+    second: thread-04_31
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -144,7 +144,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 32
+  spritePixelsToUnits: 64
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -165,7 +165,7 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 4096
     resizeAlgorithm: 0
     textureFormat: -1
     textureCompression: 0
@@ -206,13 +206,541 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: THREAD-04_0
+      name: thread-04_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 639f3e40588917d498000f95ea40d697
+      internalID: -593004336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5726e2965e711e04dbf92d69430fd834
+      internalID: 52388433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5276e49697d421b46ac77b6f896c6e59
+      internalID: 1246115230
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53ac43c0626ad424da3ccd801fe9d084
+      internalID: 1870266815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d695424320f949d42937e828e638d817
+      internalID: -179351785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4a380567561626a48abc6bf0fcb811d0
+      internalID: -628560866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 256
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5a87acd7dd8cb694d8813a57a0c5c9e4
+      internalID: 683772935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_7
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 66c80f4450ff89c44b1f15961d3a0e44
+      internalID: 305762318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_8
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c97f65f37f184f4bba5d05490b7650d
+      internalID: -457167302
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_9
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f509ab483c1a9334f899d115d7d7c309
+      internalID: 993985710
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_10
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 22b38467c53b923438b543a4dca1e500
+      internalID: 1683153412
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_11
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59a59f0f78cc509438a70424de1a140b
+      internalID: -461860332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_12
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 192
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 82ffcbb8a7e591b4f95d5710f3addcfa
+      internalID: -1313764370
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_13
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2009512d44906374c82aab5d95553592
+      internalID: -1917113701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_14
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 197858a0c6aab334b94bc3dc5b014f58
+      internalID: -299134181
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_15
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b84c440127b6b3945ac802bfd6666372
+      internalID: -1664926559
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_16
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 128
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0622c0321c449740ae02c762c126f9d
+      internalID: -1491204260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_17
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8c29732678e23af4eb0a119f07bd4779
+      internalID: 33270985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_18
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d3619487595a72c4fa11e9f68f219649
+      internalID: -591458321
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_19
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2ba8ae840a772924ba3468e325726d41
+      internalID: 1690533799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_20
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 393097c05667cbd4ea08b2ab7f74e79f
+      internalID: 637583875
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_21
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 744c1acf3be961845ac9825697073c58
+      internalID: -350269008
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_22
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bec6a54094f812e49baae59c02ced0f2
+      internalID: 1748907467
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_23
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 64
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fa78e1290ccc5e24397f21daa1f218bc
+      internalID: -1654008738
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: thread-04_24
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -221,20 +749,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 9522e7c21b5675e43b725c6fcbf4bbac
-      internalID: -841990505
+      spriteID: b7fbfd91524c05d4493a818f6cf4d6c2
+      internalID: -1835485368
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THREAD-04_1
+      name: thread-04_25
       rect:
         serializedVersion: 2
-        x: 240
+        x: 64
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -243,20 +771,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: cbdd8a866bce25b4abd47a79ca7e8b00
-      internalID: -1230388220
+      spriteID: 0d6e3f7977adf634ea1ebb4fb7bfe78b
+      internalID: -1065138326
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THREAD-04_2
+      name: thread-04_26
       rect:
         serializedVersion: 2
-        x: 480
+        x: 128
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -265,20 +793,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 6111d477ce0aa314aa6f438b6b4ce369
-      internalID: 2117477334
+      spriteID: 348fae2e62d539a488d8d0709570dda4
+      internalID: 55705304
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THREAD-04_3
+      name: thread-04_27
       rect:
         serializedVersion: 2
-        x: 720
+        x: 192
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -287,20 +815,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2c6c5134dde19a445ae3c932b7149d24
-      internalID: 686187037
+      spriteID: 3d4b32f261c5ae04eb6ea09809407549
+      internalID: 1507827559
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THREAD-04_4
+      name: thread-04_28
       rect:
         serializedVersion: 2
-        x: 960
+        x: 256
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -309,20 +837,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 4ddfad385d19b264582ef03be4db939d
-      internalID: -236311626
+      spriteID: 0bc40dffdafe6f2409cbd8839bdd06c1
+      internalID: 1649428652
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: THREAD-04_5
+      name: thread-04_29
       rect:
         serializedVersion: 2
-        x: 1200
+        x: 320
         y: 0
-        width: 240
-        height: 260
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -331,382 +859,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: e22f3ea652613644db5c552d2fe2084a
-      internalID: 750631952
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_6
-      rect:
-        serializedVersion: 2
-        x: 1440
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d50935cd4ade8ee4fab0f29675046b7d
-      internalID: -1629571447
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_7
-      rect:
-        serializedVersion: 2
-        x: 1680
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: f7f8ecd070444884dadeb14ae86d6e10
-      internalID: -1014954693
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_8
-      rect:
-        serializedVersion: 2
-        x: 1920
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: bf9c19ab266b56f43a8a3c77993c0345
-      internalID: -839982773
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_9
-      rect:
-        serializedVersion: 2
-        x: 2160
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5455d6673cf45d4290e2735c9b7cdd7
-      internalID: -1614557067
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_10
-      rect:
-        serializedVersion: 2
-        x: 2400
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a0b426c3e18590545884b2e6aeb8e025
-      internalID: -1178491329
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_11
-      rect:
-        serializedVersion: 2
-        x: 2640
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 9ca65a2967ab58f4f9ee3a46ac893ddb
-      internalID: -233224366
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_12
-      rect:
-        serializedVersion: 2
-        x: 2880
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 1efcec33f96cc574797b85f7a5f76324
-      internalID: -69364381
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_13
-      rect:
-        serializedVersion: 2
-        x: 3120
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 92d9366a173be5643b56f68a82c3cd9c
-      internalID: -599133869
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_14
-      rect:
-        serializedVersion: 2
-        x: 3360
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: a503f5866a1a56c47bd3ea27dbd97bc4
-      internalID: 1857383882
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_15
-      rect:
-        serializedVersion: 2
-        x: 3600
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 34ccbabf35a6b414da149a4231970bc6
-      internalID: -789601178
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_16
-      rect:
-        serializedVersion: 2
-        x: 3840
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: ae50811ecf73fb84898ebdb37ae74cdd
-      internalID: 1765180961
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_17
-      rect:
-        serializedVersion: 2
-        x: 4080
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 80952a988002eba40b0400113af1b79b
-      internalID: -741243213
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_18
-      rect:
-        serializedVersion: 2
-        x: 4320
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 96a7340f7d1ac8e4f975afc0508a1ab9
-      internalID: -1510752956
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_19
-      rect:
-        serializedVersion: 2
-        x: 4560
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 98b697aca8d1c784aae8e294a630fcbe
-      internalID: 1683595503
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_20
-      rect:
-        serializedVersion: 2
-        x: 4800
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: fd1ea3f119cb9444f8ea4cb9ed650d57
-      internalID: -1928012145
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_21
-      rect:
-        serializedVersion: 2
-        x: 5040
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 17e571aa634fe96459ffcf9e09c7495d
-      internalID: -501176510
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: THREAD-04_22
-      rect:
-        serializedVersion: 2
-        x: 5280
-        y: 0
-        width: 240
-        height: 260
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 4313d6c388d0df246bfe4e1fe2191b12
-      internalID: -598191060
+      spriteID: ccf2478f5232d75438b326c491ef6a3b
+      internalID: 421787895
       vertices: []
       indices: 
       edges: []
@@ -715,7 +869,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 23cac4f172e46b741b4f7eb986b480cb
+    spriteID: c6752f5b8b99eec4ca2fcc88b0a21528
     internalID: 0
     vertices: []
     indices: 
@@ -725,31 +879,38 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":24.0,"y":1.0},"gridSpriteSize":{"x":240.0,"y":260.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":7.0,"y":5.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      THREAD-04_0: -841990505
-      THREAD-04_1: -1230388220
-      THREAD-04_10: -1178491329
-      THREAD-04_11: -233224366
-      THREAD-04_12: -69364381
-      THREAD-04_13: -599133869
-      THREAD-04_14: 1857383882
-      THREAD-04_15: -789601178
-      THREAD-04_16: 1765180961
-      THREAD-04_17: -741243213
-      THREAD-04_18: -1510752956
-      THREAD-04_19: 1683595503
-      THREAD-04_2: 2117477334
-      THREAD-04_20: -1928012145
-      THREAD-04_21: -501176510
-      THREAD-04_22: -598191060
-      THREAD-04_3: 686187037
-      THREAD-04_4: -236311626
-      THREAD-04_5: 750631952
-      THREAD-04_6: -1629571447
-      THREAD-04_7: -1014954693
-      THREAD-04_8: -839982773
-      THREAD-04_9: -1614557067
+      thread-04_0: -593004336
+      thread-04_1: 52388433
+      thread-04_10: 1683153412
+      thread-04_11: -461860332
+      thread-04_12: -1313764370
+      thread-04_13: -1917113701
+      thread-04_14: -299134181
+      thread-04_15: -1664926559
+      thread-04_16: -1491204260
+      thread-04_17: 33270985
+      thread-04_18: -591458321
+      thread-04_19: 1690533799
+      thread-04_2: 1246115230
+      thread-04_20: 637583875
+      thread-04_21: -350269008
+      thread-04_22: 1748907467
+      thread-04_23: -1654008738
+      thread-04_24: -1835485368
+      thread-04_25: -1065138326
+      thread-04_26: 55705304
+      thread-04_27: 1507827559
+      thread-04_28: 1649428652
+      thread-04_29: 421787895
+      thread-04_3: 1870266815
+      thread-04_4: -179351785
+      thread-04_5: -628560866
+      thread-04_6: 683772935
+      thread-04_7: 305762318
+      thread-04_8: -457167302
+      thread-04_9: 993985710
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
