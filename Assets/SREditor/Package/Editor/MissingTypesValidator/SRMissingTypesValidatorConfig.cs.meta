@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: beb551bf139a48dfbece7e54de847f2f
+timeCreated: 1669541088
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/MissingTypesValidator/SRMissingTypesValidatorConfig.cs
+  uploadId: 931220

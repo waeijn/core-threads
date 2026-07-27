@@ -1,0 +1,9 @@
+﻿<Solution>
+  <Project Path="SRDemo.csproj" />
+  <Project Path="Assembly-CSharp.csproj" />
+  <Project Path="SREditor-Editor.csproj" />
+  <Project Path="Assembly-CSharp-firstpass.csproj" />
+  <Project Path="SREditor.csproj" />
+  <Project Path="SRDemo-Editor.csproj" />
+  <Project Path="NewTest.csproj" />
+</Solution>

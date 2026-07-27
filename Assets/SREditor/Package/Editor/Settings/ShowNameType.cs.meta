@@ -1,0 +1,10 @@
+fileFormatVersion: 2
+guid: 08ace08a16b142d38810c23e0935eca1
+timeCreated: 1713102981
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/Settings/ShowNameType.cs
+  uploadId: 931220

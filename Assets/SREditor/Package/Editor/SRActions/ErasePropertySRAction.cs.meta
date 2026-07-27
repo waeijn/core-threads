@@ -1,0 +1,10 @@
+﻿fileFormatVersion: 2
+guid: cd3e01ae2bcf4fbe92472de761d9db99
+timeCreated: 1673467146
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/SRActions/ErasePropertySRAction.cs
+  uploadId: 931220

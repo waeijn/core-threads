@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: 3b82dcb2a88de0042949d4379b9026b7
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/Tools/MissingTypesLogger.cs
+  uploadId: 931220

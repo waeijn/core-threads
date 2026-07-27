@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: e9b5a5ac9c94408cb095108828def7b0
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/SRActions/CutPropertySRAction.cs
+  uploadId: 931220

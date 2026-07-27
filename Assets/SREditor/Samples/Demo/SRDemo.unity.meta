@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 6cd91f6a087d648538722bc333e7846e
+DefaultImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Samples/Demo/SRDemo.unity
+  uploadId: 931220

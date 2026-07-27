@@ -1,0 +1,9 @@
+fileFormatVersion: 2
+guid: c1fafdd6e2c907a42b3f59993134b3d2
+AssetOrigin:
+  serializedVersion: 1
+  productId: 297559
+  packageName: Serialize Reference Editor
+  packageVersion: 1.4.5
+  assetPath: Assets/SREditor/Package/Editor/Tools/MissingTypesCleaner.cs
+  uploadId: 931220
