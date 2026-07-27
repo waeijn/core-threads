@@ -7,6 +7,11 @@ using UnityEngine;
 public class EnemySystem : Singleton<EnemySystem>
 {
     [SerializeField] private EnemyBoardView enemyBoardView;
+
+    /// <summary>
+    /// Exposes enemy views so card effects (e.g. DealDamageEffect) can target them.
+    /// </summary>
+    public List<EnemyView> EnemyViews => enemyBoardView.EnemyViews;
     void OnEnable()
     {
         ActionSystem.AttachPerformer<EnemyTurnGA>(EnemyTurnPerformer);
@@ -43,11 +48,12 @@ public class EnemySystem : Singleton<EnemySystem>
     private IEnumerator AttackHeroPerformer(AttackHeroGA attackHeroGA)
     {
         EnemyView attacker = attackHeroGA.Attacker;
-        Tween tween = attacker.transform.DOMoveX(attacker.transform.position.x - 1f, 0.15f);
+        // Move only the sprite so HP/ATK text stays in place
+        Transform sprite = attacker.SpriteTransform;
+        Tween tween = sprite.DOMoveX(sprite.position.x - 1f, 0.15f);
         yield return tween.WaitForCompletion();
-        attacker.transform.DOMoveX(attacker.transform.position.x + 1f, 0.25f);
+        sprite.DOMoveX(sprite.position.x + 1f, 0.25f);
         DealDamageGA dealDamageGA = new(attacker.AttackPower, new() { HeroSystem.Instance.HeroView });
         ActionSystem.Instance.AddReaction(dealDamageGA);
-        //Deal Damage
     }
 }

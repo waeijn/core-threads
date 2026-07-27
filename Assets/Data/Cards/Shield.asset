@@ -10,15 +10,17 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f375f19916e6de8478f644954803ab6e, type: 3}
-  m_Name: Fireball
+  m_Name: Shield
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  <Description>k__BackingField: Deal 4 damage to an enemies
-  <Mana>k__BackingField: 2
-  <Image>k__BackingField: {fileID: 6931125597186889381, guid: 12765c4699b8ece4bb46eb6fbf325795, type: 3}
+  <Description>k__BackingField: Gain 5 block
+  <Mana>k__BackingField: 1
+  <Image>k__BackingField: {fileID: -6746118456476313098, guid: 12765c4699b8ece4bb46eb6fbf325795, type: 3}
   <Effects>k__BackingField:
-  - rid: -2
+  - rid: 5914603523456368726
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 5914603523456368726
+      type: {class: BlockEffect, ns: , asm: Assembly-CSharp}
+      data:
+        blockAmount: 5
