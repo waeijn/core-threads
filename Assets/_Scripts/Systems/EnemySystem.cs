@@ -48,6 +48,8 @@ public class EnemySystem : Singleton<EnemySystem>
     private IEnumerator AttackHeroPerformer(AttackHeroGA attackHeroGA)
     {
         EnemyView attacker = attackHeroGA.Attacker;
+        // Play attack animation
+        attacker.PlayAttackAnimation();
         // Move only the sprite so HP/ATK text stays in place
         Transform sprite = attacker.SpriteTransform;
         Tween tween = sprite.DOMoveX(sprite.position.x - 1f, 0.15f);

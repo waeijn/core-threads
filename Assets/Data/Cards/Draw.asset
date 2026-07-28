@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375f19916e6de8478f644954803ab6e, type: 3}
   m_Name: Draw
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  <Description>k__BackingField: Draw 2 cards.
+  <Description>k__BackingField: Decrypt Encrypt.sys. Draw 2 cards.
   <Mana>k__BackingField: 1
   <Image>k__BackingField: {fileID: -6746118456476313098, guid: 12765c4699b8ece4bb46eb6fbf325795, type: 3}
   <Effects>k__BackingField:

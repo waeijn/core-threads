@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::EnemyView
   healthText: {fileID: 7654329888852796977}
   spriteRenderer: {fileID: 1575109285037901285}
+  animator: {fileID: 2333304355266424318}
   attackText: {fileID: 1923603056158307804}
 --- !u!65 &2222178995037290435
 BoxCollider:
@@ -355,13 +356,43 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3177922068018496657, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 2333304355266424318}
   m_SourcePrefab: {fileID: 100100000, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
 --- !u!4 &970335527079467418 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3326598612749759979, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
   m_PrefabInstance: {fileID: 2548229065438063729}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1100883397109934304 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3177922068018496657, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
+  m_PrefabInstance: {fileID: 2548229065438063729}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &2333304355266424318
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1100883397109934304}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 77cdac3f0f691bd448351ae2bd89b090, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!212 &1575109285037901285 stripped
 SpriteRenderer:
   m_CorrespondingSourceObject: {fileID: 3929049112554006932, guid: faf400bf60f52294d8d44b654588a09f, type: 3}

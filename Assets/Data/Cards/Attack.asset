@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375f19916e6de8478f644954803ab6e, type: 3}
   m_Name: Attack
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  <Description>k__BackingField: Deal 6 damage to all enemies
+  <Description>k__BackingField: Deploy Coupler.exe. Deal 6 damage to all enemies.
   <Mana>k__BackingField: 1
-  <Image>k__BackingField: {fileID: 6931125597186889381, guid: 12765c4699b8ece4bb46eb6fbf325795, type: 3}
+  <Image>k__BackingField: {fileID: -1181149441543630304, guid: 2b04a3bf1fb9d7844a87f80e6c995bdd, type: 3}
   <Effects>k__BackingField:
   - rid: 5914603523456368728
   references:

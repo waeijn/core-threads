@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f375f19916e6de8478f644954803ab6e, type: 3}
   m_Name: Regen
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  <Description>k__BackingField: Restore 4 HP
+  <Description>k__BackingField: Run Garbage_Collector. Restore 4 HP.
   <Mana>k__BackingField: 1
-  <Image>k__BackingField: {fileID: 6931125597186889381, guid: 12765c4699b8ece4bb46eb6fbf325795, type: 3}
+  <Image>k__BackingField: {fileID: 1484939017031921853, guid: 324a1e682754cbb4aa841417a08222c5, type: 3}
   <Effects>k__BackingField:
   - rid: 5914603523456368727
   references:

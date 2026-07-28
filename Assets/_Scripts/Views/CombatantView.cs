@@ -6,9 +6,11 @@ public class CombatantView : MonoBehaviour
 {
     [SerializeField] private TMP_Text healthText;
     [SerializeField] private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
     public int MaxHealth { get; private set; }
     public int CurrentHealth { get; private set; }
     public int CurrentBlock { get; private set; }
+    public bool IsDead => CurrentHealth <= 0;
 
     /// <summary>
     /// The transform of the sprite child object. Use this for movement/shake
@@ -39,6 +41,10 @@ public class CombatantView : MonoBehaviour
     public void GainBlock(int amount)
     {
         CurrentBlock += amount;
+        if (animator != null)
+        {
+            animator.SetTrigger("Shield");
+        }
         UpdateHealthText();
     }
 
@@ -64,8 +70,25 @@ public class CombatantView : MonoBehaviour
             CurrentHealth = 0;
         }
 
+        // Play take damage animation
+        if (animator != null)
+        {
+            animator.SetTrigger("TakeDamage");
+        }
+
         // Shake only the sprite, not the UI text elements
         SpriteTransform.DOShakePosition(0.2f, 0.5f);
         UpdateHealthText();
+    }
+
+    /// <summary>
+    /// Triggers the attack animation on this combatant's animator.
+    /// </summary>
+    public void PlayAttackAnimation()
+    {
+        if (animator != null)
+        {
+            animator.SetTrigger("Attack");
+        }
     }
 }

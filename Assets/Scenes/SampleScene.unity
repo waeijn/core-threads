@@ -2585,7 +2585,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 418946910883349460, guid: 3f960ec3b9c259f49a9eef9f0b8d5b25, type: 3}
       propertyPath: m_text
-      value: HP:44
+      value: 100/100
       objectReference: {fileID: 0}
     - target: {fileID: 418946910883349460, guid: 3f960ec3b9c259f49a9eef9f0b8d5b25, type: 3}
       propertyPath: m_fontSize

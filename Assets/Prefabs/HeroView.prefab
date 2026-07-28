@@ -47,6 +47,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::HeroView
   healthText: {fileID: 418946910883349460}
   spriteRenderer: {fileID: 8805144238457118720}
+  animator: {fileID: 5792156896123900411}
 --- !u!1001 &5527290382100466068
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -102,7 +103,10 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 3177922068018496657, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 5792156896123900411}
   m_SourcePrefab: {fileID: 100100000, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
 --- !u!114 &418946910883349460 stripped
 MonoBehaviour:
@@ -115,6 +119,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshPro
+--- !u!1 &6966749875892784389 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3177922068018496657, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
+  m_PrefabInstance: {fileID: 5527290382100466068}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &5792156896123900411
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6966749875892784389}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 506c370305b003644b0eedb9a9558f7a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!4 &7106278346879253631 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 3326598612749759979, guid: faf400bf60f52294d8d44b654588a09f, type: 3}
