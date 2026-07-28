@@ -37,10 +37,38 @@ public class EnemySystem : Singleton<EnemySystem>
 
     private IEnumerator EnemyTurnPerformer(EnemyTurnGA enemyTurnGA)
     {
-       foreach(var enemy in enemyBoardView.EnemyViews)
+        // --- Slay the Spire: Reset player block at start of turn ---
+        HeroSystem.Instance.HeroView.ResetBlock();
+
+        foreach (var enemy in enemyBoardView.EnemyViews)
         {
-            AttackHeroGA attackHeroGA = new(enemy);
-            ActionSystem.Instance.AddReaction(attackHeroGA);
+            if (enemy.IsDead) continue;
+
+            switch (enemy.CurrentIntent)
+            {
+                case EnemyIntent.Attack:
+                    AttackHeroGA attackGA = new(enemy);
+                    ActionSystem.Instance.AddReaction(attackGA);
+                    break;
+
+                case EnemyIntent.Defend:
+                    enemy.GainBlock(enemy.BlockPower);
+                    break;
+
+                case EnemyIntent.AttackAndDefend:
+                    enemy.GainBlock(enemy.BlockPower);
+                    AttackHeroGA comboGA = new(enemy);
+                    ActionSystem.Instance.AddReaction(comboGA);
+                    break;
+
+                case EnemyIntent.Buff:
+                    // Buff increases attack power permanently
+                    enemy.AttackPower += enemy.BuffAmount;
+                    break;
+            }
+
+            // Roll next intent for the following turn (shown to player)
+            enemy.RollNextIntent();
         }
         yield return null;
     }

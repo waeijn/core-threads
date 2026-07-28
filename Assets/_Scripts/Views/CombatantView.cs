@@ -48,6 +48,15 @@ public class CombatantView : MonoBehaviour
         UpdateHealthText();
     }
 
+    /// <summary>
+    /// Slay the Spire mechanic: Block resets to 0 at the start of each turn.
+    /// </summary>
+    public void ResetBlock()
+    {
+        CurrentBlock = 0;
+        UpdateHealthText();
+    }
+
     public void Heal(int amount)
     {
         CurrentHealth = Mathf.Min(CurrentHealth + amount, MaxHealth);

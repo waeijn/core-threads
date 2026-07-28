@@ -15,3 +15,18 @@ MonoBehaviour:
   <Image>k__BackingField: {fileID: -1660224391, guid: 761de0d7f9224114ca74448a3d84e85c, type: 3}
   <Health>k__BackingField: 15
   <AttackPower>k__BackingField: 4
+  <BlockPower>k__BackingField: 4
+  <BuffAmount>k__BackingField: 2
+  <MovePool>k__BackingField:
+  - Intent: 0
+    Weight: 4
+    OverrideValue: 0
+  - Intent: 1
+    Weight: 2
+    OverrideValue: 0
+  - Intent: 2
+    Weight: 1
+    OverrideValue: 0
+  - Intent: 3
+    Weight: 1
+    OverrideValue: 0

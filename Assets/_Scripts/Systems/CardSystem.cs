@@ -14,6 +14,18 @@ public class CardsSystem : Singleton<CardsSystem>
     private readonly List<Card> discardPile = new();
     private readonly List<Card> hand = new();
 
+    // --- Pile data exposed for UI ---
+    public IReadOnlyList<Card> DrawPileCards => drawPile;
+    public IReadOnlyList<Card> DiscardPileCards => discardPile;
+    public int DrawPileCount => drawPile.Count;
+    public int DiscardPileCount => discardPile.Count;
+
+    /// <summary>
+    /// Fired whenever the draw or discard pile changes (card drawn, played, discarded, reshuffled).
+    /// PileCountUI subscribes to this to update the count badges.
+    /// </summary>
+    public event Action OnPilesChanged;
+
     void OnEnable()
     {
         ActionSystem.AttachPerformer<DrawCardsGA>(DrawCardsPerformer);
@@ -38,6 +50,8 @@ public class CardsSystem : Singleton<CardsSystem>
             Card card = new(cardData);
             drawPile.Add(card);
         }
+        drawPile.Shuffle();
+        OnPilesChanged?.Invoke();
     }
     private IEnumerator DrawCardsPerformer(DrawCardsGA drawCardsGA)
     {
@@ -74,6 +88,7 @@ public class CardsSystem : Singleton<CardsSystem>
             yield return DiscardCard(cardView);
         }
         hand.Clear();
+        OnPilesChanged?.Invoke();
     }
 
     private IEnumerator PlayCardPerformer(PlayCardGA playCardGA)
@@ -85,6 +100,8 @@ public class CardsSystem : Singleton<CardsSystem>
 
         CardView cardView = handView.RemoveCard(playCardGA.Card);
         yield return DiscardCard(cardView);
+
+        OnPilesChanged?.Invoke();
 
         SpendManaGA spendManaGA = new(playCardGA.Card.Mana);
         ActionSystem.Instance.AddReaction(spendManaGA);
@@ -115,6 +132,7 @@ public class CardsSystem : Singleton<CardsSystem>
         Debug.Log($"<color=green>SUCCESS:</color> The system just drew the card image named: {card.Image.name}");
         hand.Add(card);
         CardView cardView = CardViewCreator.Instance.CreateCardView(card, drawPilePoint.position, drawPilePoint.rotation);
+        OnPilesChanged?.Invoke();
         yield return handView.AddCard(cardView);
     }
 
@@ -122,6 +140,8 @@ public class CardsSystem : Singleton<CardsSystem>
     {
         drawPile.AddRange(discardPile);
         discardPile.Clear();
+        drawPile.Shuffle();
+        OnPilesChanged?.Invoke();
     }
 
     private IEnumerator DiscardCard(CardView cardView)

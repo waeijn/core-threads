@@ -12,6 +12,19 @@ public class ActionSystem : Singleton<ActionSystem>
     private static Dictionary<Type, List<Action<GameAction>>> postSubs = new();
     private static Dictionary<Type, Func<GameAction, IEnumerator>> performers = new();
 
+    /// <summary>
+    /// Clears all static dictionaries when entering play mode.
+    /// Prevents stale delegates from previous play sessions accumulating 
+    /// and causing duplicate reactions (e.g. drawing 10 cards instead of 5).
+    /// </summary>
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.SubsystemRegistration)]
+    private static void ResetStatics()
+    {
+        preSubs = new();
+        postSubs = new();
+        performers = new();
+    }
+
     public void Perform(GameAction action, System.Action OnPerformFinished = null)
     {
         if (IsPerforming) return;
