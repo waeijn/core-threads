@@ -15,7 +15,14 @@
         "com.unity.nuget.newtonsoft-json": "3.0.2",
         "com.unity.test-framework": "1.1.31"
       },
-      "hash": "c14de1e6dc01ab42d2bb358730cff954bce0ce6b"
+      "hash": "4ce7dd3cc54e37e2ed6dc59cb5a047f3dccb3f50"
+    },
+    "com.termway.ide.antigravity": {
+      "version": "https://github.com/TermWay/unity-ide-antigravity.git",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "e5e981edf16a5c85f2c1a00209deee6626544bc5"
     },
     "com.unity.2d.animation": {
       "version": "15.1.0",

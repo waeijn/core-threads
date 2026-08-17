@@ -12,4 +12,5 @@
   <Project Path="ToonyColorsPro.Demo.Editor.csproj" />
   <Project Path="SRDemo-Editor.csproj" />
   <Project Path="NewTest.csproj" />
+  <Project Path="Assembly-CSharp-Editor.csproj" />
 </Solution>
