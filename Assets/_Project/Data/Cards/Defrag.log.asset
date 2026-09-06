@@ -10,21 +10,21 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f375f19916e6de8478f644954803ab6e, type: 3}
-  m_Name: Execute
+  m_Name: Defrag.log
   m_EditorClassIdentifier: Assembly-CSharp::CardData
-  <Title>k__BackingField: Execute.exe
-  <Category>k__BackingField: Attack (.exe)
-  <CardColor>k__BackingField: {r: 0.9, g: 0.22, b: 0.21, a: 1}
-  <Description>k__BackingField: Deal 8 damage.
+  <Title>k__BackingField: Defrag.log
+  <Category>k__BackingField: 
+  <CardColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Description>k__BackingField: Apply 2 Vulnerable.
   <Mana>k__BackingField: 1
   <IsExhaust>k__BackingField: 0
-  <Image>k__BackingField: {fileID: 21300000, guid: a74f6d3e7a597e9428ff0381ef07eb5e, type: 3}
+  <Image>k__BackingField: {fileID: 21300000, guid: e2919862f2fdbdc43be52ee0cab88c07, type: 3}
   <Effects>k__BackingField:
-  - rid: 5914603523456368728
+  - rid: 1953966836266827887
   references:
     version: 2
     RefIds:
-    - rid: 5914603523456368728
-      type: {class: DealDamageEffect, ns: , asm: Assembly-CSharp}
+    - rid: 1953966836266827887
+      type: {class: VulnerableEffect, ns: , asm: Assembly-CSharp}
       data:
-        damageAmount: 8
+        vulnerableAmount: 2

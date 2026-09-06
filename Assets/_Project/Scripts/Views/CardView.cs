@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 
 public class CardView : MonoBehaviour
@@ -79,14 +80,50 @@ public class CardView : MonoBehaviour
         if (ManaSystem.Instance.HasEnoughMana(Card.Mana) &&
             Physics.Raycast(safeRayOrigin, Vector3.forward, out RaycastHit hit, 20f, dropLayer))
         {
-            PlayCardGA playCardGA = new(Card);
-            ActionSystem.Instance.Perform(playCardGA);
+            // Play the pop animation, then perform the card action
+            StartCoroutine(PlayCardAnimation());
         }
         else
         {
             transform.position = dragStartPosition;
             transform.rotation = dragStartRotation;
         }
+        Interactions.Instance.PlayerIsDragging = false;
+    }
+
+    private IEnumerator PlayCardAnimation()
+    {
+        // Disable further interaction while animating
+        Interactions.Instance.PlayerIsDragging = true;
+
+        Vector3 originalScale = transform.localScale;
+
+        // Quick scale-up pop
+        float elapsed = 0f;
+        float popDuration = 0.08f;
+        while (elapsed < popDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / popDuration;
+            transform.localScale = Vector3.Lerp(originalScale, originalScale * 1.25f, t);
+            yield return null;
+        }
+
+        // Shrink to nothing
+        elapsed = 0f;
+        float shrinkDuration = 0.10f;
+        while (elapsed < shrinkDuration)
+        {
+            elapsed += Time.deltaTime;
+            float t = elapsed / shrinkDuration;
+            transform.localScale = Vector3.Lerp(originalScale * 1.25f, Vector3.zero, t);
+            yield return null;
+        }
+
+        // Perform the card action
+        PlayCardGA playCardGA = new(Card);
+        ActionSystem.Instance.Perform(playCardGA);
+
         Interactions.Instance.PlayerIsDragging = false;
     }
 }
