@@ -73,6 +73,24 @@ public class PileCountUI : MonoBehaviour
         // Don't allow opening the viewer during animations
         if (ActionSystem.Instance.IsPerforming) return;
 
+        // If the viewer is already open, check if it's showing THIS pile
+        if (pileViewerUI.IsOpen)
+        {
+            // Match the enums correctly (they are defined in two different places)
+            bool isSamePile = false;
+            if (pileType == PileType.Draw && pileViewerUI.CurrentPile == PileViewerUI.PileType.Draw) isSamePile = true;
+            if (pileType == PileType.Discard && pileViewerUI.CurrentPile == PileViewerUI.PileType.Discard) isSamePile = true;
+            if (pileType == PileType.Exhaust && pileViewerUI.CurrentPile == PileViewerUI.PileType.Exhaust) isSamePile = true;
+
+            // If it is, close it
+            if (isSamePile)
+            {
+                pileViewerUI.Hide();
+                return;
+            }
+            // Otherwise, it will just overwrite and show the new pile (which is what we want!)
+        }
+
         if (pileType == PileType.Draw)
         {
             pileViewerUI.ShowDrawPile();

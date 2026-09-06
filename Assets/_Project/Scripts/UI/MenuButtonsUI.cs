@@ -13,7 +13,7 @@ public class MenuButtonsUI : MonoBehaviour
     [SerializeField] private Button settingsButton;
 
     [Header("Panels")]
-    [SerializeField] private GameObject deckPanel;
+    [SerializeField] private DeckViewerUI deckViewer;
     [SerializeField] private GameObject settingsPanel;
 
     private void OnEnable()
@@ -50,9 +50,12 @@ public class MenuButtonsUI : MonoBehaviour
 
     private void OnDeckClicked()
     {
-        if (deckPanel != null)
+        if (deckViewer != null)
         {
-            deckPanel.SetActive(!deckPanel.activeSelf);
+            if (deckViewer.IsOpen)
+                deckViewer.Hide();
+            else
+                deckViewer.Show();
         }
         // Close settings if open
         if (settingsPanel != null) settingsPanel.SetActive(false);
@@ -65,6 +68,6 @@ public class MenuButtonsUI : MonoBehaviour
             settingsPanel.SetActive(!settingsPanel.activeSelf);
         }
         // Close deck if open
-        if (deckPanel != null) deckPanel.SetActive(false);
+        if (deckViewer != null) deckViewer.Hide();
     }
 }
