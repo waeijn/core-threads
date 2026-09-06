@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 /// <summary>
-/// Manages post-combat rewards in BattleScene.
+/// Manages post-combat rewards in GameScene.
 /// On non-boss victory, presents the player with Duplicate / Purge / Skip choices.
 /// Unlike Treasure nodes (which show the full deck for targeted selection),
 /// combat rewards show a random subset of 3 cards.

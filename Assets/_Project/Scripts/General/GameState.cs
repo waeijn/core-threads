@@ -119,6 +119,19 @@ public static class GameState
     }
 
     /// <summary>
+    /// Returns the full deck list (including duplicates), sorted by card name.
+    /// Useful for the deck viewer overlay on the map.
+    /// </summary>
+    public static List<CardData> GetFullDeck()
+    {
+        if (PlayerDeck == null) return new List<CardData>();
+        var sorted = new List<CardData>(PlayerDeck);
+        sorted.Sort((a, b) => string.Compare(a.name, b.name, System.StringComparison.OrdinalIgnoreCase));
+        return sorted;
+    }
+
+
+    /// <summary>
     /// Returns how many copies of a specific card are in the deck.
     /// </summary>
     public static int GetCardCount(CardData card)

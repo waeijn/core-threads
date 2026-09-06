@@ -54,6 +54,17 @@ public class MatchSetupSystem : MonoBehaviour
             enemiesToSpawn = fallbackEnemyDatas;
         }
 
+        if (!GameState.IsInitialized)
+        {
+            GameState.HeroData = heroData;
+            GameState.InitializeDeck(heroData.Deck);
+        }
+
+        if (StatusEffectSystem.Instance != null)
+        {
+            StatusEffectSystem.Instance.ClearAll();
+        }
+        
         HeroSystem.Instance.Setup(heroData);
 
         // Restore player HP from previous fights

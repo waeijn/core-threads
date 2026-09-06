@@ -44,8 +44,8 @@ public class MapSystem : MonoBehaviour
 
     private void Start()
     {
-        // Disable redundant camera when MapScene is loaded additively over BattleScene
-        if (SceneManager.GetSceneByName("BattleScene").isLoaded)
+        // Disable redundant camera when MapScene is loaded additively over GameScene
+        if (SceneManager.GetSceneByName("GameScene").isLoaded)
         {
             var roots = gameObject.scene.GetRootGameObjects();
             foreach (var root in roots)
@@ -257,8 +257,8 @@ public class MapSystem : MonoBehaviour
 
     private void OnNodeClicked(MapNodeView view)
     {
-        // View-Only mode when BattleScene is loaded — do not allow node selection mid-fight
-        if (SceneManager.GetSceneByName("BattleScene").isLoaded)
+        // View-Only mode when GameScene is loaded — do not allow node selection mid-fight
+        if (SceneManager.GetSceneByName("GameScene").isLoaded)
         {
             Debug.Log("[MapSystem] Map is in View-Only mode during active combat.");
             return;
@@ -294,8 +294,8 @@ public class MapSystem : MonoBehaviour
             return;
         }
 
-        // Combat / Boss → load BattleScene
-        SceneManager.LoadScene("BattleScene");
+        // Combat / Boss → load GameScene
+        SceneManager.LoadScene("GameScene");
     }
 
     // ── Rest Node ──────────────────────────────────────────────────────────
