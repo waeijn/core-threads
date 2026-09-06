@@ -10,7 +10,7 @@ public static class HealthUISetupUtility
     [MenuItem("Tools/Setup Symmetrical Health UI")]
     public static void SetupHealthUI()
     {
-        Canvas canvas = Object.FindFirstObjectByType<Canvas>();
+        Canvas canvas = Object.FindAnyObjectByType<Canvas>();
         if (canvas == null)
         {
             Debug.LogError("No Canvas found in active scene!");

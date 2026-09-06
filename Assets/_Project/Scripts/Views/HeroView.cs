@@ -5,7 +5,7 @@ public class HeroView : CombatantView
 {
     public void Setup(HeroData heroData)
     {
-        var canvas = Object.FindFirstObjectByType<Canvas>();
+        var canvas = Object.FindAnyObjectByType<Canvas>();
         if (canvas != null)
         {
             var pUI = canvas.transform.Find("HealthUIContainer/PlayerHealthUI") ?? canvas.transform.Find("PlayerHealthUI");
