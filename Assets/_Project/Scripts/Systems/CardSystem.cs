@@ -280,8 +280,8 @@ public class CardsSystem : Singleton<CardsSystem>
         {
             // Delay the discard sound just a tiny bit as it flies
             DOVirtual.DelayedCall(0.05f, () => {
-                //if (AudioSystem.Instance != null && GameState.HeroData != null) 
-                //    AudioSystem.Instance.PlaySFX(GameState.HeroData.CardDiscardSound, 0.25f);
+                if (AudioSystem.Instance != null && GameState.HeroData != null) 
+                    AudioSystem.Instance.PlaySFX(GameState.HeroData.CardDiscardSound, 0.25f);
             });
         }
 
