@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c821af4ea62e440addf7a61d967cd0, type: 3}
+  m_Name: Leech
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Image>k__BackingField: {fileID: -3568818173856501073, guid: c8d555706aabd7a4aaeaa11765c19b93, type: 3}
+  <Health>k__BackingField: 35
+  <AttackPower>k__BackingField: 8
+  <BlockPower>k__BackingField: 5
+  <BuffAmount>k__BackingField: 3
+  <Scale>k__BackingField: {x: 3.5, y: 3.5, z: 1}
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 1ba913c1bfc5b774f80e641a9010192c, type: 2}
+  <FSMStates>k__BackingField: []
+  <AttackSound>k__BackingField: {fileID: 0}
+  <DamageSound>k__BackingField: {fileID: 0}
+  <MovePool>k__BackingField:
+  - Intent: 0
+    Weight: 4
+    OverrideValue: 0
+  - Intent: 1
+    Weight: 2
+    OverrideValue: 0
+  - Intent: 2
+    Weight: 2
+    OverrideValue: 0
+  - Intent: 3
+    Weight: 1
+    OverrideValue: 0

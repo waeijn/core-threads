@@ -37,9 +37,17 @@ public class MatchSetupSystem : MonoBehaviour
             else
             {
                 // Regular combat
-                enemiesToSpawn = selectedNode.Enemies != null && selectedNode.Enemies.Length > 0
+                var rawEnemies = selectedNode.Enemies != null && selectedNode.Enemies.Length > 0
                     ? new List<EnemyData>(selectedNode.Enemies)
                     : fallbackEnemyDatas;
+
+                enemiesToSpawn = new List<EnemyData>();
+                foreach(var e in rawEnemies)
+                {
+                    if (e != null) enemiesToSpawn.Add(e);
+                }
+                
+                if (enemiesToSpawn.Count == 0) enemiesToSpawn = fallbackEnemyDatas;
             }
 
             // Swap background if available
@@ -54,6 +62,17 @@ public class MatchSetupSystem : MonoBehaviour
             enemiesToSpawn = fallbackEnemyDatas;
         }
 
+        if (!GameState.IsInitialized)
+        {
+            GameState.HeroData = heroData;
+            GameState.InitializeDeck(heroData.Deck);
+        }
+
+        if (StatusEffectSystem.Instance != null)
+        {
+            StatusEffectSystem.Instance.ClearAll();
+        }
+        
         HeroSystem.Instance.Setup(heroData);
 
         // Restore player HP from previous fights

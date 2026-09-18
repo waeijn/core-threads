@@ -5,7 +5,7 @@ public class HeroView : CombatantView
 {
     public void Setup(HeroData heroData)
     {
-        var canvas = Object.FindFirstObjectByType<Canvas>();
+        var canvas = Object.FindAnyObjectByType<Canvas>();
         if (canvas != null)
         {
             var pUI = canvas.transform.Find("HealthUIContainer/PlayerHealthUI") ?? canvas.transform.Find("PlayerHealthUI");
@@ -35,6 +35,13 @@ public class HeroView : CombatantView
             var strObj = GameObject.Find("PlayerStrengthText");
             if (strObj != null) strengthText = strObj.GetComponent<TMP_Text>();
         }
+
+        attackSound = heroData.AttackSound;
+        damageSound = heroData.DamageSound;
+        healSound = heroData.HealSound;
+        buffSound = heroData.BuffSound;
+        shieldSound = heroData.BuffSound; // Reuse buff sound for shield
+        debuffSound = heroData.DebuffSound;
 
         SetupBase(heroData.Health, heroData.Image);
     }

@@ -50,11 +50,20 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
             if (bossDefeated)
             {
-                // Advance act and wipe the map so it regenerates fresh
-                GameState.CurrentAct = Mathf.Clamp(GameState.CurrentAct + 1, 1, 3);
-                GameState.GeneratedMap = null;
-                GameState.SelectedNode = null;
-                ShowGameOver("SECTOR CLEARED\n<size=60%>ALL THREATS NEUTRALIZED</size>", Color.white, true);
+                if (GameState.CurrentAct == 3)
+                {
+                    // Won the entire game
+                    GameState.ResetRun();
+                    ShowGameOver("RUN COMPLETE\n<size=60%>SYSTEM FULLY PURGED</size>", Color.cyan, true);
+                }
+                else
+                {
+                    // Advance act and wipe the map so it regenerates fresh
+                    GameState.CurrentAct++;
+                    GameState.GeneratedMap = null;
+                    GameState.SelectedNode = null;
+                    ShowGameOver("SECTOR CLEARED\n<size=60%>ALL THREATS NEUTRALIZED</size>", Color.white, true);
+                }
             }
             else
             {
@@ -83,6 +92,8 @@ public class GameOverSystem : Singleton<GameOverSystem>
     private void ShowGameOver(string message, Color color, bool isVictory)
     {
         IsGameOver = true;
+
+        if (AudioSystem.Instance != null) AudioSystem.Instance.PlayGameOver();
 
         if (CardViewHoverSystem.Instance != null)
         {
@@ -129,13 +140,17 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
     private void OnReturnClicked()
     {
-        if (HeroSystem.Instance.HeroView.IsDead)
+        // If the player died, OR if they beat Act 3 (where we reset the run early)
+        if (HeroSystem.Instance.HeroView.IsDead || GameState.PlayerDeck == null)
         {
-            // Defeat — full reset
+            // Full reset and return to main menu
             GameState.ResetRun();
+            GameState.IsInitialized = false; // Force re-init next run
+            SceneManager.LoadScene("MainMenu");
+            return;
         }
 
-        // Return to map (always)
+        // Standard victory — Return to map to continue the run
         if (GameState.IsInitialized)
         {
             SceneManager.LoadScene("MapScene");

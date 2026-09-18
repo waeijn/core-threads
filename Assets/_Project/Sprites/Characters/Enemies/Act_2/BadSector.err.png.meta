@@ -1,0 +1,687 @@
+fileFormatVersion: 2
+guid: 246635f5e871ab34299d34bb3848eaef
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8428067206037986590
+    second: bad_sector-Sheet_0
+  - first:
+      213: -8488969032225749352
+    second: bad_sector-Sheet_1
+  - first:
+      213: 3605528525376024690
+    second: bad_sector-Sheet_2
+  - first:
+      213: 1909339230282090624
+    second: bad_sector-Sheet_3
+  - first:
+      213: 1328335190136771842
+    second: bad_sector-Sheet_4
+  - first:
+      213: -6079247724147517064
+    second: bad_sector-Sheet_5
+  - first:
+      213: 4084028222413417823
+    second: bad_sector-Sheet_6
+  - first:
+      213: -571512206460249721
+    second: bad_sector-Sheet_7
+  - first:
+      213: 3466039583566266754
+    second: bad_sector-Sheet_8
+  - first:
+      213: 7945820392289844688
+    second: bad_sector-Sheet_9
+  - first:
+      213: 8628197936832156687
+    second: bad_sector-Sheet_10
+  - first:
+      213: -5546031946215791704
+    second: bad_sector-Sheet_11
+  - first:
+      213: 936857784912767821
+    second: bad_sector-Sheet_12
+  - first:
+      213: 156338441111127275
+    second: bad_sector-Sheet_13
+  - first:
+      213: 3087623143826756648
+    second: bad_sector-Sheet_14
+  - first:
+      213: 7251454185258346975
+    second: bad_sector-Sheet_15
+  - first:
+      213: 2146874821316937766
+    second: bad_sector-Sheet_16
+  - first:
+      213: -5522898857561655702
+    second: bad_sector-Sheet_17
+  - first:
+      213: -8168763260412492491
+    second: bad_sector-Sheet_18
+  - first:
+      213: 2530690850975448530
+    second: bad_sector-Sheet_19
+  - first:
+      213: 5745667630168217246
+    second: bad_sector-Sheet_20
+  - first:
+      213: 4660303041668149149
+    second: bad_sector-Sheet_21
+  - first:
+      213: 4939682170286599371
+    second: bad_sector-Sheet_22
+  - first:
+      213: 1735671535764100224
+    second: bad_sector-Sheet_23
+  - first:
+      213: 4586788775984559882
+    second: bad_sector-Sheet_24
+  - first:
+      213: 2099541518334095264
+    second: bad_sector-Sheet_25
+  - first:
+      213: -2930845246977857209
+    second: bad_sector-Sheet_26
+  - first:
+      213: 7100437339108246821
+    second: bad_sector-Sheet_27
+  - first:
+      213: -7536233111513117435
+    second: bad_sector-Sheet_28
+  - first:
+      213: -3885052854426388607
+    second: bad_sector-Sheet_29
+  - first:
+      213: -8275613336857766989
+    second: bad_sector-Sheet_30
+  - first:
+      213: -4825416120633713018
+    second: bad_sector-Sheet_31
+  - first:
+      213: 1185957950103745001
+    second: bad_sector-Sheet_32
+  - first:
+      213: 9193544570581848005
+    second: bad_sector-Sheet_33
+  - first:
+      213: 2784198577621112005
+    second: bad_sector-Sheet_34
+  - first:
+      213: -6090652586298021526
+    second: bad_sector-Sheet_35
+  - first:
+      213: -6919980057660527242
+    second: bad_sector-Sheet_36
+  - first:
+      213: 4746050705403632022
+    second: bad_sector-Sheet_37
+  - first:
+      213: -7748615349247211991
+    second: bad_sector-Sheet_38
+  - first:
+      213: 5036075714606452960
+    second: bad_sector-Sheet_39
+  - first:
+      213: 3780320981811143007
+    second: bad_sector-Sheet_40
+  - first:
+      213: -2669442684922129018
+    second: bad_sector-Sheet_41
+  - first:
+      213: -9097599238995812669
+    second: bad_sector-Sheet_42
+  - first:
+      213: -896571994947891262
+    second: bad_sector-Sheet_43
+  - first:
+      213: 4346024655558981359
+    second: bad_sector-Sheet_44
+  - first:
+      213: 8214769692358378759
+    second: bad_sector-Sheet_45
+  - first:
+      213: 6530180250483169699
+    second: bad_sector-Sheet_46
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: bad_sector-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2e2acf8a78d790b80800000000000000
+      internalID: -8428067206037986590
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 89684e444af113a80800000000000000
+      internalID: -8488969032225749352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 128
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27073964719690230800000000000000
+      internalID: 3605528525376024690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 192
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0888ea0f9e55f7a10800000000000000
+      internalID: 1909339230282090624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 256
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 205d0ce41d13f6210800000000000000
+      internalID: 1328335190136771842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 320
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879d594776c22aba0800000000000000
+      internalID: -6079247724147517064
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 384
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5d2f99b7026da830800000000000000
+      internalID: 4084028222413417823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 789132d1da49118f0800000000000000
+      internalID: -571512206460249721
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 512
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28109eb23a8d91030800000000000000
+      internalID: 3466039583566266754
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 576
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0ddbd7b4c89354e60800000000000000
+      internalID: 7945820392289844688
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f0493a43f448db770800000000000000
+      internalID: 8628197936832156687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 704
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8a3e6dc34598803b0800000000000000
+      internalID: -5546031946215791704
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 768
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4be8c21133600d00800000000000000
+      internalID: 936857784912767821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 832
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4ca2fdbfc6b2200800000000000000
+      internalID: 156338441111127275
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 896
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8249110f3e079da20800000000000000
+      internalID: 3087623143826756648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fd9e751692752a460800000000000000
+      internalID: 7251454185258346975
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 1024
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62883dd764b3bcd10800000000000000
+      internalID: 2146874821316937766
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: bad_sector-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 1088
+        y: 0
+        width: 64
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6670a820c8ba53b0800000000000000
+      internalID: -5522898857561655702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 9a941091ca6a42f429df84c23bcda256
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":18.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      bad_sector-Sheet_0: -8428067206037986590
+      bad_sector-Sheet_1: -8488969032225749352
+      bad_sector-Sheet_10: 8628197936832156687
+      bad_sector-Sheet_11: -5546031946215791704
+      bad_sector-Sheet_12: 936857784912767821
+      bad_sector-Sheet_13: 156338441111127275
+      bad_sector-Sheet_14: 3087623143826756648
+      bad_sector-Sheet_15: 7251454185258346975
+      bad_sector-Sheet_16: 2146874821316937766
+      bad_sector-Sheet_17: -5522898857561655702
+      bad_sector-Sheet_2: 3605528525376024690
+      bad_sector-Sheet_3: 1909339230282090624
+      bad_sector-Sheet_4: 1328335190136771842
+      bad_sector-Sheet_5: -6079247724147517064
+      bad_sector-Sheet_6: 4084028222413417823
+      bad_sector-Sheet_7: -571512206460249721
+      bad_sector-Sheet_8: 3466039583566266754
+      bad_sector-Sheet_9: 7945820392289844688
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -16,13 +16,14 @@ public class EnemySystem : Singleton<EnemySystem>
     {
         ActionSystem.AttachPerformer<EnemyTurnGA>(EnemyTurnPerformer);
         ActionSystem.AttachPerformer<AttackHeroGA>(AttackHeroPerformer);
+        ActionSystem.SubscribeReaction<EnemyTurnGA>(EnemyTurnPostReaction, ReactionTiming.POST);
     }
 
     void OnDisable()
     {
         ActionSystem.DetachPerformer<EnemyTurnGA>();
         ActionSystem.DetachPerformer<AttackHeroGA>();
-
+        ActionSystem.UnsubscribeReaction<EnemyTurnGA>(EnemyTurnPostReaction, ReactionTiming.POST);
     }
 
     public void Setup(List<EnemyData> enemyDatas)
@@ -37,9 +38,25 @@ public class EnemySystem : Singleton<EnemySystem>
 
     private IEnumerator EnemyTurnPerformer(EnemyTurnGA enemyTurnGA)
     {
-        // --- Slay the Spire: Reset enemy block at start of enemy turn ---
+        // Reset enemy block at start of enemy turn
         foreach (var e in enemyBoardView.EnemyViews) { if (!e.IsDead) e.ResetBlock(); }
 
+        // Tick down Vulnerable on all enemies
+        foreach (var e in enemyBoardView.EnemyViews) { if (!e.IsDead) e.TickVulnerable(); }
+
+        // Tick down Vulnerable on hero
+        if (HeroSystem.Instance != null && HeroSystem.Instance.HeroView != null)
+            HeroSystem.Instance.HeroView.TickVulnerable();
+
+        // 1. Hide all intents at the start of the turn
+        foreach (var enemy in enemyBoardView.EnemyViews)
+        {
+            if (!enemy.IsDead) enemy.HideIntent();
+        }
+        
+        yield return new WaitForSeconds(0.2f);
+
+        // 2. Perform actions sequentially (or queue them)
         foreach (var enemy in enemyBoardView.EnemyViews)
         {
             if (enemy.IsDead) continue;
@@ -47,29 +64,39 @@ public class EnemySystem : Singleton<EnemySystem>
             switch (enemy.CurrentIntent)
             {
                 case EnemyIntent.Attack:
-                    AttackHeroGA attackGA = new(enemy);
-                    ActionSystem.Instance.AddReaction(attackGA);
+                    ActionSystem.Instance.AddReaction(new AttackHeroGA(enemy));
                     break;
 
                 case EnemyIntent.Defend:
-                    enemy.GainBlock(enemy.BlockPower);
+                    enemy.GainBlock(enemy.GetIntentValue());
+                    yield return new WaitForSeconds(0.4f);
                     break;
 
                 case EnemyIntent.AttackAndDefend:
                     enemy.GainBlock(enemy.BlockPower);
-                    AttackHeroGA comboGA = new(enemy);
-                    ActionSystem.Instance.AddReaction(comboGA);
+                    ActionSystem.Instance.AddReaction(new AttackHeroGA(enemy));
                     break;
 
                 case EnemyIntent.Buff:
                     enemy.GainStrength(enemy.BuffAmount);
+                    yield return new WaitForSeconds(0.4f);
                     break;
             }
-
-            // Roll next intent for the following turn (shown to player)
-            enemy.RollNextIntent();
         }
-        yield return null;
+        
+        yield return new WaitForSeconds(0.2f);
+    }
+
+    private void EnemyTurnPostReaction(EnemyTurnGA enemyTurnGA)
+    {
+        // 3. Roll next intents AT THE START of the player's next turn (which coincides with EnemyTurn POST reactions)
+        foreach (var enemy in enemyBoardView.EnemyViews)
+        {
+            if (!enemy.IsDead)
+            {
+                enemy.RollNextIntent();
+            }
+        }
     }
 
     private IEnumerator AttackHeroPerformer(AttackHeroGA attackHeroGA)
@@ -82,7 +109,9 @@ public class EnemySystem : Singleton<EnemySystem>
         Tween tween = sprite.DOMoveX(sprite.position.x - 1f, 0.15f);
         yield return tween.WaitForCompletion();
         sprite.DOMoveX(sprite.position.x + 1f, 0.25f);
-        DealDamageGA dealDamageGA = new(attacker.AttackPower + attacker.Strength, new() { HeroSystem.Instance.HeroView });
+        
+        int baseDamage = attacker.GetIntentValue();
+        DealDamageGA dealDamageGA = new(baseDamage + attacker.Strength, new() { HeroSystem.Instance.HeroView });
         ActionSystem.Instance.AddReaction(dealDamageGA);
     }
 }

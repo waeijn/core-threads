@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /// <summary>
 /// ScriptableObject holding all configuration parameters for the procedural map generator.
@@ -15,21 +15,25 @@ public class MapConfig : ScriptableObject
     public int act1StartingPaths = 2;
     [Tooltip("Middle layer count (excluding layer 0 and boss layer).")]
     public int act1MiddleLayers = 2;
-    public EnemyData act1Layer0Enemy;     // Coupler
-    public EnemyData act1Layer1Enemy;     // Corrupted
-    public EnemyData act1BossEnemy;       // Collector
+    public System.Collections.Generic.List<EnemyData> act1WeakEnemies;     // e.g., Coupler
+    public System.Collections.Generic.List<EnemyData> act1NormalEnemies;   // e.g., Corrupted
+    public System.Collections.Generic.List<EnemyData> act1BossEnemies;     // e.g., Collector
     public int act1BossSpriteIndex = 3;
 
     [Header("Act 2 - Placeholder")]
     public int act2StartingPaths = 3;
     public int act2MiddleLayers = 3;
-    public EnemyData act2BossEnemy;
+    public System.Collections.Generic.List<EnemyData> act2WeakEnemies;
+    public System.Collections.Generic.List<EnemyData> act2NormalEnemies;
+    public System.Collections.Generic.List<EnemyData> act2BossEnemies;
     public int act2BossSpriteIndex = 4;
 
     [Header("Act 3 - Placeholder")]
     public int act3StartingPaths = 4;
     public int act3MiddleLayers = 4;
-    public EnemyData act3BossEnemy;
+    public System.Collections.Generic.List<EnemyData> act3WeakEnemies;
+    public System.Collections.Generic.List<EnemyData> act3NormalEnemies;
+    public System.Collections.Generic.List<EnemyData> act3BossEnemies;
     public int act3BossSpriteIndex = 5;
 
     [Header("Map Layout")]

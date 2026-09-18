@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e13dc9ae0146734479e2a25248a16bc4, type: 3}
   m_Name: DefaultHero
   m_EditorClassIdentifier: Assembly-CSharp::HeroData
+  <HeroName>k__BackingField: THREAD-04
   <Image>k__BackingField: {fileID: 1766820177, guid: 6b05799c4993e4c47b3a5aa2e927260c, type: 3}
   <Health>k__BackingField: 44
   <Deck>k__BackingField:
@@ -25,3 +26,10 @@ MonoBehaviour:
   - {fileID: 11400000, guid: a1b2c3d4e5f647a8b9c0d1e2f3a4b5c6, type: 2}
   - {fileID: 11400000, guid: edc4def116c62b440b9dad72ba813370, type: 2}
   - {fileID: 11400000, guid: d7e8f9a0b1c2d3e4f5a6b7c8d9e0f1a2, type: 2}
+  <AttackSound>k__BackingField: {fileID: 8300000, guid: 1d271d57b7c60a94fab6c80ecd6aa165, type: 3}
+  <DamageSound>k__BackingField: {fileID: 0}
+  <HealSound>k__BackingField: {fileID: 8300000, guid: af4295b5e5ca296409b3fcbdc6916b1e, type: 3}
+  <BuffSound>k__BackingField: {fileID: 8300000, guid: 2acc09ddb23859f4597283079bfe2b57, type: 3}
+  <DebuffSound>k__BackingField: {fileID: 8300000, guid: e5f5216c6febea3469096a4086c5743d, type: 3}
+  <CardDrawSound>k__BackingField: {fileID: 8300000, guid: 4e076589b961a2548ad50d6be268f9af, type: 3}
+  <CardDiscardSound>k__BackingField: {fileID: 8300000, guid: 9bc80d2ee26c8e64c8efee68338cab64, type: 3}

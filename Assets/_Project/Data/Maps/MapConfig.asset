@@ -21,17 +21,39 @@ MonoBehaviour:
   - {fileID: -1436408385, guid: d48c0e5dc19041b4482778d78592d997, type: 3}
   act1StartingPaths: 2
   act1MiddleLayers: 2
-  act1Layer0Enemy: {fileID: 11400000, guid: a95f96165e194f244a8870d2c12fcc46, type: 2}
-  act1Layer1Enemy: {fileID: 11400000, guid: cd27bf3e8f0aff94db0c01964f5a7547, type: 2}
-  act1BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
+  act1WeakEnemies:
+  - {fileID: 11400000, guid: a95f96165e194f244a8870d2c12fcc46, type: 2}
+  act1NormalEnemies:
+  - {fileID: 11400000, guid: cd27bf3e8f0aff94db0c01964f5a7547, type: 2}
+  act1BossEnemies:
+  - {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
   act1BossSpriteIndex: 3
   act2StartingPaths: 3
   act2MiddleLayers: 3
-  act2BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
+  act2WeakEnemies:
+  - {fileID: 11400000, guid: 898044fa4dd1df144b676d97930a2146, type: 2}
+  - {fileID: 11400000, guid: 4158aa3f089451d4195a77901af6c354, type: 2}
+  act2NormalEnemies:
+  - {fileID: 11400000, guid: 9179c6c65050c5742b09234bf8142876, type: 2}
+  - {fileID: 11400000, guid: da60eb7da6e126046abe90e277567bd5, type: 2}
+  - {fileID: 11400000, guid: a11fa33d58894cf40b116e0547981fe1, type: 2}
+  - {fileID: 11400000, guid: 3d738ffafb70730448047da4c6ce81b5, type: 2}
+  act2BossEnemies:
+  - {fileID: 11400000, guid: 731c0a6b17c19734c855291c701fe59c, type: 2}
+  - {fileID: 11400000, guid: ab50322e7ab0a3344bdd8dcbe1595afc, type: 2}
   act2BossSpriteIndex: 4
   act3StartingPaths: 4
   act3MiddleLayers: 4
-  act3BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
+  act3WeakEnemies:
+  - {fileID: 11400000, guid: 9179c6c65050c5742b09234bf8142876, type: 2}
+  - {fileID: 11400000, guid: da60eb7da6e126046abe90e277567bd5, type: 2}
+  - {fileID: 11400000, guid: a11fa33d58894cf40b116e0547981fe1, type: 2}
+  - {fileID: 11400000, guid: 3d738ffafb70730448047da4c6ce81b5, type: 2}
+  act3NormalEnemies:
+  - {fileID: 11400000, guid: 731c0a6b17c19734c855291c701fe59c, type: 2}
+  - {fileID: 11400000, guid: ab50322e7ab0a3344bdd8dcbe1595afc, type: 2}
+  act3BossEnemies:
+  - {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
   act3BossSpriteIndex: 5
   layerHeight: 180
   columnWidth: 160

@@ -8,16 +8,14 @@ public static class ListExtensions
         // 1. Safety check
         if (list.Count == 0) return default;
         
-        // 2. Pick a random index
-        int r = Random.Range(0, list.Count);
+        // 2. Pop from the end of the list (top of the deck)
+        int lastIndex = list.Count - 1;
+        T t = list[lastIndex]; 
         
-        // 3. Save the item at that index to a variable 't'
-        T t = list[r]; 
+        // 3. Remove the item
+        list.RemoveAt(lastIndex);
         
-        // 4. Remove the item from the list using its index
-        list.RemoveAt(r);
-        
-        // 5. Return the saved item
+        // 4. Return the saved item
         return t; 
     }
 

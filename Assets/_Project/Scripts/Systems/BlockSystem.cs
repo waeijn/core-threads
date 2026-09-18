@@ -15,8 +15,16 @@ public class BlockSystem : MonoBehaviour
 
     private IEnumerator GainBlockPerformer(GainBlockGA gainBlockGA)
     {
-        // Grant block to the hero
-        HeroSystem.Instance.HeroView.GainBlock(gainBlockGA.Amount);
+        var heroView = HeroSystem.Instance.HeroView;
+        heroView.GainBlock(gainBlockGA.Amount);
+
+        var feedback = CombatFeedbackSystem.Instance;
+        if (feedback != null)
+        {
+            feedback.FlashSprite(heroView.spriteRenderer, new Color(0.2f, 0.8f, 1f, 1f));
+            feedback.SpawnFloatingText(heroView.SpriteTransform.position, $"+{gainBlockGA.Amount} BLK", Color.cyan);
+        }
+
         yield return null;
     }
 }

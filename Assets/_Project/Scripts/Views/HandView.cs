@@ -26,6 +26,8 @@ public class HandView : MonoBehaviour
             StopCoroutine(layoutRoutine);
         }
 
+        if (!gameObject.activeInHierarchy) return null;
+
         // We start the animation and save the Coroutine to our variable
         layoutRoutine = StartCoroutine(UpdateCardPositions(0.15f));
 
@@ -38,7 +40,11 @@ public class HandView : MonoBehaviour
         CardView cardView = GetCardView(card);
         if (cardView == null) return null;
         cards.Remove(cardView);
-        StartCoroutine(UpdateCardPositions(0.15f));
+
+        if (gameObject.activeInHierarchy)
+        {
+            StartCoroutine(UpdateCardPositions(0.15f));
+        }
         return cardView;
     }
 

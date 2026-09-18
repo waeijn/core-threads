@@ -249,17 +249,42 @@ public static class MapGenerator
         _ => 3
     };
 
-    private static EnemyData GetLayer0Enemy(int act) =>
-        act == 1 ? _cfg.act1Layer0Enemy : _cfg.act1Layer0Enemy; // Placeholder same for all acts
-
-    private static EnemyData GetLayer1Enemy(int act) =>
-        act == 1 ? _cfg.act1Layer1Enemy : _cfg.act1Layer1Enemy; // Placeholder
-
-    private static EnemyData GetBossEnemy(int act) => act switch
+    private static EnemyData GetLayer0Enemy(int act)
     {
-        1 => _cfg.act1BossEnemy,
-        2 => _cfg.act2BossEnemy,
-        3 => _cfg.act3BossEnemy,
-        _ => _cfg.act1BossEnemy
-    };
+        var list = act switch
+        {
+            1 => _cfg.act1WeakEnemies,
+            2 => _cfg.act2WeakEnemies,
+            3 => _cfg.act3WeakEnemies,
+            _ => _cfg.act1WeakEnemies
+        };
+        if (list == null || list.Count == 0) list = _cfg.act1WeakEnemies;
+        return (list != null && list.Count > 0) ? list[Random.Range(0, list.Count)] : null;
+    }
+
+    private static EnemyData GetLayer1Enemy(int act)
+    {
+        var list = act switch
+        {
+            1 => _cfg.act1NormalEnemies,
+            2 => _cfg.act2NormalEnemies,
+            3 => _cfg.act3NormalEnemies,
+            _ => _cfg.act1NormalEnemies
+        };
+        if (list == null || list.Count == 0) list = _cfg.act1NormalEnemies;
+        return (list != null && list.Count > 0) ? list[Random.Range(0, list.Count)] : null;
+    }
+
+    private static EnemyData GetBossEnemy(int act)
+    {
+        var list = act switch
+        {
+            1 => _cfg.act1BossEnemies,
+            2 => _cfg.act2BossEnemies,
+            3 => _cfg.act3BossEnemies,
+            _ => _cfg.act1BossEnemies
+        };
+        if (list == null || list.Count == 0) list = _cfg.act1BossEnemies;
+        return (list != null && list.Count > 0) ? list[Random.Range(0, list.Count)] : null;
+    }
 }

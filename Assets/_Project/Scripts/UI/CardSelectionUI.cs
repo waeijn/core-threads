@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 /// <summary>
 /// Reusable card selection overlay. Displays the player's deck cards as clickable entries.
-/// Used by RewardSystem (BattleScene), and NodeChoicePanelUI (MapScene) for Duplicate/Purge flows.
+/// Used by RewardSystem (GameScene), and NodeChoicePanelUI (MapScene) for Duplicate/Purge flows.
 /// </summary>
 public class CardSelectionUI : MonoBehaviour
 {

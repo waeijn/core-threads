@@ -9,6 +9,7 @@ public class Card
     public string Description => data.Description;
     public Sprite Image => data.Image;
     public bool IsExhaust => data.IsExhaust;
+    public AudioClip PlaySound => data.PlaySound;
 
     public List<Effect> Effects => data.Effects;
     public int Mana { get; private set; }

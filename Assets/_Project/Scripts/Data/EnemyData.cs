@@ -24,6 +24,10 @@ public class EnemyData : ScriptableObject
     /// </summary>
     [field: SerializeField] public List<EnemyFSMState> FSMStates { get; private set; } = new();
 
+    [Header("Audio")]
+    [field: SerializeField] public AudioClip AttackSound { get; private set; }
+    [field: SerializeField] public AudioClip DamageSound { get; private set; }
+
     /// <summary>
     /// Fallback move pool used when no FSM state matches
     /// or when no FSM states are configured.

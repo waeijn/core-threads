@@ -1,0 +1,37 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c821af4ea62e440addf7a61d967cd0, type: 3}
+  m_Name: Sniffer
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Image>k__BackingField: {fileID: 4982548662562570856, guid: 14f69ec89f4ccb144a5a7063b70f0e3a, type: 3}
+  <Health>k__BackingField: 65
+  <AttackPower>k__BackingField: 12
+  <BlockPower>k__BackingField: 8
+  <BuffAmount>k__BackingField: 4
+  <Scale>k__BackingField: {x: 5.5, y: 5.5, z: 1}
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 5d6eb9fab439b3c44a32c3e46fad8f8c, type: 2}
+  <FSMStates>k__BackingField: []
+  <AttackSound>k__BackingField: {fileID: 0}
+  <DamageSound>k__BackingField: {fileID: 0}
+  <MovePool>k__BackingField:
+  - Intent: 0
+    Weight: 4
+    OverrideValue: 0
+  - Intent: 1
+    Weight: 2
+    OverrideValue: 0
+  - Intent: 2
+    Weight: 2
+    OverrideValue: 0
+  - Intent: 3
+    Weight: 1
+    OverrideValue: 0

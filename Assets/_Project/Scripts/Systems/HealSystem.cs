@@ -15,8 +15,16 @@ public class HealSystem : MonoBehaviour
 
     private IEnumerator HealPerformer(HealGA healGA)
     {
-        // Heal the hero
-        HeroSystem.Instance.HeroView.Heal(healGA.Amount);
+        var heroView = HeroSystem.Instance.HeroView;
+        heroView.Heal(healGA.Amount);
+
+        var feedback = CombatFeedbackSystem.Instance;
+        if (feedback != null)
+        {
+            feedback.FlashSprite(heroView.spriteRenderer, new Color(0.2f, 1f, 0.3f, 1f));
+            feedback.SpawnFloatingText(heroView.SpriteTransform.position, $"+{healGA.Amount} HP", Color.green);
+        }
+
         yield return null;
     }
 }

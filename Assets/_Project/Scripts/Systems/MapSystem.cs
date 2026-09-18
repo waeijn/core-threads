@@ -44,8 +44,8 @@ public class MapSystem : MonoBehaviour
 
     private void Start()
     {
-        // Disable redundant camera when MapScene is loaded additively over BattleScene
-        if (SceneManager.GetSceneByName("BattleScene").isLoaded)
+        // Disable redundant camera when MapScene is loaded additively over GameScene
+        if (SceneManager.GetSceneByName("GameScene").isLoaded)
         {
             var roots = gameObject.scene.GetRootGameObjects();
             foreach (var root in roots)
@@ -67,6 +67,8 @@ public class MapSystem : MonoBehaviour
             GameState.IsInitialized   = true;
         }
 
+        CreateBackButton();
+
         // Generate or reload map
         if (GameState.GeneratedMap == null)
             _map = MapGenerator.GenerateMap(GameState.CurrentAct, mapConfig);
@@ -77,6 +79,51 @@ public class MapSystem : MonoBehaviour
         RefreshAllNodes();
         UpdateHUD();
         StartCoroutine(CenterMapAfterLayout());
+    }
+
+    private void CreateBackButton()
+    {
+        // Don't show "Back to Menu" if we are just peeking at the map during combat
+        if (SceneManager.GetSceneByName("GameScene").isLoaded) return;
+
+        if (nodesContainer == null) return;
+        var canvas = nodesContainer.GetComponentInParent<Canvas>();
+        if (canvas == null) return;
+
+        var go = new GameObject("BackButton");
+        go.transform.SetParent(canvas.transform, false);
+        go.transform.SetAsLastSibling(); // Ensure it renders on top and catches clicks first
+        var rect = go.AddComponent<RectTransform>();
+        rect.anchorMin = new Vector2(0, 1);
+        rect.anchorMax = new Vector2(0, 1);
+        rect.pivot = new Vector2(0, 1);
+        rect.anchoredPosition = new Vector2(40, -80); // Lowered from -20 to -80
+        rect.sizeDelta = new Vector2(220, 60); // Enlarged from 160x45
+
+        var img = go.AddComponent<Image>();
+        // Make it a bright, distinct red so it stands out from the dark tech background
+        img.color = new Color(0.8f, 0.2f, 0.2f, 1f); 
+
+        var btn = go.AddComponent<Button>();
+        btn.onClick.AddListener(() => {
+            GameState.GeneratedMap = null;
+            GameState.IsInitialized = false;
+            SceneManager.LoadScene("MainMenu");
+        });
+
+        var textGo = new GameObject("Text");
+        textGo.transform.SetParent(go.transform, false);
+        var textRect = textGo.AddComponent<RectTransform>();
+        textRect.anchorMin = Vector2.zero;
+        textRect.anchorMax = Vector2.one;
+        textRect.sizeDelta = Vector2.zero;
+
+        var text = textGo.AddComponent<TextMeshProUGUI>();
+        text.text = "< BACK TO MENU";
+        text.alignment = TextAlignmentOptions.Center;
+        text.color = Color.white;
+        text.fontSize = 24; // Increased font size
+        text.fontStyle = FontStyles.Bold;
     }
 
     // ── Map UI Building ────────────────────────────────────────────────────
@@ -257,8 +304,8 @@ public class MapSystem : MonoBehaviour
 
     private void OnNodeClicked(MapNodeView view)
     {
-        // View-Only mode when BattleScene is loaded — do not allow node selection mid-fight
-        if (SceneManager.GetSceneByName("BattleScene").isLoaded)
+        // View-Only mode when GameScene is loaded — do not allow node selection mid-fight
+        if (SceneManager.GetSceneByName("GameScene").isLoaded)
         {
             Debug.Log("[MapSystem] Map is in View-Only mode during active combat.");
             return;
@@ -294,8 +341,8 @@ public class MapSystem : MonoBehaviour
             return;
         }
 
-        // Combat / Boss → load BattleScene
-        SceneManager.LoadScene("BattleScene");
+        // Combat / Boss → load GameScene
+        SceneManager.LoadScene("GameScene");
     }
 
     // ── Rest Node ──────────────────────────────────────────────────────────

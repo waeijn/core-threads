@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8d85f73ffc1adc4eb875196d319bd3f, type: 3}
+  m_Name: AudioConfig
+  m_EditorClassIdentifier: Assembly-CSharp::AudioConfig
+  BackgroundMusic: {fileID: 8300000, guid: 593d2f389556998479c8b56510a7df11, type: 3}
+  BGMVolume: 0.15
+  ButtonClick: {fileID: 8300000, guid: 17df5dbb36eb1794789ef9b7fe8f18d3, type: 3}
+  EndTurn: {fileID: 8300000, guid: 33d4f81e0d8e6fd4c91676ed4e2a807e, type: 3}
+  GameOver: {fileID: 8300000, guid: 9a78924a4bd5ebb4bbed2a994a4c84ba, type: 3}

@@ -20,7 +20,7 @@ public class EnemyView : CombatantView
 
     public void Setup(EnemyData data)
     {
-        var canvas = Object.FindFirstObjectByType<Canvas>();
+        var canvas = Object.FindAnyObjectByType<Canvas>();
         if (canvas != null)
         {
             var eUI = canvas.transform.Find("HealthUIContainer/EnemyHealthUI") ?? canvas.transform.Find("EnemyHealthUI");
@@ -38,23 +38,43 @@ public class EnemyView : CombatantView
         if (healthText == null)
         {
             var hpObj = GameObject.Find("EnemyHealthText");
-            if (hpObj != null) healthText = hpObj.GetComponent<TMP_Text>();
-        }
-        if (blockText == null)
-        {
-            var blkObj = GameObject.Find("EnemyBlockText");
-            if (blkObj != null) blockText = blkObj.GetComponent<TMP_Text>();
-        }
-        if (strengthText == null)
-        {
-            var strObj = GameObject.Find("EnemyStrengthText");
-            if (strObj != null) strengthText = strObj.GetComponent<TMP_Text>();
+            if (hpObj != null) 
+            {
+                healthText = hpObj.GetComponent<TMP_Text>();
+                if (blockText == null)
+                {
+                    var blkTr = hpObj.transform.parent.Find("EnemyBlockText");
+                    if (blkTr != null) blockText = blkTr.GetComponent<TMP_Text>();
+                }
+                if (strengthText == null)
+                {
+                    var strTr = hpObj.transform.parent.Find("EnemyStrengthText");
+                    if (strTr != null) strengthText = strTr.GetComponent<TMP_Text>();
+                }
+            }
         }
 
         enemyData = data;
         AttackPower = data.AttackPower;
         BlockPower = data.BlockPower;
         BuffAmount = data.BuffAmount;
+        
+        attackSound = data.AttackSound;
+        damageSound = data.DamageSound;
+
+        // Fallback to Player's sounds as requested by the user
+        if (GameState.HeroData != null)
+        {
+            if (attackSound == null) attackSound = GameState.HeroData.AttackSound;
+            if (damageSound == null) damageSound = GameState.HeroData.DamageSound;
+            
+            // Re-use player's BuffSound for Enemy Shield
+            shieldSound = GameState.HeroData.BuffSound;
+            
+            // Re-use player's HealSound (health regen) for Enemy Buff
+            buffSound = GameState.HeroData.HealSound;
+        }
+
         UpdateAttackText();
         SetupBase(data.Health, data.Image);
 
@@ -161,15 +181,61 @@ public class EnemyView : CombatantView
         };
     }
 
+    public string GetIntentTooltip(bool isSecondary)
+    {
+        if (CurrentIntent == EnemyIntent.AttackAndDefend)
+        {
+            if (isSecondary)
+            {
+                return $"<color=#4488FF>Defend</color>\nThis enemy intends to gain <color=#4488FF>{BlockPower}</color> Block.";
+            }
+            else
+            {
+                return $"<color=#FF4444>Attack</color>\nThis enemy intends to deal <color=#FF4444>{AttackPower}</color> damage.";
+            }
+        }
+        else
+        {
+            switch (CurrentIntent)
+            {
+                case EnemyIntent.Attack:
+                    return $"<color=#FF4444>Attack</color>\nThis enemy intends to deal <color=#FF4444>{AttackPower}</color> damage.";
+                case EnemyIntent.Defend:
+                    return $"<color=#4488FF>Defend</color>\nThis enemy intends to gain <color=#4488FF>{BlockPower}</color> Block.";
+                case EnemyIntent.Buff:
+                    return $"<color=#44FF44>Buff</color>\nThis enemy intends to apply a buff.";
+                default:
+                    return "Unknown Intent";
+            }
+        }
+    }
+
     private void UpdateAttackText()
     {
         attackText.text = "ATK: " + AttackPower;
     }
 
-    private void UpdateIntentDisplay()
+    public void HideIntent()
     {
+        if (intentIcon != null) intentIcon.gameObject.SetActive(false);
+        if (intentText != null) intentText.gameObject.SetActive(false);
         if (secondaryIntentIcon != null) secondaryIntentIcon.gameObject.SetActive(false);
         if (secondaryIntentText != null) secondaryIntentText.gameObject.SetActive(false);
+    }
+
+    protected override void OnDeath()
+    {
+        base.OnDeath();
+        HideIntent();
+        
+        if (healthText != null) healthText.gameObject.SetActive(false);
+        if (blockText != null) blockText.gameObject.SetActive(false);
+        if (strengthText != null) strengthText.gameObject.SetActive(false);
+    }
+
+    private void UpdateIntentDisplay()
+    {
+        HideIntent();
 
         if (intentIcon != null && intentSprites != null && intentSprites.Length >= 4)
         {

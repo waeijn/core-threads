@@ -16,6 +16,7 @@ public class CardsSystem : Singleton<CardsSystem>
     private readonly List<Card> discardPile = new();
     private readonly List<Card> exhaustPile = new();
     private readonly List<Card> hand = new();
+    private bool retainHand = false;
 
     // --- Pile data exposed for UI ---
     public IReadOnlyList<Card> DrawPileCards => drawPile;
@@ -36,6 +37,8 @@ public class CardsSystem : Singleton<CardsSystem>
         ActionSystem.AttachPerformer<DrawCardsGA>(DrawCardsPerformer);
         ActionSystem.AttachPerformer<DiscardAllCardsGA>(DiscardAllCardsPerformer);
         ActionSystem.AttachPerformer<PlayCardGA>(PlayCardPerformer);
+        ActionSystem.AttachPerformer<CleanupCardGA>(CleanupCardPerformer);
+        ActionSystem.AttachPerformer<RetainHandGA>(RetainHandPerformer);
         ActionSystem.SubscribeReaction<EnemyTurnGA>(EnemyTurnPreReaction, ReactionTiming.PRE);
         ActionSystem.SubscribeReaction<EnemyTurnGA>(EnemyTurnPostReaction, ReactionTiming.POST);
     }
@@ -44,12 +47,15 @@ public class CardsSystem : Singleton<CardsSystem>
         ActionSystem.DetachPerformer<DrawCardsGA>();
         ActionSystem.DetachPerformer<DiscardAllCardsGA>();
         ActionSystem.DetachPerformer<PlayCardGA>();
+        ActionSystem.DetachPerformer<CleanupCardGA>();
+        ActionSystem.DetachPerformer<RetainHandGA>();
         ActionSystem.UnsubscribeReaction<EnemyTurnGA>(EnemyTurnPreReaction, ReactionTiming.PRE);
         ActionSystem.UnsubscribeReaction<EnemyTurnGA>(EnemyTurnPostReaction, ReactionTiming.POST);
     }
 
     public void Setup(List<CardData> deckData)
     {
+        retainHand = false;
         foreach(var cardData in deckData)
         {
             Card card = new(cardData);
@@ -72,7 +78,7 @@ public class CardsSystem : Singleton<CardsSystem>
 
         if (notDrawnAmount > 0)
         {
-            RefillDeck();
+            yield return RefillDeck();
 
             // FIX 2: Recalculate how many we can ACTUALLY draw after refilling, 
             // just in case both the deck and discard pile were completely empty!
@@ -101,30 +107,43 @@ public class CardsSystem : Singleton<CardsSystem>
     private IEnumerator PlayCardPerformer(PlayCardGA playCardGA)
     {
         hand.Remove(playCardGA.Card);
-
         CardView cardView = handView.RemoveCard(playCardGA.Card);
 
-        if (playCardGA.Card.IsExhaust)
-        {
-            exhaustPile.Add(playCardGA.Card);
-            yield return ExhaustCard(cardView);
-        }
-        else
-        {
-            discardPile.Add(playCardGA.Card);
-            yield return DiscardCard(cardView);
-        }
-
-        OnPilesChanged?.Invoke();
-
+        // Instead of adding to discardPile immediately, we wait until effects finish.
+        // The card is now floating in "limbo".
+        
+        // Add Mana Cost (Pre Reaction)
         SpendManaGA spendManaGA = new(playCardGA.Card.Mana);
         ActionSystem.Instance.AddReaction(spendManaGA);
 
+        // Add Effects (Post Reaction)
         foreach (var effect in playCardGA.Card.Effects)
         {
             PerformEffectGA performEffectGA = new(effect);
             ActionSystem.Instance.AddReaction(performEffectGA);
         }
+
+        // Add Cleanup Action (Post Reaction - added last so it runs after effects)
+        CleanupCardGA cleanupCardGA = new(playCardGA.Card, cardView);
+        ActionSystem.Instance.AddReaction(cleanupCardGA);
+
+        yield return null;
+    }
+
+    private IEnumerator CleanupCardPerformer(CleanupCardGA cleanupCardGA)
+    {
+        if (cleanupCardGA.Card.IsExhaust)
+        {
+            exhaustPile.Add(cleanupCardGA.Card);
+            yield return ExhaustCard(cleanupCardGA.CardView);
+        }
+        else
+        {
+            discardPile.Add(cleanupCardGA.Card);
+            yield return DiscardCard(cleanupCardGA.CardView, false); // Do not play discard sound when playing a card
+        }
+
+        OnPilesChanged?.Invoke();
     }
 
     private IEnumerator ExhaustCard(CardView cardView)
@@ -138,10 +157,23 @@ public class CardsSystem : Singleton<CardsSystem>
         Destroy(cardView.gameObject);
     }
 
+    private IEnumerator RetainHandPerformer(RetainHandGA retainHandGA)
+    {
+        retainHand = true;
+        yield return null;
+    }
+
     private void EnemyTurnPreReaction(EnemyTurnGA enemyTurnGA)
     {
-        DiscardAllCardsGA discardAllCardsGA = new();
-        ActionSystem.Instance.AddReaction(discardAllCardsGA);
+        if (retainHand)
+        {
+            retainHand = false;
+        }
+        else
+        {
+            DiscardAllCardsGA discardAllCardsGA = new();
+            ActionSystem.Instance.AddReaction(discardAllCardsGA);
+        }
     }
 
     private void EnemyTurnPostReaction(EnemyTurnGA enemyTurnGA)
@@ -154,12 +186,23 @@ public class CardsSystem : Singleton<CardsSystem>
 
     private IEnumerator DrawCards()
     {
-        Debug.Log("<color=yellow>2. CARD SPAWNED:</color> Instantiating one visual card prefab.");
         Card card = drawPile.Draw();
-        Debug.Log($"<color=green>SUCCESS:</color> The system just drew the card image named: {card.Image.name}");
         hand.Add(card);
+
+        // Spawn at draw pile position, invisible (scale 0)
         CardView cardView = CardViewCreator.Instance.CreateCardView(card, drawPilePoint.position, drawPilePoint.rotation);
+        cardView.transform.localScale = Vector3.zero;
+
+        // Scale up from 0 → full size with a slight overshoot bounce
+        cardView.transform.DOScale(Vector3.one * 1.1f, 0.10f)
+            .OnComplete(() => cardView.transform.DOScale(Vector3.one, 0.06f));
+
         OnPilesChanged?.Invoke();
+
+        // Play card draw sound immediately
+        if (AudioSystem.Instance != null && GameState.HeroData != null) 
+            AudioSystem.Instance.PlaySFX(GameState.HeroData.CardDrawSound);
+
         yield return handView.AddCard(cardView);
     }
 
@@ -171,18 +214,81 @@ public class CardsSystem : Singleton<CardsSystem>
         }
     }
 
-    private void RefillDeck()
+    public void ShowHand()
     {
+        if (handView != null)
+        {
+            handView.gameObject.SetActive(true);
+        }
+    }
+
+    private IEnumerator RefillDeck()
+    {
+        if (discardPile.Count == 0) yield break;
+
+        // Visual animation: spawn actual CardViews for up to 3 cards in the discard pile
+        if (discardPilePoint != null && drawPilePoint != null)
+        {
+            int cardsToSpawn = Mathf.Min(3, discardPile.Count);
+            for (int i = 0; i < cardsToSpawn; i++)
+            {
+                // Grab actual cards from the top of the discard pile
+                Card cardToShow = discardPile[discardPile.Count - 1 - i];
+                
+                // Use CardViewCreator but override its scale and disable collider so it's purely visual
+                CardView cardView = CardViewCreator.Instance.CreateCardView(cardToShow, discardPilePoint.position, discardPilePoint.rotation);
+                
+                // Immediately set scale to 0.8 so we override the creator's scale animation
+                cardView.transform.DOKill(); 
+                cardView.transform.localScale = new Vector3(0.8f, 0.8f, 1f);
+                
+                // Offset slightly to look like a stack
+                cardView.transform.position += new Vector3(0, 0, -1f - i * 0.1f);
+                
+                // Disable interaction
+                Collider2D col = cardView.GetComponent<Collider2D>();
+                if (col != null) col.enabled = false;
+
+                // Rotate it
+                cardView.transform.DORotate(new Vector3(0, 0, 180f), 0.3f, RotateMode.FastBeyond360);
+                
+                // Fly it
+                Tween moveTween = cardView.transform.DOMove(drawPilePoint.position, 0.3f).SetEase(Ease.OutQuad);
+                
+                // Destroy after tween
+                moveTween.OnComplete(() => Destroy(cardView.gameObject));
+
+                yield return new WaitForSeconds(0.1f);
+            }
+            
+            yield return new WaitForSeconds(0.1f); // Wait a bit for the last one to finish
+        }
+        else
+        {
+            yield return new WaitForSeconds(0.2f);
+        }
+
         drawPile.AddRange(discardPile);
         discardPile.Clear();
         drawPile.Shuffle();
         OnPilesChanged?.Invoke();
     }
 
-    private IEnumerator DiscardCard(CardView cardView)
+    private IEnumerator DiscardCard(CardView cardView, bool playSound = true)
     {
-        cardView.transform.DOScale(Vector3.zero, 0.15f);
-        Tween tween = cardView.transform.DOMove(discardPilePoint.position, 0.15f);
+        if (playSound)
+        {
+            // Delay the discard sound just a tiny bit as it flies
+            DOVirtual.DelayedCall(0.05f, () => {
+                //if (AudioSystem.Instance != null && GameState.HeroData != null) 
+                //    AudioSystem.Instance.PlaySFX(GameState.HeroData.CardDiscardSound, 0.25f);
+            });
+        }
+
+        // Fly to discard pile with a gentle arc rotation
+        cardView.transform.DORotate(new Vector3(0, 0, -20f), 0.18f);
+        cardView.transform.DOScale(Vector3.zero, 0.18f);
+        Tween tween = cardView.transform.DOMove(discardPilePoint.position, 0.18f);
         yield return tween.WaitForCompletion();
         Destroy(cardView.gameObject);
     }
