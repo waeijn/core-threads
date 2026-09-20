@@ -67,5 +67,5 @@
         "*.sln": "*.csproj",
         "*.slnx": "*.csproj"
     },
-    "dotnet.defaultSolution": "CORE THREADS.slnx"
+    "dotnet.defaultSolution": "core-threads.slnx"
 }

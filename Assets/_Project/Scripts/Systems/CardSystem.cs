@@ -117,10 +117,13 @@ public class CardsSystem : Singleton<CardsSystem>
         ActionSystem.Instance.AddReaction(spendManaGA);
 
         // Add Effects (Post Reaction)
-        foreach (var effect in playCardGA.Card.Effects)
+        if (playCardGA.Card.Effects != null)
         {
-            PerformEffectGA performEffectGA = new(effect);
-            ActionSystem.Instance.AddReaction(performEffectGA);
+            foreach (var effect in playCardGA.Card.Effects)
+            {
+                PerformEffectGA performEffectGA = new(effect);
+                ActionSystem.Instance.AddReaction(performEffectGA);
+            }
         }
 
         // Add Cleanup Action (Post Reaction - added last so it runs after effects)

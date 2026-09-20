@@ -10,7 +10,7 @@ public class Card
     public Sprite Image => data.Image;
     public bool IsExhaust => data.IsExhaust;
 
-    public List<Effect> Effects => data.Effects;
+    public List<Effect> Effects => data.Effects ?? new List<Effect>();
     public int Mana { get; private set; }
     private readonly CardData data;
 
