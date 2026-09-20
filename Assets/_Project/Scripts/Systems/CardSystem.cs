@@ -62,6 +62,7 @@ public class CardsSystem : Singleton<CardsSystem>
             drawPile.Add(card);
         }
         drawPile.Shuffle();
+        AudioSystem.Instance?.PlayShuffleDeck();
         OnPilesChanged?.Invoke();
     }
     private IEnumerator DrawCardsPerformer(DrawCardsGA drawCardsGA)
@@ -183,6 +184,7 @@ public class CardsSystem : Singleton<CardsSystem>
     {
         // Reset player block at start of player turn
         HeroSystem.Instance.HeroView.ResetBlock();
+        AudioSystem.Instance?.PlayStartTurn();
         DrawCardsGA drawCardsGA = new(5);
         ActionSystem.Instance.AddReaction(drawCardsGA);
     }
@@ -269,6 +271,7 @@ public class CardsSystem : Singleton<CardsSystem>
         drawPile.AddRange(discardPile);
         discardPile.Clear();
         drawPile.Shuffle();
+        AudioSystem.Instance?.PlayShuffleDeck();
         OnPilesChanged?.Invoke();
     }
 

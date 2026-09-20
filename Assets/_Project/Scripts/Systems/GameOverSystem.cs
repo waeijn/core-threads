@@ -84,6 +84,11 @@ public class GameOverSystem : Singleton<GameOverSystem>
     {
         IsGameOver = true;
 
+        if (!isVictory)
+        {
+            AudioSystem.Instance?.PlayGameOver();
+        }
+
         if (CardViewHoverSystem.Instance != null)
         {
             CardViewHoverSystem.Instance.Hide();

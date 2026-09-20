@@ -75,6 +75,9 @@ public class MatchSetupSystem : MonoBehaviour
 
         EnemySystem.Instance.Setup(enemiesToSpawn);
         CardsSystem.Instance.Setup(GameState.PlayerDeck ?? heroData.Deck);
+        
+        AudioSystem.Instance?.PlayStartTurn();
+        
         DrawCardsGA drawCardsGA = new(5);
         ActionSystem.Instance.Perform(drawCardsGA);
     }
