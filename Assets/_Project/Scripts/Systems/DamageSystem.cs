@@ -21,6 +21,7 @@ public class DamageSystem : MonoBehaviour
 
     private IEnumerator DealDamagePerformer(DealDamageGA dealDamageGA)
     {
+        AudioSystem.Instance?.PlayAttack();
         foreach (var target in dealDamageGA.Targets)
         {
             int before = target.CurrentHealth + target.CurrentBlock;
@@ -39,6 +40,8 @@ public class DamageSystem : MonoBehaviour
                 // Red flash on the target sprite
                 feedback.FlashSprite(target.spriteRenderer, new Color(1f, 0.2f, 0.2f, 1f));
 
+                feedback.PlayHitVFX(target.transform.position);
+
                 // Floating damage number (show actual damage dealt, minimum 0)
                 if (actualDamage > 0)
                     feedback.SpawnFloatingText(target.SpriteTransform.position, $"-{actualDamage}", Color.red);
@@ -52,6 +55,7 @@ public class DamageSystem : MonoBehaviour
 
     private IEnumerator ApplyVulnerablePerformer(ApplyVulnerableGA applyVulnerableGA)
     {
+        AudioSystem.Instance?.PlayDebuff();
         foreach (var target in applyVulnerableGA.Targets)
         {
             target.ApplyVulnerable(applyVulnerableGA.Amount);
@@ -68,6 +72,7 @@ public class DamageSystem : MonoBehaviour
 
     private IEnumerator CleansePerformer(CleanseGA cleanseGA)
     {
+        AudioSystem.Instance?.PlayBuff();
         var hero = HeroSystem.Instance.HeroView;
         if (hero != null)
         {

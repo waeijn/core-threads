@@ -15,6 +15,12 @@ public class CombatFeedbackSystem : MonoBehaviour
     [SerializeField] private Camera mainCamera;
     [SerializeField] private GameObject floatingTextPrefab;
 
+    [Header("Particle VFX Prefabs")]
+    [SerializeField] private GameObject hitVFXPrefab;
+    [SerializeField] private GameObject blockVFXPrefab;
+    [SerializeField] private GameObject healVFXPrefab;
+    [SerializeField] private GameObject buffVFXPrefab;
+
     [Header("Screen Shake")]
     [SerializeField] private float defaultShakeDuration  = 0.18f;
     [SerializeField] private float defaultShakeIntensity = 0.18f;
@@ -56,6 +62,28 @@ public class CombatFeedbackSystem : MonoBehaviour
     {
         if (sr == null) return;
         StartCoroutine(FlashRoutine(sr, flashColor));
+    }
+
+    // --- Particle VFX Methods ---
+
+    public void PlayHitVFX(Vector3 worldPos)
+    {
+        if (hitVFXPrefab != null) Instantiate(hitVFXPrefab, worldPos, Quaternion.identity);
+    }
+
+    public void PlayBlockVFX(Vector3 worldPos)
+    {
+        if (blockVFXPrefab != null) Instantiate(blockVFXPrefab, worldPos, Quaternion.identity);
+    }
+
+    public void PlayHealVFX(Vector3 worldPos)
+    {
+        if (healVFXPrefab != null) Instantiate(healVFXPrefab, worldPos, Quaternion.identity);
+    }
+
+    public void PlayBuffVFX(Vector3 worldPos)
+    {
+        if (buffVFXPrefab != null) Instantiate(buffVFXPrefab, worldPos, Quaternion.identity);
     }
 
     /// <summary>Spawn a floating number at a world-space position.</summary>

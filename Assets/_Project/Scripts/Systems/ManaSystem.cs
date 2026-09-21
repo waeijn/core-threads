@@ -5,12 +5,11 @@ public class ManaSystem : Singleton<ManaSystem>
 {
     [SerializeField] private ManaUI manaUI;
 
-    private const int MAX_MANA = 3;
-
-    private int currentMana = MAX_MANA;
+    private int currentMana;
 
     void Start()
     {
+        currentMana = GameState.PlayerMaxMana;
         manaUI.UpdateManaText(currentMana);
     }
 
@@ -44,7 +43,7 @@ public class ManaSystem : Singleton<ManaSystem>
 
     private IEnumerator RefillManaPerformer(RefillManaGA refillManaGA)
     {
-        currentMana = MAX_MANA;
+        currentMana = GameState.PlayerMaxMana;
         manaUI.UpdateManaText(currentMana);
         yield return null;
     }

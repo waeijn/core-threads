@@ -27,18 +27,33 @@ public class StatusEffectSystem : Singleton<StatusEffectSystem>
     {
         RegenStacks += amount;
         Debug.Log($"Added {amount} Regen. Total: {RegenStacks}");
+        if (CombatFeedbackSystem.Instance != null && HeroSystem.Instance != null)
+        {
+            CombatFeedbackSystem.Instance.PlayBuffVFX(HeroSystem.Instance.HeroView.transform.position);
+            CombatFeedbackSystem.Instance.SpawnFloatingText(HeroSystem.Instance.HeroView.transform.position, "Regen+", Color.yellow);
+        }
     }
 
     public void AddBlockNextTurn(int amount)
     {
         BlockNextTurnStacks += amount;
         Debug.Log($"Added {amount} Block Next Turn. Total: {BlockNextTurnStacks}");
+        if (CombatFeedbackSystem.Instance != null && HeroSystem.Instance != null)
+        {
+            CombatFeedbackSystem.Instance.PlayBuffVFX(HeroSystem.Instance.HeroView.transform.position);
+            CombatFeedbackSystem.Instance.SpawnFloatingText(HeroSystem.Instance.HeroView.transform.position, "Block+", Color.cyan);
+        }
     }
 
     public void AddEnergyPerTurn(int amount)
     {
         EnergyPerTurnStacks += amount;
         Debug.Log($"Added {amount} Energy Per Turn. Total: {EnergyPerTurnStacks}");
+        if (CombatFeedbackSystem.Instance != null && HeroSystem.Instance != null)
+        {
+            CombatFeedbackSystem.Instance.PlayBuffVFX(HeroSystem.Instance.HeroView.transform.position);
+            CombatFeedbackSystem.Instance.SpawnFloatingText(HeroSystem.Instance.HeroView.transform.position, "Energy+", Color.yellow);
+        }
     }
 
     public void ClearAll()
@@ -85,18 +100,21 @@ public class StatusEffectSystem : Singleton<StatusEffectSystem>
 
     private IEnumerator ApplyRegenPerformer(ApplyRegenGA applyRegenGA)
     {
+        AudioSystem.Instance?.PlayBuff();
         AddRegen(applyRegenGA.Amount);
         yield return null;
     }
 
     private IEnumerator ApplyBlockNextTurnPerformer(ApplyBlockNextTurnGA applyBlockNextTurnGA)
     {
+        AudioSystem.Instance?.PlayBuff();
         AddBlockNextTurn(applyBlockNextTurnGA.Amount);
         yield return null;
     }
 
     private IEnumerator ApplyEnergyPerTurnPerformer(ApplyEnergyPerTurnGA applyEnergyPerTurnGA)
     {
+        AudioSystem.Instance?.PlayBuff();
         AddEnergyPerTurn(applyEnergyPerTurnGA.Amount);
         yield return null;
     }
