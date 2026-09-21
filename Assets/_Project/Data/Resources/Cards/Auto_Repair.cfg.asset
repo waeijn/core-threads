@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Auto_Repair.cfg
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   <Title>k__BackingField: Auto_Repair.cfg
-  <Category>k__BackingField: 
-  <CardColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Category>k__BackingField: Repair (.cfg)
+  <CardColor>k__BackingField: {r: 0.25882354, g: 0.6313726, b: 0.2784314, a: 1}
   <Description>k__BackingField: Gain 2 HP at start of turn.
   <Mana>k__BackingField: 1
   <IsExhaust>k__BackingField: 1
   <Image>k__BackingField: {fileID: 21300000, guid: 080cac9f21545c445846acae27149980, type: 3}
+  <PlaySound>k__BackingField: {fileID: 0}
   <Effects>k__BackingField:
   - rid: 1953966836266827882
+  <Tier>k__BackingField: 2
+  <Role>k__BackingField: 3
   references:
     version: 2
     RefIds:

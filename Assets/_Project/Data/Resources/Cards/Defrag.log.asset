@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Defrag.log
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   <Title>k__BackingField: Defrag.log
-  <Category>k__BackingField: 
-  <CardColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Category>k__BackingField: Buff Debuff (.log)
+  <CardColor>k__BackingField: {r: 1, g: 0.6470588, b: 0, a: 1}
   <Description>k__BackingField: Apply 2 Vulnerable.
   <Mana>k__BackingField: 1
   <IsExhaust>k__BackingField: 0
   <Image>k__BackingField: {fileID: 21300000, guid: e2919862f2fdbdc43be52ee0cab88c07, type: 3}
+  <PlaySound>k__BackingField: {fileID: 0}
   <Effects>k__BackingField:
   - rid: 1953966836266827887
+  <Tier>k__BackingField: 2
+  <Role>k__BackingField: 4
   references:
     version: 2
     RefIds:

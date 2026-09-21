@@ -13,14 +13,17 @@ MonoBehaviour:
   m_Name: Zero_Day.bin
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   <Title>k__BackingField: Zero_Day.bin
-  <Category>k__BackingField: 
-  <CardColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Category>k__BackingField: Attack (.bin)
+  <CardColor>k__BackingField: {r: 0.9019608, g: 0.21960784, b: 0.21176471, a: 1}
   <Description>k__BackingField: Deal 24 dmg.
   <Mana>k__BackingField: 3
   <IsExhaust>k__BackingField: 0
   <Image>k__BackingField: {fileID: 21300000, guid: 9cef3769789bc084aa53ef73c6a8f611, type: 3}
+  <PlaySound>k__BackingField: {fileID: 0}
   <Effects>k__BackingField:
   - rid: 1953966836266827886
+  <Tier>k__BackingField: 3
+  <Role>k__BackingField: 0
   references:
     version: 2
     RefIds:

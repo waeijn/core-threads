@@ -13,15 +13,18 @@ MonoBehaviour:
   m_Name: Kernel_Restore.db
   m_EditorClassIdentifier: Assembly-CSharp::CardData
   <Title>k__BackingField: Kernel_Restore.db
-  <Category>k__BackingField: 
-  <CardColor>k__BackingField: {r: 1, g: 1, b: 1, a: 1}
+  <Category>k__BackingField: Repair (.db)
+  <CardColor>k__BackingField: {r: 0.25882354, g: 0.6313726, b: 0.2784314, a: 1}
   <Description>k__BackingField: Heal 10 HP, Cleanse debuffs.
   <Mana>k__BackingField: 2
   <IsExhaust>k__BackingField: 1
   <Image>k__BackingField: {fileID: 21300000, guid: 6870c771f299b4d44a56a32bbe7f6839, type: 3}
+  <PlaySound>k__BackingField: {fileID: 0}
   <Effects>k__BackingField:
   - rid: 1953966836266827891
   - rid: 1953966836266827892
+  <Tier>k__BackingField: 3
+  <Role>k__BackingField: 3
   references:
     version: 2
     RefIds:
