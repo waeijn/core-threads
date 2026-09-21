@@ -57,6 +57,8 @@ public class MatchSetupSystem : MonoBehaviour
         if (!GameState.IsInitialized)
         {
             GameState.HeroData = heroData;
+            GameState.PlayerMaxHP = heroData.Health;
+            GameState.PlayerCurrentHP = heroData.Health;
             GameState.InitializeDeck(heroData.Deck);
         }
 

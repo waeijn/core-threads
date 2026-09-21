@@ -1,0 +1,1095 @@
+fileFormatVersion: 2
+guid: d28c2dedd44867e4ea61f143a61752ac
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 4982548662562570856
+    second: sniffer-Sheet_0
+  - first:
+      213: -285422559159099361
+    second: sniffer-Sheet_1
+  - first:
+      213: 371313474759659797
+    second: sniffer-Sheet_2
+  - first:
+      213: 1850377360987460931
+    second: sniffer-Sheet_3
+  - first:
+      213: 5509904680301861417
+    second: sniffer-Sheet_4
+  - first:
+      213: 2688113378072993308
+    second: sniffer-Sheet_5
+  - first:
+      213: 5357104180695839033
+    second: sniffer-Sheet_6
+  - first:
+      213: 9214143498950426171
+    second: sniffer-Sheet_7
+  - first:
+      213: 8958812065092874025
+    second: sniffer-Sheet_8
+  - first:
+      213: 797313573192738265
+    second: sniffer-Sheet_9
+  - first:
+      213: 7959359003451638720
+    second: sniffer-Sheet_10
+  - first:
+      213: 2499975985609963263
+    second: sniffer-Sheet_11
+  - first:
+      213: -4177921019771016554
+    second: sniffer-Sheet_12
+  - first:
+      213: -6642332627246930683
+    second: sniffer-Sheet_13
+  - first:
+      213: -5622343620885739573
+    second: sniffer-Sheet_14
+  - first:
+      213: 5552072242454781815
+    second: sniffer-Sheet_15
+  - first:
+      213: -8421789571682869155
+    second: sniffer-Sheet_16
+  - first:
+      213: 2872094666754434833
+    second: sniffer-Sheet_17
+  - first:
+      213: 359804225690831
+    second: sniffer-Sheet_18
+  - first:
+      213: -3062731271875212888
+    second: sniffer-Sheet_19
+  - first:
+      213: 7283353064323134709
+    second: sniffer-Sheet_20
+  - first:
+      213: 6943019914069956839
+    second: sniffer-Sheet_21
+  - first:
+      213: -4815877425662995401
+    second: sniffer-Sheet_22
+  - first:
+      213: 224263223049084595
+    second: sniffer-Sheet_23
+  - first:
+      213: -7587112242974483421
+    second: sniffer-Sheet_24
+  - first:
+      213: 4032199440404528705
+    second: sniffer-Sheet_25
+  - first:
+      213: -6159785654286551769
+    second: sniffer-Sheet_26
+  - first:
+      213: -6806835329856530486
+    second: sniffer-Sheet_27
+  - first:
+      213: -6000190639058200075
+    second: sniffer-Sheet_28
+  - first:
+      213: 5803502861835691949
+    second: sniffer-Sheet_29
+  - first:
+      213: 9002825612357631050
+    second: sniffer-Sheet_30
+  - first:
+      213: 2496565433715136611
+    second: sniffer-Sheet_31
+  - first:
+      213: 673082250386403648
+    second: sniffer-Sheet_32
+  - first:
+      213: 4681435380454055275
+    second: sniffer-Sheet_33
+  - first:
+      213: -1479828173236074818
+    second: sniffer-Sheet_34
+  - first:
+      213: 3717573309793715626
+    second: sniffer-Sheet_35
+  - first:
+      213: 3689000452203779469
+    second: sniffer-Sheet_36
+  - first:
+      213: 2699930636753660069
+    second: sniffer-Sheet_37
+  - first:
+      213: 5906683075477547292
+    second: sniffer-Sheet_38
+  - first:
+      213: -1785388016049937234
+    second: sniffer-Sheet_39
+  - first:
+      213: 4254445279326796309
+    second: sniffer-Sheet_40
+  - first:
+      213: 5665248939435579463
+    second: sniffer-Sheet_41
+  - first:
+      213: 3859232049524738676
+    second: sniffer-Sheet_42
+  - first:
+      213: -6241620780695254839
+    second: sniffer-Sheet_43
+  - first:
+      213: -3767042791949535716
+    second: sniffer-Sheet_44
+  - first:
+      213: -3379442583245816652
+    second: sniffer-Sheet_45
+  - first:
+      213: -7563615974025803340
+    second: sniffer-Sheet_46
+  - first:
+      213: -6990584000697629646
+    second: sniffer-Sheet_47
+  - first:
+      213: 8054656532618527414
+    second: sniffer-Sheet_48
+  - first:
+      213: -6504225195951968811
+    second: sniffer-Sheet_49
+  - first:
+      213: -3591326278312701263
+    second: sniffer-Sheet_50
+  - first:
+      213: -9187585168253690513
+    second: sniffer-Sheet_51
+  - first:
+      213: 590936241400114302
+    second: sniffer-Sheet_52
+  - first:
+      213: -7831138869962521937
+    second: sniffer-Sheet_53
+  - first:
+      213: -4106938723775252982
+    second: sniffer-Sheet_54
+  - first:
+      213: -4590491642288954300
+    second: sniffer-Sheet_55
+  - first:
+      213: 5850512460683165835
+    second: sniffer-Sheet_56
+  - first:
+      213: 7304721605303270076
+    second: sniffer-Sheet_57
+  - first:
+      213: 7418012798018605571
+    second: sniffer-Sheet_58
+  - first:
+      213: -4040288564055026097
+    second: sniffer-Sheet_59
+  - first:
+      213: 4833532030333616745
+    second: sniffer-Sheet_60
+  - first:
+      213: 8208452637576816549
+    second: sniffer-Sheet_61
+  - first:
+      213: 4712990208707121536
+    second: sniffer-Sheet_62
+  - first:
+      213: 3775257550520158207
+    second: sniffer-Sheet_63
+  - first:
+      213: -3761563980377588028
+    second: sniffer-Sheet_64
+  - first:
+      213: -562822022115109402
+    second: sniffer-Sheet_65
+  - first:
+      213: -814185763839731508
+    second: sniffer-Sheet_66
+  - first:
+      213: 7640647864135664159
+    second: sniffer-Sheet_67
+  - first:
+      213: 6916486859830906891
+    second: sniffer-Sheet_68
+  - first:
+      213: -2292569080961332620
+    second: sniffer-Sheet_69
+  - first:
+      213: 6103798515263976951
+    second: sniffer-Sheet_70
+  - first:
+      213: 9142915253329772155
+    second: sniffer-Sheet_71
+  - first:
+      213: -4608808597912840647
+    second: sniffer-Sheet_72
+  - first:
+      213: 7546046244746204682
+    second: sniffer-Sheet_73
+  - first:
+      213: -6731655769304604363
+    second: sniffer-Sheet_74
+  - first:
+      213: -6390252081777261265
+    second: sniffer-Sheet_75
+  - first:
+      213: -107897618758338788
+    second: sniffer-Sheet_76
+  - first:
+      213: -3785631011094923708
+    second: sniffer-Sheet_77
+  - first:
+      213: 5477230026602830371
+    second: sniffer-Sheet_78
+  - first:
+      213: 2398583108781132468
+    second: sniffer-Sheet_79
+  - first:
+      213: 562857091460977669
+    second: sniffer-Sheet_80
+  - first:
+      213: 1716772227014929473
+    second: sniffer-Sheet_81
+  - first:
+      213: -7476181204848506220
+    second: sniffer-Sheet_82
+  - first:
+      213: 7376506839573894871
+    second: sniffer-Sheet_83
+  - first:
+      213: -30286030842467505
+    second: sniffer-Sheet_84
+  - first:
+      213: 7957069390492807256
+    second: sniffer-Sheet_85
+  - first:
+      213: 4644620555120876257
+    second: sniffer-Sheet_86
+  - first:
+      213: -7999729636616419547
+    second: sniffer-Sheet_87
+  - first:
+      213: 2596063984858000999
+    second: sniffer-Sheet_88
+  - first:
+      213: -6031328293037940330
+    second: sniffer-Sheet_89
+  - first:
+      213: -5634811108685754641
+    second: sniffer-Sheet_90
+  - first:
+      213: 4661098689296645440
+    second: sniffer-Sheet_91
+  - first:
+      213: 8934548395162576113
+    second: sniffer-Sheet_92
+  - first:
+      213: 8329986096644737953
+    second: sniffer-Sheet_93
+  - first:
+      213: 8403245050776978807
+    second: sniffer-Sheet_94
+  - first:
+      213: -8230999376243003566
+    second: sniffer-Sheet_95
+  - first:
+      213: -6517121546377234751
+    second: sniffer-Sheet_96
+  - first:
+      213: -4700489140116493049
+    second: sniffer-Sheet_97
+  - first:
+      213: -38948798824878019
+    second: sniffer-Sheet_98
+  - first:
+      213: -245661645255570687
+    second: sniffer-Sheet_99
+  - first:
+      213: 1503579078401088854
+    second: sniffer-Sheet_100
+  - first:
+      213: -2321499162869653327
+    second: sniffer-Sheet_101
+  - first:
+      213: -3782208035225614541
+    second: sniffer-Sheet_102
+  - first:
+      213: -1354338389294487676
+    second: sniffer-Sheet_103
+  - first:
+      213: 1095872341594832484
+    second: sniffer-Sheet_104
+  - first:
+      213: -3802768410887449990
+    second: sniffer-Sheet_105
+  - first:
+      213: 708931604498788276
+    second: sniffer-Sheet_106
+  - first:
+      213: 7830193375459921529
+    second: sniffer-Sheet_107
+  - first:
+      213: 7238459006707519771
+    second: sniffer-Sheet_108
+  - first:
+      213: 5002840448030229570
+    second: sniffer-Sheet_109
+  - first:
+      213: -7206208970791914817
+    second: sniffer-Sheet_110
+  - first:
+      213: -8394858159466651123
+    second: sniffer-Sheet_111
+  - first:
+      213: 39525503802254870
+    second: sniffer-Sheet_112
+  - first:
+      213: 5765212027585381493
+    second: sniffer-Sheet_113
+  - first:
+      213: 6941280020277696455
+    second: sniffer-Sheet_114
+  - first:
+      213: -3797855584637070104
+    second: sniffer-Sheet_115
+  - first:
+      213: 8175752176300648354
+    second: sniffer-Sheet_116
+  - first:
+      213: -3837939148345606723
+    second: sniffer-Sheet_117
+  - first:
+      213: -7607253611191190126
+    second: sniffer-Sheet_118
+  - first:
+      213: -6066698918989968139
+    second: sniffer-Sheet_119
+  - first:
+      213: 1540151288985849953
+    second: sniffer-Sheet_120
+  - first:
+      213: -4481887861643640253
+    second: sniffer-Sheet_121
+  - first:
+      213: 6240150192283879976
+    second: sniffer-Sheet_122
+  - first:
+      213: -2119975660025728726
+    second: sniffer-Sheet_123
+  - first:
+      213: -444755605240526228
+    second: sniffer-Sheet_124
+  - first:
+      213: -7402589793609997497
+    second: sniffer-Sheet_125
+  - first:
+      213: -9098325364637486622
+    second: sniffer-Sheet_126
+  - first:
+      213: 1721413364426945591
+    second: sniffer-Sheet_127
+  - first:
+      213: -144659159450980198
+    second: sniffer-Sheet_128
+  - first:
+      213: -4687066310933364444
+    second: sniffer-Sheet_129
+  - first:
+      213: -3383876264363328905
+    second: sniffer-Sheet_130
+  - first:
+      213: 9114078629593273132
+    second: sniffer-Sheet_131
+  - first:
+      213: -137629036473863324
+    second: sniffer-Sheet_132
+  - first:
+      213: 6939539118462280095
+    second: sniffer-Sheet_133
+  - first:
+      213: 22371359224902677
+    second: sniffer-Sheet_134
+  - first:
+      213: 6298050884496153795
+    second: sniffer-Sheet_135
+  - first:
+      213: 349217749358516352
+    second: sniffer-Sheet_136
+  - first:
+      213: -2457028523920019264
+    second: sniffer-Sheet_137
+  - first:
+      213: 204085060737420660
+    second: sniffer-Sheet_138
+  - first:
+      213: 1249373452137740983
+    second: sniffer-Sheet_139
+  - first:
+      213: 1131524767485484257
+    second: sniffer-Sheet_140
+  - first:
+      213: 5042688655113248614
+    second: sniffer-Sheet_141
+  - first:
+      213: 3134857874817366548
+    second: sniffer-Sheet_142
+  - first:
+      213: -5891167444649050624
+    second: sniffer-Sheet_143
+  - first:
+      213: 8910312969744752094
+    second: sniffer-Sheet_144
+  - first:
+      213: 4742436978160864246
+    second: sniffer-Sheet_145
+  - first:
+      213: 6574530614124495080
+    second: sniffer-Sheet_146
+  - first:
+      213: 3450762435272153716
+    second: sniffer-Sheet_147
+  - first:
+      213: 8444256795127699989
+    second: sniffer-Sheet_148
+  - first:
+      213: -5962008503913596331
+    second: sniffer-Sheet_149
+  - first:
+      213: -277380168978463030
+    second: sniffer-Sheet_150
+  - first:
+      213: -6795112257093624128
+    second: sniffer-Sheet_151
+  - first:
+      213: -8216711283728291187
+    second: sniffer-Sheet_152
+  - first:
+      213: -9004390638963190133
+    second: sniffer-Sheet_153
+  - first:
+      213: 2273391431535479215
+    second: sniffer-Sheet_154
+  - first:
+      213: -3522181681886481727
+    second: sniffer-Sheet_155
+  - first:
+      213: -6270450454934796313
+    second: sniffer-Sheet_156
+  - first:
+      213: -6182429902237511201
+    second: sniffer-Sheet_157
+  - first:
+      213: 3056428748167777907
+    second: sniffer-Sheet_158
+  - first:
+      213: 1465518348719657685
+    second: sniffer-Sheet_159
+  - first:
+      213: -291158436926028075
+    second: sniffer-Sheet_160
+  - first:
+      213: -3738210995950400851
+    second: sniffer-Sheet_161
+  - first:
+      213: -1520297092512373687
+    second: sniffer-Sheet_162
+  - first:
+      213: 8588994059299103879
+    second: sniffer-Sheet_163
+  - first:
+      213: 267962298137487808
+    second: sniffer-Sheet_164
+  - first:
+      213: -7756749275485807821
+    second: sniffer-Sheet_165
+  - first:
+      213: 4797964716785565029
+    second: sniffer-Sheet_166
+  - first:
+      213: 6551354016311400148
+    second: sniffer-Sheet_167
+  - first:
+      213: -5109298114615010078
+    second: sniffer-Sheet_168
+  - first:
+      213: -5216849654647714758
+    second: sniffer-Sheet_169
+  - first:
+      213: -1591883563896434387
+    second: sniffer-Sheet_170
+  - first:
+      213: 4328901364652963467
+    second: sniffer-Sheet_171
+  - first:
+      213: 3171903148348243249
+    second: sniffer-Sheet_172
+  - first:
+      213: -9155187699518062622
+    second: sniffer-Sheet_173
+  - first:
+      213: -5621194444780018818
+    second: sniffer-Sheet_174
+  - first:
+      213: -8600332673897174760
+    second: sniffer-Sheet_175
+  - first:
+      213: 5596667736584893641
+    second: sniffer-Sheet_176
+  - first:
+      213: 8949931947282500762
+    second: sniffer-Sheet_177
+  - first:
+      213: 4466493680707214453
+    second: sniffer-Sheet_178
+  - first:
+      213: -8770899799480787631
+    second: sniffer-Sheet_179
+  - first:
+      213: -5470931020098188398
+    second: sniffer-Sheet_180
+  - first:
+      213: 6853141802892429540
+    second: sniffer-Sheet_181
+  - first:
+      213: 4938261725854660497
+    second: sniffer-Sheet_182
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 1
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 0
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 64
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 4096
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: sniffer-Sheet_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 862c3242c91952540800000000000000
+      internalID: 4982548662562570856
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_1
+      rect:
+        serializedVersion: 2
+        x: 218
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f106076d1b9f90cf0800000000000000
+      internalID: -285422559159099361
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_2
+      rect:
+        serializedVersion: 2
+        x: 436
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5119d5353ab272500800000000000000
+      internalID: 371313474759659797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_3
+      rect:
+        serializedVersion: 2
+        x: 654
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3451516f76cdda910800000000000000
+      internalID: 1850377360987460931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_4
+      rect:
+        serializedVersion: 2
+        x: 872
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92a97af2d1d177c40800000000000000
+      internalID: 5509904680301861417
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_5
+      rect:
+        serializedVersion: 2
+        x: 1090
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c1e140800e81e4520800000000000000
+      internalID: 2688113378072993308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_6
+      rect:
+        serializedVersion: 2
+        x: 1308
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 931b2238ed1485a40800000000000000
+      internalID: 5357104180695839033
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_7
+      rect:
+        serializedVersion: 2
+        x: 1526
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3e3a6491b63fdf70800000000000000
+      internalID: 9214143498950426171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_8
+      rect:
+        serializedVersion: 2
+        x: 1744
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 92f285d7b18145c70800000000000000
+      internalID: 8958812065092874025
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_9
+      rect:
+        serializedVersion: 2
+        x: 1962
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d520c07870a01b00800000000000000
+      internalID: 797313573192738265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_10
+      rect:
+        serializedVersion: 2
+        x: 2180
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0c3ca88d7d2557e60800000000000000
+      internalID: 7959359003451638720
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_11
+      rect:
+        serializedVersion: 2
+        x: 2398
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ff6f949d9e2b1b220800000000000000
+      internalID: 2499975985609963263
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_12
+      rect:
+        serializedVersion: 2
+        x: 2616
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 69a29e4d7fa0506c0800000000000000
+      internalID: -4177921019771016554
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_13
+      rect:
+        serializedVersion: 2
+        x: 2834
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505a5f80ba1b1d3a0800000000000000
+      internalID: -6642332627246930683
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_14
+      rect:
+        serializedVersion: 2
+        x: 3052
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bc70ce7e34c69f1b0800000000000000
+      internalID: -5622343620885739573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_15
+      rect:
+        serializedVersion: 2
+        x: 3270
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77fd2d2d94cec0d40800000000000000
+      internalID: 5552072242454781815
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_16
+      rect:
+        serializedVersion: 2
+        x: 3488
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d50e0ce410bcf1b80800000000000000
+      internalID: -8421789571682869155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: sniffer-Sheet_17
+      rect:
+        serializedVersion: 2
+        x: 3706
+        y: 0
+        width: 218
+        height: 222
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1172135e1eabbd720800000000000000
+      internalID: 2872094666754434833
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 1fa2623bb31c2944b9238fd726ea4a23
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":18.0,"y":1.0},"gridSpriteSize":{"x":218.0,"y":222.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      sniffer-Sheet_0: 4982548662562570856
+      sniffer-Sheet_1: -285422559159099361
+      sniffer-Sheet_10: 7959359003451638720
+      sniffer-Sheet_11: 2499975985609963263
+      sniffer-Sheet_12: -4177921019771016554
+      sniffer-Sheet_13: -6642332627246930683
+      sniffer-Sheet_14: -5622343620885739573
+      sniffer-Sheet_15: 5552072242454781815
+      sniffer-Sheet_16: -8421789571682869155
+      sniffer-Sheet_17: 2872094666754434833
+      sniffer-Sheet_2: 371313474759659797
+      sniffer-Sheet_3: 1850377360987460931
+      sniffer-Sheet_4: 5509904680301861417
+      sniffer-Sheet_5: 2688113378072993308
+      sniffer-Sheet_6: 5357104180695839033
+      sniffer-Sheet_7: 9214143498950426171
+      sniffer-Sheet_8: 8958812065092874025
+      sniffer-Sheet_9: 797313573192738265
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
