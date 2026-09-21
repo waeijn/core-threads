@@ -43,6 +43,7 @@ public class CardView : MonoBehaviour
 
     void OnMouseExit()
     {
+        AudioSystem.Instance?.StopHoverSFX();
         CardViewHoverSystem.Instance.Hide();
         wrapper.SetActive(true);
     }
@@ -50,6 +51,9 @@ public class CardView : MonoBehaviour
     void OnMouseDown()
     {
         if (!Interactions.Instance.PlayerCanInteract()) return;
+        
+        AudioSystem.Instance?.StopHoverSFX();
+        
         Interactions.Instance.PlayerIsDragging = true;
         wrapper.SetActive(true);
         CardViewHoverSystem.Instance.Hide();

@@ -44,7 +44,7 @@ public class DeckViewerUI : MonoBehaviour
 
     private void OnEnable()
     {
-        if (backgroundOverlay != null) backgroundOverlay.onClick.AddListener(Hide);
+        if (backgroundOverlay != null) backgroundOverlay.onClick.AddListener(() => { AudioSystem.Instance?.PlayButtonClick(); Hide(); });
     }
 
     private void OnDisable()
@@ -56,6 +56,7 @@ public class DeckViewerUI : MonoBehaviour
     {
         IsOpen = true;
         gameObject.SetActive(true); // Ensure the script's own GameObject is active before coroutines!
+        transform.SetAsLastSibling(); // Ensure it renders OVER the TopBar and everything else
         if (panel != null) panel.SetActive(true);
         
         if (CardsSystem.Instance != null) CardsSystem.Instance.HideHand();
@@ -92,6 +93,15 @@ public class DeckViewerUI : MonoBehaviour
         IsOpen = false;
         if (CardsSystem.Instance != null) CardsSystem.Instance.ShowHand();
         StartAnim(AnimClose());
+    }
+
+    private void Update()
+    {
+        if (IsOpen && (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)))
+        {
+            AudioSystem.Instance?.PlayButtonClick();
+            Hide();
+        }
     }
 
     // ── Helpers ────────────────────────────────────────────────────────────

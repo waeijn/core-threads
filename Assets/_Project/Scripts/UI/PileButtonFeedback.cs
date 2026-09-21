@@ -34,12 +34,14 @@ public class PileButtonFeedback : MonoBehaviour,
 
     public void OnPointerEnter(PointerEventData _)
     {
+        AudioSystem.Instance?.PlayButtonHover();
         _isHovered = true;
         ScaleTo(_originalScale * hoverScale, hoverDuration);
     }
 
     public void OnPointerExit(PointerEventData _)
     {
+        AudioSystem.Instance?.StopHoverSFX();
         _isHovered = false;
         ScaleTo(_originalScale, hoverDuration);
     }
@@ -48,6 +50,7 @@ public class PileButtonFeedback : MonoBehaviour,
 
     public void OnPointerDown(PointerEventData _)
     {
+        AudioSystem.Instance?.PlayButtonClick();
         ScaleTo(_originalScale * clickScale, clickDuration);
     }
 

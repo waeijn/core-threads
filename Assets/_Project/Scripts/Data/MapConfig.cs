@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 
 /// <summary>
 /// ScriptableObject holding all configuration parameters for the procedural map generator.
@@ -11,25 +11,25 @@ public class MapConfig : ScriptableObject
     [Tooltip("The network_icons.png sprite sheet sliced into 6 sprites (indices 0-5).")]
     public Sprite[] nodeSprites = new Sprite[6];
 
+    [Header("Enemy Rosters")]
+    public ActEnemyRoster act1Roster;
+    public ActEnemyRoster act2Roster;
+    public ActEnemyRoster act3Roster;
+
     [Header("Act 1 - Floppy Sector")]
     public int act1StartingPaths = 2;
     [Tooltip("Middle layer count (excluding layer 0 and boss layer).")]
     public int act1MiddleLayers = 2;
-    public EnemyData act1Layer0Enemy;     // Coupler
-    public EnemyData act1Layer1Enemy;     // Corrupted
-    public EnemyData act1BossEnemy;       // Collector
     public int act1BossSpriteIndex = 3;
 
-    [Header("Act 2 - Placeholder")]
+    [Header("Act 2 - System RAM")]
     public int act2StartingPaths = 3;
     public int act2MiddleLayers = 3;
-    public EnemyData act2BossEnemy;
     public int act2BossSpriteIndex = 4;
 
-    [Header("Act 3 - Placeholder")]
+    [Header("Act 3 - CPU Core")]
     public int act3StartingPaths = 4;
     public int act3MiddleLayers = 4;
-    public EnemyData act3BossEnemy;
     public int act3BossSpriteIndex = 5;
 
     [Header("Map Layout")]
