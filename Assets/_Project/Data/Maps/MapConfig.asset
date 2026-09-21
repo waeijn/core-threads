@@ -19,19 +19,17 @@ MonoBehaviour:
   - {fileID: 1534706144, guid: d48c0e5dc19041b4482778d78592d997, type: 3}
   - {fileID: 1694395850, guid: d48c0e5dc19041b4482778d78592d997, type: 3}
   - {fileID: -1436408385, guid: d48c0e5dc19041b4482778d78592d997, type: 3}
+  act1Roster: {fileID: 11400000, guid: 42d83ad6df84b4a4b98c7f46a5e9811b, type: 2}
+  act2Roster: {fileID: 11400000, guid: 3b42ebadb36d26448a77cc194c1e4198, type: 2}
+  act3Roster: {fileID: 11400000, guid: a5cd8dcba3aee26409c85761db8ccec9, type: 2}
   act1StartingPaths: 2
   act1MiddleLayers: 2
-  act1Layer0Enemy: {fileID: 11400000, guid: a95f96165e194f244a8870d2c12fcc46, type: 2}
-  act1Layer1Enemy: {fileID: 11400000, guid: cd27bf3e8f0aff94db0c01964f5a7547, type: 2}
-  act1BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
   act1BossSpriteIndex: 3
   act2StartingPaths: 3
   act2MiddleLayers: 3
-  act2BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
   act2BossSpriteIndex: 4
   act3StartingPaths: 4
   act3MiddleLayers: 4
-  act3BossEnemy: {fileID: 11400000, guid: 95470c8b8bba8194b8538f5654173852, type: 2}
   act3BossSpriteIndex: 5
   layerHeight: 180
   columnWidth: 160

@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c821af4ea62e440addf7a61d967cd0, type: 3}
+  m_Name: Kernel
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Image>k__BackingField: {fileID: 3002207226581056727, guid: 34919e2819015b44db02d2ee0e127bed, type: 3}
+  <Health>k__BackingField: 150
+  <AttackPower>k__BackingField: 20
+  <BlockPower>k__BackingField: 18
+  <BuffAmount>k__BackingField: 6
+  <Scale>k__BackingField: {x: 5, y: 5, z: 5}
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 97fc3b5464b47b84f87a5b1928849465, type: 2}
+  <FSMStates>k__BackingField: []
+  <MovePool>k__BackingField:
+  - Intent: 0
+    Weight: 5
+    OverrideValue: 0
+  - Intent: 1
+    Weight: 3
+    OverrideValue: 0
+  - Intent: 3
+    Weight: 1
+    OverrideValue: 0

@@ -19,19 +19,39 @@ public class MenuButtonsUI : MonoBehaviour
     private void OnEnable()
     {
         if (mapButton != null) mapButton.onClick.AddListener(OnMapClicked);
-        if (deckButton != null) deckButton.onClick.AddListener(OnDeckClicked);
         if (settingsButton != null) settingsButton.onClick.AddListener(OnSettingsClicked);
+        
+        AddHoverSound(mapButton);
+        AddHoverSound(settingsButton);
+    }
+
+    private void AddHoverSound(Button button)
+    {
+        if (button == null) return;
+        var trigger = button.gameObject.GetComponent<UnityEngine.EventSystems.EventTrigger>() ?? button.gameObject.AddComponent<UnityEngine.EventSystems.EventTrigger>();
+        
+        // Prevent duplicate triggers if OnEnable is called multiple times
+        trigger.triggers.RemoveAll(e => e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerEnter);
+        trigger.triggers.RemoveAll(e => e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerExit);
+        
+        var enterEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerEnter };
+        enterEntry.callback.AddListener((data) => { AudioSystem.Instance?.PlayButtonHover(); });
+        trigger.triggers.Add(enterEntry);
+
+        var exitEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerExit };
+        exitEntry.callback.AddListener((data) => { AudioSystem.Instance?.StopHoverSFX(); });
+        trigger.triggers.Add(exitEntry);
     }
 
     private void OnDisable()
     {
         if (mapButton != null) mapButton.onClick.RemoveListener(OnMapClicked);
-        if (deckButton != null) deckButton.onClick.RemoveListener(OnDeckClicked);
         if (settingsButton != null) settingsButton.onClick.RemoveListener(OnSettingsClicked);
     }
 
     private void OnMapClicked()
     {
+        AudioSystem.Instance?.PlayButtonClick();
         // Don't allow during combat actions
         if (ActionSystem.Instance != null && ActionSystem.Instance.IsPerforming) return;
 
@@ -41,33 +61,43 @@ public class MenuButtonsUI : MonoBehaviour
             // Toggle off — unload MapScene overlay
             SceneManager.UnloadSceneAsync("MapScene");
         }
-        else if (GameState.IsInitialized)
+        else
         {
             // Toggle on — load MapScene additively
             SceneManager.LoadScene("MapScene", LoadSceneMode.Additive);
         }
     }
 
-    private void OnDeckClicked()
-    {
-        if (deckViewer != null)
-        {
-            if (deckViewer.IsOpen)
-                deckViewer.Hide();
-            else
-                deckViewer.Show();
-        }
-        // Close settings if open
-        if (settingsPanel != null) settingsPanel.SetActive(false);
-    }
-
     private void OnSettingsClicked()
     {
+        AudioSystem.Instance?.PlayButtonClick();
+
+        if (settingsPanel == null)
+        {
+            var allSettings = Resources.FindObjectsOfTypeAll<SettingsPanelUI>();
+            foreach (var s in allSettings)
+            {
+                if (s.gameObject.scene.isLoaded)
+                {
+                    settingsPanel = s.gameObject;
+                    break;
+                }
+            }
+        }
+
+        // Close deck if open
+        if (deckViewer != null && deckViewer.IsOpen)
+        {
+            deckViewer.Hide();
+        }
+
         if (settingsPanel != null)
         {
             settingsPanel.SetActive(!settingsPanel.activeSelf);
         }
-        // Close deck if open
-        if (deckViewer != null) deckViewer.Hide();
+        else
+        {
+            Debug.LogWarning("[MenuButtonsUI] SettingsPanel not found in scene!");
+        }
     }
 }

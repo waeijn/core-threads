@@ -31,9 +31,11 @@ public class CardView : MonoBehaviour
         {
             return;
         }
-        Debug.Log("The mouse touched the card!");
 
         if (!Interactions.Instance.PlayerCanHover()) return;
+        
+        AudioSystem.Instance?.PlayCardHover();
+        
         wrapper.SetActive(false);
         Vector3 pos = new Vector3(transform.position.x, transform.position.y + 4.5f, -1f);
         CardViewHoverSystem.Instance.Show(Card, pos);
@@ -41,6 +43,7 @@ public class CardView : MonoBehaviour
 
     void OnMouseExit()
     {
+        AudioSystem.Instance?.StopHoverSFX();
         CardViewHoverSystem.Instance.Hide();
         wrapper.SetActive(true);
     }
@@ -48,6 +51,9 @@ public class CardView : MonoBehaviour
     void OnMouseDown()
     {
         if (!Interactions.Instance.PlayerCanInteract()) return;
+        
+        AudioSystem.Instance?.StopHoverSFX();
+        
         Interactions.Instance.PlayerIsDragging = true;
         wrapper.SetActive(true);
         CardViewHoverSystem.Instance.Hide();
@@ -85,6 +91,7 @@ public class CardView : MonoBehaviour
         }
         else
         {
+            AudioSystem.Instance?.PlayError();
             transform.position = dragStartPosition;
             transform.rotation = dragStartRotation;
         }
@@ -95,6 +102,11 @@ public class CardView : MonoBehaviour
     {
         // Disable further interaction while animating
         Interactions.Instance.PlayerIsDragging = true;
+
+        if (Card.PlaySound != null)
+        {
+            AudioSystem.Instance?.PlaySFX(Card.PlaySound);
+        }
 
         Vector3 originalScale = transform.localScale;
 

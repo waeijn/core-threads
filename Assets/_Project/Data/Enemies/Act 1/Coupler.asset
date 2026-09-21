@@ -1,0 +1,32 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2c821af4ea62e440addf7a61d967cd0, type: 3}
+  m_Name: Coupler
+  m_EditorClassIdentifier: Assembly-CSharp::EnemyData
+  <Image>k__BackingField: {fileID: -597529968, guid: 761de0d7f9224114ca74448a3d84e85c, type: 3}
+  <Health>k__BackingField: 25
+  <AttackPower>k__BackingField: 6
+  <BlockPower>k__BackingField: 5
+  <BuffAmount>k__BackingField: 2
+  <Scale>k__BackingField: {x: 3, y: 3, z: 3}
+  <AnimatorController>k__BackingField: {fileID: 9100000, guid: 3f38d3b70b31a0744bb6c509aef67dae, type: 2}
+  <FSMStates>k__BackingField: []
+  <MovePool>k__BackingField:
+  - Intent: 0
+    Weight: 5
+    OverrideValue: 0
+  - Intent: 1
+    Weight: 3
+    OverrideValue: 0
+  - Intent: 3
+    Weight: 1
+    OverrideValue: 0

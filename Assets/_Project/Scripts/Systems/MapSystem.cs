@@ -361,12 +361,12 @@ public class MapSystem : MonoBehaviour
 
         nodeChoicePanel.Show(
             "DATA CACHE",
-            "TARGETED DUPLICATION\n<size=60%>Duplicate 1 non-Repair Card</size>",
-            canPurge ? "SYSTEM CLEANSE\n<size=60%>Purge 1 Card</size>" : "SYSTEM CLEANSE\n<size=60%>(MIN DECK)</size>",
+            "TARGETED DUPLICATION\n<size=60%>Duplicate 1 Card</size>",
+            "DRAFT REWARD CARD\n<size=60%>Draft a new card</size>",
             OnTreasureDuplicate,
-            OnTreasurePurge,
+            OnTreasureDraft,
             () => CompleteNodeAndRefresh(), // Skip
-            optionBEnabled: canPurge
+            optionBEnabled: true
         );
     }
 
@@ -388,7 +388,7 @@ public class MapSystem : MonoBehaviour
         });
     }
 
-    private void OnTreasurePurge()
+    private void OnTreasureDraft()
     {
         if (nodeCardSelection == null)
         {
@@ -396,12 +396,13 @@ public class MapSystem : MonoBehaviour
             return;
         }
 
-        List<CardData> cards = GameState.GetDistinctCards();
-        nodeCardSelection.Show(cards, "SELECT A CARD TO PURGE", (card) =>
+        List<CardData> draftOptions = CardRewardManager.GetDraftChoices(RewardContext.DatabaseTreasure, GameState.CurrentAct);
+
+        nodeCardSelection.Show(draftOptions, "DRAFT — SELECT A NEW CARD", (card) =>
         {
-            GameState.PurgeCard(card);
+            GameState.PlayerDeck.Add(card);
             CompleteNodeAndRefresh();
-        });
+        }, showCounts: false);
     }
 
     // ── Helpers ─────────────────────────────────────────────────────────────

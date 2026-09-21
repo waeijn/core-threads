@@ -52,7 +52,7 @@ public class PileViewerUI : MonoBehaviour
     private void OnEnable()
     {
         if (backgroundOverlay != null)
-            backgroundOverlay.onClick.AddListener(Hide);
+            backgroundOverlay.onClick.AddListener(() => { AudioSystem.Instance?.PlayButtonClick(); Hide(); });
     }
 
     private void OnDisable()
@@ -109,6 +109,7 @@ public class PileViewerUI : MonoBehaviour
     {
         IsOpen = true;
         gameObject.SetActive(true); // Ensure the script's own GameObject is active before coroutines!
+        transform.SetAsLastSibling(); // Ensure it renders OVER the TopBar
         if (panel != null) panel.SetActive(true);
 
         if (CardsSystem.Instance != null) CardsSystem.Instance.HideHand();
@@ -148,6 +149,15 @@ public class PileViewerUI : MonoBehaviour
         if (CardsSystem.Instance != null) CardsSystem.Instance.ShowHand();
         if (_animRoutine != null) StopCoroutine(_animRoutine);
         if (gameObject.activeInHierarchy) _animRoutine = StartCoroutine(AnimateClose());
+    }
+
+    private void Update()
+    {
+        if (IsOpen && (Input.GetKeyDown(KeyCode.Escape) || Input.GetMouseButtonDown(1)))
+        {
+            AudioSystem.Instance?.PlayButtonClick();
+            Hide();
+        }
     }
 
     private void ClearThumbnails()

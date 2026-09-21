@@ -28,7 +28,10 @@ public static class GameState
     public static int PlayerCurrentHP = -1;
 
     /// <summary>Player's max HP.</summary>
-    public static int PlayerMaxHP = 100;
+    public static int PlayerMaxHP = -1;
+
+    /// <summary>Player's max Energy/Mana.</summary>
+    public static int PlayerMaxMana = 3;
 
     /// <summary>Whether the game has been initialized.</summary>
     public static bool IsInitialized = false;
@@ -50,7 +53,8 @@ public static class GameState
         SelectedNode = null;
         GeneratedMap = null;
         PlayerCurrentHP = -1;
-        PlayerMaxHP = 100;
+        PlayerMaxHP = -1;
+        PlayerMaxMana = 3;
         IsInitialized = false;
         HeroData = null;
         PlayerDeck = null;
@@ -149,6 +153,8 @@ public static class GameState
         SelectedNode = null;
         CurrentAct = 1;
         PlayerCurrentHP = -1;
+        PlayerMaxHP = -1;
+        PlayerMaxMana = 3;
         PlayerDeck = null;
     }
 

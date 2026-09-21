@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: afbbbf96f1272c74b9503eebb6aae93e, type: 3}
+  m_Name: Act3Roster
+  m_EditorClassIdentifier: Assembly-CSharp::ActEnemyRoster
+  ActNumber: 3
+  StandardEnemies:
+  - {fileID: 11400000, guid: 1ab14605e8859e9498853ac81c9f0c98, type: 2}
+  - {fileID: 11400000, guid: 2c196cc4ac44aaf4f80362eeacb3fda2, type: 2}
+  - {fileID: 11400000, guid: 274f482649c71184283031fe15af9170, type: 2}
+  - {fileID: 11400000, guid: b8583f52fe8763b499a88010c2415217, type: 2}
+  BossEnemy: {fileID: 11400000, guid: 322d041b0bedb79498095739c29f0b03, type: 2}

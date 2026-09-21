@@ -62,6 +62,7 @@ public class CardsSystem : Singleton<CardsSystem>
             drawPile.Add(card);
         }
         drawPile.Shuffle();
+        AudioSystem.Instance?.PlayShuffleDeck();
         OnPilesChanged?.Invoke();
     }
     private IEnumerator DrawCardsPerformer(DrawCardsGA drawCardsGA)
@@ -117,10 +118,13 @@ public class CardsSystem : Singleton<CardsSystem>
         ActionSystem.Instance.AddReaction(spendManaGA);
 
         // Add Effects (Post Reaction)
-        foreach (var effect in playCardGA.Card.Effects)
+        if (playCardGA.Card.Effects != null)
         {
-            PerformEffectGA performEffectGA = new(effect);
-            ActionSystem.Instance.AddReaction(performEffectGA);
+            foreach (var effect in playCardGA.Card.Effects)
+            {
+                PerformEffectGA performEffectGA = new(effect);
+                ActionSystem.Instance.AddReaction(performEffectGA);
+            }
         }
 
         // Add Cleanup Action (Post Reaction - added last so it runs after effects)
@@ -180,12 +184,14 @@ public class CardsSystem : Singleton<CardsSystem>
     {
         // Reset player block at start of player turn
         HeroSystem.Instance.HeroView.ResetBlock();
+        AudioSystem.Instance?.PlayStartTurn();
         DrawCardsGA drawCardsGA = new(5);
         ActionSystem.Instance.AddReaction(drawCardsGA);
     }
 
     private IEnumerator DrawCards()
     {
+        AudioSystem.Instance?.PlayCardDraw();
         Card card = drawPile.Draw();
         hand.Add(card);
 
@@ -266,11 +272,13 @@ public class CardsSystem : Singleton<CardsSystem>
         drawPile.AddRange(discardPile);
         discardPile.Clear();
         drawPile.Shuffle();
+        AudioSystem.Instance?.PlayShuffleDeck();
         OnPilesChanged?.Invoke();
     }
 
     private IEnumerator DiscardCard(CardView cardView)
     {
+        AudioSystem.Instance?.PlayCardDiscard();
         // Fly to discard pile with a gentle arc rotation
         cardView.transform.DORotate(new Vector3(0, 0, -20f), 0.18f);
         cardView.transform.DOScale(Vector3.zero, 0.18f);

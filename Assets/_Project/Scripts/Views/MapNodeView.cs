@@ -46,9 +46,31 @@ public class MapNodeView : MonoBehaviour
 
         // Wire button
         button.onClick.RemoveAllListeners();
-        button.onClick.AddListener(() => _onClicked?.Invoke(this));
+        button.onClick.AddListener(() => 
+        {
+            AudioSystem.Instance?.PlayButtonClick();
+            _onClicked?.Invoke(this);
+        });
+
+        AddHoverSound(button);
 
         RefreshVisuals();
+    }
+
+    private void AddHoverSound(Button btn)
+    {
+        if (btn == null) return;
+        var trigger = btn.gameObject.GetComponent<UnityEngine.EventSystems.EventTrigger>() ?? btn.gameObject.AddComponent<UnityEngine.EventSystems.EventTrigger>();
+        trigger.triggers.RemoveAll(e => e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerEnter);
+        trigger.triggers.RemoveAll(e => e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerExit);
+        
+        var enterEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerEnter };
+        enterEntry.callback.AddListener((data) => { if (btn.interactable) AudioSystem.Instance?.PlayButtonHover(); });
+        trigger.triggers.Add(enterEntry);
+
+        var exitEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerExit };
+        exitEntry.callback.AddListener((data) => { AudioSystem.Instance?.StopHoverSFX(); });
+        trigger.triggers.Add(exitEntry);
     }
 
     // ── State ──────────────────────────────────────────────────────────────

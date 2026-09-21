@@ -7,6 +7,7 @@ public class CombatantView : MonoBehaviour
     public TMP_Text healthText;
     public TMP_Text blockText;
     public TMP_Text strengthText;
+    [HideInInspector] public TMP_Text vulnerableText;
     public SpriteRenderer spriteRenderer;
     public Animator animator;
 
@@ -32,6 +33,19 @@ public class CombatantView : MonoBehaviour
         Strength = 0;
         Vulnerable = 0;
         spriteRenderer.sprite = image;
+
+        // Dynamically create vulnerableText by cloning strengthText if we don't have one
+        if (vulnerableText == null && strengthText != null)
+        {
+            GameObject vulnObj = Instantiate(strengthText.gameObject, strengthText.transform.parent);
+            vulnObj.name = "VulnerableText";
+            vulnerableText = vulnObj.GetComponent<TMP_Text>();
+            vulnerableText.color = new Color(0.8f, 0.2f, 0.8f); // Purple
+            
+            // Move it next to the other status effects (left of health text/icon)
+            vulnObj.transform.SetSiblingIndex(strengthText.transform.GetSiblingIndex() + 1);
+        }
+
         UpdateHealthText();
     }
 
@@ -68,6 +82,21 @@ public class CombatantView : MonoBehaviour
             {
                 if (strengthText.gameObject.activeSelf) layoutChanged = true;
                 strengthText.gameObject.SetActive(false);
+            }
+        }
+
+        if (vulnerableText != null)
+        {
+            if (Vulnerable > 0)
+            {
+                if (!vulnerableText.gameObject.activeSelf) layoutChanged = true;
+                vulnerableText.gameObject.SetActive(true);
+                vulnerableText.text = $"VULN: {Vulnerable}";
+            }
+            else
+            {
+                if (vulnerableText.gameObject.activeSelf) layoutChanged = true;
+                vulnerableText.gameObject.SetActive(false);
             }
         }
 

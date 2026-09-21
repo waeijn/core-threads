@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using DG.Tweening;
 
 public class GameOverSystem : Singleton<GameOverSystem>
 {
@@ -50,11 +51,29 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
             if (bossDefeated)
             {
-                // Advance act and wipe the map so it regenerates fresh
-                GameState.CurrentAct = Mathf.Clamp(GameState.CurrentAct + 1, 1, 3);
-                GameState.GeneratedMap = null;
-                GameState.SelectedNode = null;
-                ShowGameOver("SECTOR CLEARED\n<size=60%>ALL THREATS NEUTRALIZED</size>", Color.white, true);
+                IsGameOver = true;
+                if (CardViewHoverSystem.Instance != null) CardViewHoverSystem.Instance.Hide();
+                if (CardsSystem.Instance != null) CardsSystem.Instance.HideHand();
+
+                if (GameState.CurrentAct >= 3)
+                {
+                    StartCoroutine(PlayFinalBossSequence());
+                }
+                else
+                {
+                    if (RewardSystem.Instance != null)
+                    {
+                        RewardSystem.Instance.ShowBossReward();
+                    }
+                    else
+                    {
+                        // Fallback
+                        GameState.CurrentAct = Mathf.Clamp(GameState.CurrentAct + 1, 1, 3);
+                        GameState.GeneratedMap = null;
+                        GameState.SelectedNode = null;
+                        ShowGameOver("SECTOR CLEARED\n<size=60%>ALL THREATS NEUTRALIZED</size>", Color.white, true);
+                    }
+                }
             }
             else
             {
@@ -83,6 +102,11 @@ public class GameOverSystem : Singleton<GameOverSystem>
     private void ShowGameOver(string message, Color color, bool isVictory)
     {
         IsGameOver = true;
+
+        if (!isVictory)
+        {
+            AudioSystem.Instance?.PlayGameOver();
+        }
 
         if (CardViewHoverSystem.Instance != null)
         {
@@ -144,5 +168,72 @@ public class GameOverSystem : Singleton<GameOverSystem>
         {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
+    }
+
+    private IEnumerator PlayFinalBossSequence()
+    {
+        var boss = EnemySystem.Instance.EnemyViews.FirstOrDefault();
+        if (boss != null)
+        {
+            // Flash boss red and shake violently
+            boss.SpriteTransform.DOShakePosition(2.0f, 0.8f, 30);
+            boss.spriteRenderer.DOColor(Color.red, 2.0f);
+            
+            AudioSystem.Instance?.PlayGameOver(); // Reusing game over sound for dramatic effect
+            yield return new WaitForSeconds(2.0f);
+
+            // Explode particles via code
+            GameObject psObj = new GameObject("BossExplosion");
+            psObj.transform.position = boss.SpriteTransform.position;
+            ParticleSystem ps = psObj.AddComponent<ParticleSystem>();
+            
+            // Stop the default "Play On Awake" before modifying duration
+            ps.Stop(true, ParticleSystemStopBehavior.StopEmittingAndClear);
+            
+            var main = ps.main;
+            main.duration = 1f;
+            main.startSpeed = 15f;
+            main.startSize = 0.8f;
+            main.startColor = Color.red;
+            main.maxParticles = 200;
+            var emission = ps.emission;
+            emission.SetBursts(new ParticleSystem.Burst[]{ new ParticleSystem.Burst(0f, 150) });
+            var shape = ps.shape;
+            shape.shapeType = ParticleSystemShapeType.Sphere;
+            
+            var psr = psObj.GetComponent<ParticleSystemRenderer>();
+            psr.material = new Material(Shader.Find("Sprites/Default"));
+            
+            ps.Play();
+
+            // Hide boss sprite
+            boss.SpriteTransform.gameObject.SetActive(false);
+            
+            yield return new WaitForSeconds(1.5f);
+        }
+
+        // Flash screen white
+        GameObject flashObj = new GameObject("WhiteFlash");
+        Canvas canvas = Object.FindAnyObjectByType<Canvas>();
+        if (canvas != null)
+        {
+            flashObj.transform.SetParent(canvas.transform, false);
+            Image flashImg = flashObj.AddComponent<Image>();
+            flashImg.color = new Color(1, 1, 1, 0);
+            RectTransform rect = flashObj.GetComponent<RectTransform>();
+            rect.anchorMin = Vector2.zero;
+            rect.anchorMax = Vector2.one;
+            rect.sizeDelta = Vector2.zero;
+
+            flashImg.DOFade(1f, 1.5f).SetEase(Ease.InOutSine);
+            yield return new WaitForSeconds(2.0f);
+        }
+        else
+        {
+            yield return new WaitForSeconds(1.0f);
+        }
+
+        // Load Credits
+        SceneManager.LoadScene("CreditsScene");
     }
 }

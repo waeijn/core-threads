@@ -36,6 +36,8 @@ public class HeroView : CombatantView
             if (strObj != null) strengthText = strObj.GetComponent<TMP_Text>();
         }
 
-        SetupBase(heroData.Health, heroData.Image);
+        // Use GameState.PlayerMaxHP if it has been initialized/modified, otherwise fallback to base hero health
+        int maxHp = GameState.PlayerMaxHP > 0 ? GameState.PlayerMaxHP : heroData.Health;
+        SetupBase(maxHp, heroData.Image);
     }
 }
