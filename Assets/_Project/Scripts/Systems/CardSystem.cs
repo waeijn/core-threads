@@ -191,6 +191,7 @@ public class CardsSystem : Singleton<CardsSystem>
 
     private IEnumerator DrawCards()
     {
+        AudioSystem.Instance?.PlayCardDraw();
         Card card = drawPile.Draw();
         hand.Add(card);
 
@@ -277,6 +278,7 @@ public class CardsSystem : Singleton<CardsSystem>
 
     private IEnumerator DiscardCard(CardView cardView)
     {
+        AudioSystem.Instance?.PlayCardDiscard();
         // Fly to discard pile with a gentle arc rotation
         cardView.transform.DORotate(new Vector3(0, 0, -20f), 0.18f);
         cardView.transform.DOScale(Vector3.zero, 0.18f);

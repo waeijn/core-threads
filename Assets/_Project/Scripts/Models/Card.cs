@@ -8,6 +8,7 @@ public class Card
     public Color CardColor => data.CardColor;
     public string Description => data.Description;
     public Sprite Image => data.Image;
+    public AudioClip PlaySound => data.PlaySound;
     public bool IsExhaust => data.IsExhaust;
 
     public List<Effect> Effects => data.Effects ?? new List<Effect>();
