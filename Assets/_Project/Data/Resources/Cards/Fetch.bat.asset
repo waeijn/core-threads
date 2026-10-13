@@ -21,6 +21,8 @@ MonoBehaviour:
   <Image>k__BackingField: {fileID: 21300000, guid: 2fcc7b12b49245845814e43016af5a1e, type: 3}
   <Effects>k__BackingField:
   - rid: 5914603424724025611
+  <Tier>k__BackingField: 1
+  <Role>k__BackingField: 2
   references:
     version: 2
     RefIds:

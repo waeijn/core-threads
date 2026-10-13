@@ -62,6 +62,8 @@ public class ArchiveUI : MonoBehaviour
     private Tab currentTab = Tab.Scripts;
     private List<GameObject> _spawnedCards = new();
     private List<GameObject> _spawnedEnemies = new();
+    private ScrollRect _scriptsScrollRect;
+    private ScrollRect _threatsScrollRect;
 
     private void Awake()
     {
@@ -72,7 +74,7 @@ public class ArchiveUI : MonoBehaviour
             _panelRT = panel.GetComponent<RectTransform>();
         }
 
-        if (backgroundOverlay != null)
+        if (backgroundOverlay != null && backgroundOverlay.gameObject != panel)
             backgroundOverlay.onClick.AddListener(() => { AudioSystem.Instance?.PlayButtonClick(); Hide(); });
             
         if (mainCloseButton != null)
@@ -103,22 +105,87 @@ public class ArchiveUI : MonoBehaviour
             AddHoverSound(enemyDetailCloseButton);
         }
 
-        gameObject.SetActive(false);
+        if (scriptsContent != null)
+            _scriptsScrollRect = scriptsContent.GetComponentInParent<ScrollRect>();
+        if (threatsContent != null)
+            _threatsScrollRect = threatsContent.GetComponentInParent<ScrollRect>();
+
+        if (_scriptsScrollRect != null) _scriptsScrollRect.scrollSensitivity = 60f;
+        if (_threatsScrollRect != null) _threatsScrollRect.scrollSensitivity = 60f;
+
+        FixScrollMasks();
     }
 
     public void Show()
     {
         IsOpen = true;
-        gameObject.SetActive(true);
+        if (!gameObject.activeSelf)
+        {
+            gameObject.SetActive(true);
+        }
         transform.SetAsLastSibling();
         if (panel != null) panel.SetActive(true);
 
+        FixScrollMasks();
         CloseCardDetail();
         CloseEnemyDetail();
         SwitchTab(Tab.Scripts);
 
-        if (_anim != null) StopCoroutine(_anim);
-        _anim = StartCoroutine(AnimOpen());
+        if (gameObject.activeInHierarchy)
+        {
+            if (_anim != null) StopCoroutine(_anim);
+            _anim = StartCoroutine(AnimOpen());
+        }
+    }
+
+    private void FixScrollMasks()
+    {
+        FixMask(scriptsContent);
+        FixMask(threatsContent);
+    }
+
+    private void FixMask(GameObject contentObj)
+    {
+        if (contentObj == null) return;
+        Transform viewport = contentObj.transform.parent;
+        if (viewport == null) return;
+        Transform scrollObj = viewport.parent;
+
+        // Clean ScrollView root: remove stencil Mask and invisible Image
+        if (scrollObj != null)
+        {
+            var rootMask = scrollObj.GetComponent<Mask>();
+            if (rootMask != null)
+            {
+                rootMask.enabled = false;
+                Destroy(rootMask);
+            }
+            var rootImg = scrollObj.GetComponent<Image>();
+            if (rootImg != null && rootImg.color.a < 0.05f)
+            {
+                rootImg.enabled = false;
+                Destroy(rootImg);
+            }
+        }
+
+        // Clean Viewport: remove stencil Mask, ensure RectMask2D, and ensure a transparent raycast target exists so mouse drag & wheel work across the entire area
+        var vpMask = viewport.GetComponent<Mask>();
+        if (vpMask != null)
+        {
+            vpMask.enabled = false;
+            Destroy(vpMask);
+        }
+
+        var vpImg = viewport.GetComponent<Image>();
+        if (vpImg == null)
+            vpImg = viewport.gameObject.AddComponent<Image>();
+        vpImg.color = Color.clear;
+        vpImg.raycastTarget = true;
+
+        if (viewport.GetComponent<RectMask2D>() == null)
+        {
+            viewport.gameObject.AddComponent<RectMask2D>();
+        }
     }
 
     public void Hide()
@@ -154,6 +221,40 @@ public class ArchiveUI : MonoBehaviour
                 Hide();
             }
         }
+
+        // Mouse wheel scrolling
+        bool popupOpen = (cardDetailPanel != null && cardDetailPanel.activeSelf) ||
+                         (enemyDetailPanel != null && enemyDetailPanel.activeSelf);
+        if (!popupOpen)
+        {
+            float scroll = Input.mouseScrollDelta.y;
+            if (Mathf.Abs(scroll) < 0.01f)
+            {
+                scroll = Input.GetAxis("Mouse ScrollWheel") * 10f;
+            }
+
+            if (Mathf.Abs(scroll) > 0.01f)
+            {
+                if (_scriptsScrollRect == null && scriptsContent != null)
+                    _scriptsScrollRect = scriptsContent.GetComponentInParent<ScrollRect>();
+                if (_threatsScrollRect == null && threatsContent != null)
+                    _threatsScrollRect = threatsContent.GetComponentInParent<ScrollRect>();
+
+                ScrollRect activeScroll = currentTab == Tab.Scripts ? _scriptsScrollRect : _threatsScrollRect;
+                if (activeScroll != null && activeScroll.content != null)
+                {
+                    float contentHeight = activeScroll.content.rect.height;
+                    float viewportHeight = activeScroll.viewport != null ? activeScroll.viewport.rect.height : 600f;
+                    float scrollable = contentHeight - viewportHeight;
+                    if (scrollable > 0)
+                    {
+                        float delta = (scroll * 80f) / scrollable;
+                        activeScroll.verticalNormalizedPosition = Mathf.Clamp01(activeScroll.verticalNormalizedPosition + delta);
+                        activeScroll.velocity = Vector2.zero;
+                    }
+                }
+            }
+        }
     }
 
     // ── Tab Switching ──────────────────────────────────────────────────────
@@ -162,8 +263,30 @@ public class ArchiveUI : MonoBehaviour
     {
         currentTab = tab;
 
-        if (scriptsContent != null) scriptsContent.SetActive(tab == Tab.Scripts);
-        if (threatsContent != null) threatsContent.SetActive(tab == Tab.Threats);
+        // Toggle entire scrollviews so inactive scrollview never intercepts raycasts or scrolls
+        if (scriptsContent != null)
+        {
+            var scriptsScroll = scriptsContent.transform.parent != null && scriptsContent.transform.parent.parent != null
+                ? scriptsContent.transform.parent.parent.gameObject
+                : scriptsContent;
+            scriptsScroll.SetActive(tab == Tab.Scripts);
+            scriptsContent.SetActive(tab == Tab.Scripts);
+        }
+
+        if (threatsContent != null)
+        {
+            var threatsScroll = threatsContent.transform.parent != null && threatsContent.transform.parent.parent != null
+                ? threatsContent.transform.parent.parent.gameObject
+                : threatsContent;
+            threatsScroll.SetActive(tab == Tab.Threats);
+            threatsContent.SetActive(tab == Tab.Threats);
+        }
+
+        // Reset scroll position to top when switching tabs
+        if (tab == Tab.Scripts && _scriptsScrollRect != null)
+            _scriptsScrollRect.verticalNormalizedPosition = 1f;
+        else if (tab == Tab.Threats && _threatsScrollRect != null)
+            _threatsScrollRect.verticalNormalizedPosition = 1f;
 
         // Update tab button visuals
         UpdateTabVisuals();
@@ -200,8 +323,8 @@ public class ArchiveUI : MonoBehaviour
 
         CardData[] allCards = Resources.LoadAll<CardData>("Cards");
 
-        // Group by tier
-        var act1 = allCards.Where(c => c.Tier == CardActTier.Act1).OrderBy(c => c.Role).ToList();
+        // Group by tier (with defensive fallback for unassigned tier defaulting to Act 1)
+        var act1 = allCards.Where(c => c.Tier == CardActTier.Act1 || (int)c.Tier == 0).OrderBy(c => c.Role).ToList();
         var act2 = allCards.Where(c => c.Tier == CardActTier.Act2).OrderBy(c => c.Role).ToList();
         var act3 = allCards.Where(c => c.Tier == CardActTier.Act3).OrderBy(c => c.Role).ToList();
 
@@ -217,11 +340,11 @@ public class ArchiveUI : MonoBehaviour
         GameObject headerObj = new GameObject("Header");
         headerObj.transform.SetParent(parent, false);
         TextMeshProUGUI headerTmp = headerObj.AddComponent<TextMeshProUGUI>();
+        if (mainFont != null) headerTmp.font = mainFont;
         headerTmp.text = header;
         headerTmp.fontSize = 24;
         headerTmp.color = new Color(0.2f, 0.8f, 1f); // Cyan
         headerTmp.alignment = TextAlignmentOptions.Left;
-        if (mainFont != null) headerTmp.font = mainFont;
         LayoutElement headerLe = headerObj.AddComponent<LayoutElement>();
         headerLe.minHeight = 40;
         headerLe.preferredWidth = 1100;
@@ -257,9 +380,17 @@ public class ArchiveUI : MonoBehaviour
                 img.color = new Color(0.2f, 0.2f, 0.2f);
             }
 
+            RectTransform entryRT = entryObj.GetComponent<RectTransform>();
+            if (entryRT != null)
+            {
+                entryRT.sizeDelta = new Vector2(130, 182);
+            }
+
             LayoutElement le = entryObj.AddComponent<LayoutElement>();
             le.minWidth = 130;
+            le.preferredWidth = 130;
             le.minHeight = 182;
+            le.preferredHeight = 182;
 
             Button btn = entryObj.AddComponent<Button>();
             CardData captured = card;
@@ -294,11 +425,11 @@ public class ArchiveUI : MonoBehaviour
         GameObject headerObj = new GameObject("Header");
         headerObj.transform.SetParent(parent, false);
         TextMeshProUGUI headerTmp = headerObj.AddComponent<TextMeshProUGUI>();
+        if (mainFont != null) headerTmp.font = mainFont;
         headerTmp.text = header;
         headerTmp.fontSize = 24;
         headerTmp.color = new Color(1f, 0.3f, 0.3f); // Reddish
         headerTmp.alignment = TextAlignmentOptions.Left;
-        if (mainFont != null) headerTmp.font = mainFont;
         LayoutElement headerLe = headerObj.AddComponent<LayoutElement>();
         headerLe.minHeight = 40;
         headerLe.preferredWidth = 1100;
@@ -350,35 +481,47 @@ public class ArchiveUI : MonoBehaviour
             spriteImg.sprite = enemy.Image;
             spriteImg.preserveAspect = true;
         }
+        RectTransform spriteRT = spriteObj.GetComponent<RectTransform>();
+        if (spriteRT != null) spriteRT.sizeDelta = new Vector2(60, 60);
         LayoutElement spriteLe = spriteObj.AddComponent<LayoutElement>();
         spriteLe.minWidth = 60;
+        spriteLe.preferredWidth = 60;
         spriteLe.minHeight = 60;
+        spriteLe.preferredHeight = 60;
 
         // Name
         GameObject nameObj = new GameObject("Name");
         nameObj.transform.SetParent(entryObj.transform, false);
         TextMeshProUGUI nameTmp = nameObj.AddComponent<TextMeshProUGUI>();
+        if (mainFont != null) nameTmp.font = mainFont;
         string bossTag = isBoss ? " <color=#FF4444>[BOSS]</color>" : "";
         nameTmp.text = $"{enemy.name.ToUpper()}{bossTag}";
         nameTmp.fontSize = 28;
         nameTmp.color = Color.white;
         nameTmp.alignment = TextAlignmentOptions.Left;
-        if (mainFont != null) nameTmp.font = mainFont;
+        RectTransform nameRT = nameObj.GetComponent<RectTransform>();
+        if (nameRT != null) nameRT.sizeDelta = new Vector2(300, 60);
         LayoutElement nameLe = nameObj.AddComponent<LayoutElement>();
         nameLe.minWidth = 300;
+        nameLe.preferredWidth = 300;
         nameLe.minHeight = 60;
+        nameLe.preferredHeight = 60;
 
         // Stats
         GameObject statsObj = new GameObject("Stats");
         statsObj.transform.SetParent(entryObj.transform, false);
         TextMeshProUGUI statsTmp = statsObj.AddComponent<TextMeshProUGUI>();
+        if (mainFont != null) statsTmp.font = mainFont;
         statsTmp.text = $"<color=#FF6666>HP: {enemy.Health}</color>  <color=#FF4444>ATK: {enemy.AttackPower}</color>  <color=#4488FF>BLK: {enemy.BlockPower}</color>  <color=#44FF44>BUFF: {enemy.BuffAmount}</color>";
         statsTmp.fontSize = 22;
         statsTmp.alignment = TextAlignmentOptions.Left;
-        if (mainFont != null) statsTmp.font = mainFont;
+        RectTransform statsRT = statsObj.GetComponent<RectTransform>();
+        if (statsRT != null) statsRT.sizeDelta = new Vector2(500, 60);
         LayoutElement statsLe = statsObj.AddComponent<LayoutElement>();
         statsLe.minWidth = 500;
+        statsLe.preferredWidth = 500;
         statsLe.minHeight = 60;
+        statsLe.preferredHeight = 60;
 
         // Click handler for detail view
         Button btn = entryObj.AddComponent<Button>();
@@ -403,10 +546,19 @@ public class ArchiveUI : MonoBehaviour
         cardDetailPanel.SetActive(true);
         cardDetailPanel.transform.SetAsLastSibling();
 
-        if (cardDetailImage != null && card.Image != null)
+        if (cardDetailImage != null)
         {
-            cardDetailImage.sprite = card.Image;
-            cardDetailImage.preserveAspect = true;
+            if (card.Image != null)
+            {
+                cardDetailImage.sprite = card.Image;
+                cardDetailImage.color = Color.white;
+                cardDetailImage.preserveAspect = true;
+            }
+            else
+            {
+                cardDetailImage.sprite = null;
+                cardDetailImage.color = Color.clear;
+            }
         }
 
         if (cardDetailTitle != null)
@@ -436,10 +588,19 @@ public class ArchiveUI : MonoBehaviour
         enemyDetailPanel.SetActive(true);
         enemyDetailPanel.transform.SetAsLastSibling();
 
-        if (enemyDetailImage != null && enemy.Image != null)
+        if (enemyDetailImage != null)
         {
-            enemyDetailImage.sprite = enemy.Image;
-            enemyDetailImage.preserveAspect = true;
+            if (enemy.Image != null)
+            {
+                enemyDetailImage.sprite = enemy.Image;
+                enemyDetailImage.color = Color.white;
+                enemyDetailImage.preserveAspect = true;
+            }
+            else
+            {
+                enemyDetailImage.sprite = null;
+                enemyDetailImage.color = Color.clear;
+            }
         }
 
         if (enemyDetailName != null)

@@ -59,11 +59,10 @@ public class MainMenuController : MonoBehaviour
         AudioSystem.Instance?.PlayButtonClick();
         if (archivePanel != null)
         {
+            archivePanel.SetActive(true);
             var archiveUI = archivePanel.GetComponent<ArchiveUI>();
             if (archiveUI != null)
                 archiveUI.Show();
-            else
-                archivePanel.SetActive(true);
         }
     }
 

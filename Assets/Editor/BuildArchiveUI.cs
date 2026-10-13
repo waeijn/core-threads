@@ -303,12 +303,6 @@ public class BuildArchiveUI : Editor
         scroll.vertical = true;
         scroll.scrollSensitivity = 30;
 
-        Image scrollBg = scrollObj.AddComponent<Image>();
-        scrollBg.color = new Color(0, 0, 0, 0); // Transparent
-
-        Mask mask = scrollObj.AddComponent<Mask>();
-        mask.showMaskGraphic = false;
-
         // Viewport
         GameObject viewport = new GameObject("Viewport");
         viewport.transform.SetParent(scrollObj.transform, false);
@@ -317,10 +311,8 @@ public class BuildArchiveUI : Editor
         viewportRT.anchorMax = Vector2.one;
         viewportRT.sizeDelta = Vector2.zero;
 
-        Image viewportImg = viewport.AddComponent<Image>();
-        viewportImg.color = new Color(1, 1, 1, 0);
-        Mask viewportMask = viewport.AddComponent<Mask>();
-        viewportMask.showMaskGraphic = false;
+        // Standard 2D Rect clipping without stencil buffer or invisible alpha issues
+        viewport.AddComponent<RectMask2D>();
 
         // Content
         GameObject content = new GameObject("Content");
