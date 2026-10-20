@@ -33,17 +33,31 @@ public class CombatantView : MonoBehaviour
         Strength = 0;
         Vulnerable = 0;
         spriteRenderer.sprite = image;
+        UpdateShieldAnimatorState();
 
-        // Dynamically create vulnerableText by cloning strengthText if we don't have one
+        if (healthText != null) healthText.gameObject.SetActive(true);
+
+        // Dynamically find or create vulnerableText next to strengthText
         if (vulnerableText == null && strengthText != null)
         {
-            GameObject vulnObj = Instantiate(strengthText.gameObject, strengthText.transform.parent);
-            vulnObj.name = "VulnerableText";
-            vulnerableText = vulnObj.GetComponent<TMP_Text>();
-            vulnerableText.color = new Color(0.8f, 0.2f, 0.8f); // Purple
-            
-            // Move it next to the other status effects (left of health text/icon)
-            vulnObj.transform.SetSiblingIndex(strengthText.transform.GetSiblingIndex() + 1);
+            var existing = strengthText.transform.parent != null
+                ? strengthText.transform.parent.Find("VulnerableText")
+                : null;
+
+            if (existing != null)
+            {
+                vulnerableText = existing.GetComponent<TMP_Text>();
+            }
+            else
+            {
+                GameObject vulnObj = Instantiate(strengthText.gameObject, strengthText.transform.parent);
+                vulnObj.name = "VulnerableText";
+                vulnerableText = vulnObj.GetComponent<TMP_Text>();
+                vulnerableText.color = new Color(0.8f, 0.2f, 0.8f); // Purple
+                
+                // Move it next to the other status effects
+                vulnObj.transform.SetSiblingIndex(strengthText.transform.GetSiblingIndex() + 1);
+            }
         }
 
         UpdateHealthText();
@@ -115,6 +129,7 @@ public class CombatantView : MonoBehaviour
     public void GainBlock(int amount)
     {
         CurrentBlock += amount;
+        UpdateShieldAnimatorState();
         if (animator != null)
         {
             foreach (AnimatorControllerParameter p in animator.parameters)
@@ -135,6 +150,7 @@ public class CombatantView : MonoBehaviour
     public void ResetBlock()
     {
         CurrentBlock = 0;
+        UpdateShieldAnimatorState();
         UpdateHealthText();
     }
 
@@ -168,6 +184,7 @@ public class CombatantView : MonoBehaviour
             CurrentBlock -= blockedDamage;
             damageAmount -= blockedDamage;
         }
+        UpdateShieldAnimatorState();
 
         CurrentHealth -= damageAmount;
         if (CurrentHealth <= 0)
@@ -190,17 +207,26 @@ public class CombatantView : MonoBehaviour
     /// Applies Vulnerable stacks. Vulnerable targets take 50% more damage.
     /// Stacks decrease by 1 each turn.
     /// </summary>
-    public void ApplyVulnerable(int stacks)
+    public void ApplyVulnerable(int stacks, bool skipNextTick = false)
     {
         Vulnerable += stacks;
+        // Debuffs applied during the opponent's turn shouldn't decay before they can matter
+        if (skipNextTick) _skipNextVulnerableTick = true;
         UpdateHealthText();
     }
+
+    private bool _skipNextVulnerableTick;
 
     /// <summary>
     /// Decrements Vulnerable by 1 at the start of each turn.
     /// </summary>
     public void TickVulnerable()
     {
+        if (_skipNextVulnerableTick)
+        {
+            _skipNextVulnerableTick = false;
+            return;
+        }
         if (Vulnerable > 0)
         {
             Vulnerable--;
@@ -214,6 +240,7 @@ public class CombatantView : MonoBehaviour
     public void Cleanse()
     {
         Vulnerable = 0;
+        _skipNextVulnerableTick = false;
         UpdateHealthText();
     }
 
@@ -229,6 +256,21 @@ public class CombatantView : MonoBehaviour
                 if (p.name == "Attack")
                 {
                     animator.SetTrigger("Attack");
+                    break;
+                }
+            }
+        }
+    }
+
+    private void UpdateShieldAnimatorState()
+    {
+        if (animator != null)
+        {
+            foreach (AnimatorControllerParameter p in animator.parameters)
+            {
+                if (p.name == "HasShield")
+                {
+                    animator.SetBool("HasShield", CurrentBlock > 0);
                     break;
                 }
             }

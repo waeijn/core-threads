@@ -5,19 +5,22 @@ public class HeroView : CombatantView
 {
     public void Setup(HeroData heroData)
     {
-        var canvas = Object.FindAnyObjectByType<Canvas>();
-        if (canvas != null)
+        Transform pUI = null;
+        var canvases = Object.FindObjectsByType<Canvas>(FindObjectsInactive.Include, FindObjectsSortMode.None);
+        foreach (var c in canvases)
         {
-            var pUI = canvas.transform.Find("HealthUIContainer/PlayerHealthUI") ?? canvas.transform.Find("PlayerHealthUI");
-            if (pUI != null)
-            {
-                var hpTr  = pUI.Find("PlayerHealthText");
-                var blkTr = pUI.Find("PlayerBlockText");
-                var strTr = pUI.Find("PlayerStrengthText");
-                if (hpTr != null)  healthText = hpTr.GetComponent<TMP_Text>();
-                if (blkTr != null) blockText  = blkTr.GetComponent<TMP_Text>();
-                if (strTr != null) strengthText = strTr.GetComponent<TMP_Text>();
-            }
+            pUI = c.transform.Find("HealthUIContainer/PlayerHealthUI") ?? c.transform.Find("PlayerHealthUI");
+            if (pUI != null) break;
+        }
+
+        if (pUI != null)
+        {
+            var hpTr  = pUI.Find("PlayerHealthText");
+            var blkTr = pUI.Find("PlayerBlockText");
+            var strTr = pUI.Find("PlayerStrengthText");
+            if (hpTr != null)  healthText = hpTr.GetComponent<TMP_Text>();
+            if (blkTr != null) blockText  = blkTr.GetComponent<TMP_Text>();
+            if (strTr != null) strengthText = strTr.GetComponent<TMP_Text>();
         }
 
         if (healthText == null)

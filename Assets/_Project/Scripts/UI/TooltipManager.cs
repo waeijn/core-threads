@@ -86,6 +86,13 @@ public class TooltipManager : MonoBehaviour
     private void Update()
     {
         if (Camera.main == null) return;
+
+        // Hardcore Mode: suppress all enemy intent tooltips
+        if (GameState.IsHardcoreMode)
+        {
+            if (tooltipObj.activeSelf) HideInternal();
+            return;
+        }
         
         // Don't show world tooltips if the player is dragging or if the battle is over (reward screen)
         if (Interactions.Instance != null && !Interactions.Instance.PlayerCanHover())
