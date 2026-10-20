@@ -18,15 +18,38 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 12
   <BuffAmount>k__BackingField: 4
   <Scale>k__BackingField: {x: 4, y: 3, z: 3}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 91bfc44cf7d028c4fb2451f32efa6f52, type: 2}
   <FSMStates>k__BackingField: []
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Resource Hog
+    Intent: 1
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 16
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Memory Swell
+    Intent: 0
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 2
+    OverrideValue: 15
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Stack Press
+    Intent: 2
+    Weight: 2
+    EnergyCost: 3
+    OverrideValue: 12
+    Hits: 1
+    BonusBlock: 12
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0

@@ -18,15 +18,180 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 18
   <BuffAmount>k__BackingField: 6
   <Scale>k__BackingField: {x: 5, y: 5, z: 5}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 97fc3b5464b47b84f87a5b1928849465, type: 2}
-  <FSMStates>k__BackingField: []
+  <FSMStates>k__BackingField:
+  - StateName: 'Phase 1: Ring 0 Security'
+    MinHPPercent: 66
+    MaxHPPercent: 100
+    Moves:
+    - SkillName: Ring 0 Firewall
+      Intent: 1
+      Weight: 3
+      EnergyCost: 2
+      OverrideValue: 20
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: System Interrupt
+      Intent: 0
+      Weight: 4
+      EnergyCost: 2
+      OverrideValue: 14
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 1
+      LifeDrain: 0
+    - SkillName: Process Counter
+      Intent: 2
+      Weight: 3
+      EnergyCost: 3
+      OverrideValue: 14
+      Hits: 1
+      BonusBlock: 14
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Core Optimization
+      Intent: 3
+      Weight: 2
+      EnergyCost: 2
+      OverrideValue: 4
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+  - StateName: 'Phase 2: Privilege Escalation'
+    MinHPPercent: 33
+    MaxHPPercent: 65
+    Moves:
+    - SkillName: Thread Preemption
+      Intent: 2
+      Weight: 4
+      EnergyCost: 2
+      OverrideValue: 8
+      Hits: 2
+      BonusBlock: 8
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Resource Seizure
+      Intent: 0
+      Weight: 3
+      EnergyCost: 2
+      OverrideValue: 16
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 2
+      LifeDrain: 0
+    - SkillName: Clock Boost
+      Intent: 3
+      Weight: 3
+      EnergyCost: 1
+      OverrideValue: 3
+      Hits: 1
+      BonusBlock: 10
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Memory Purge
+      Intent: 0
+      Weight: 2
+      EnergyCost: 3
+      OverrideValue: 22
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+  - StateName: 'Phase 3: KERNEL PANIC'
+    MinHPPercent: 0
+    MaxHPPercent: 32
+    Moves:
+    - SkillName: Fatal Exception
+      Intent: 0
+      Weight: 3
+      EnergyCost: 3
+      OverrideValue: 28
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Cascade Crash
+      Intent: 0
+      Weight: 4
+      EnergyCost: 2
+      OverrideValue: 8
+      Hits: 3
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Emergency Dump
+      Intent: 1
+      Weight: 3
+      EnergyCost: 2
+      OverrideValue: 18
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 4
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: System Halt
+      Intent: 0
+      Weight: 2
+      EnergyCost: 2
+      OverrideValue: 18
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 2
+      LifeDrain: 0
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Ring 0 Firewall
+    Intent: 1
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 2
+    OverrideValue: 20
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: System Interrupt
+    Intent: 0
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 14
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 1
+    LifeDrain: 0
+  - SkillName: Process Counter
+    Intent: 2
+    Weight: 3
+    EnergyCost: 3
+    OverrideValue: 14
+    Hits: 1
+    BonusBlock: 14
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Core Optimization
+    Intent: 3
+    Weight: 2
+    EnergyCost: 2
+    OverrideValue: 4
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0

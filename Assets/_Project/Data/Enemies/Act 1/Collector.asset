@@ -18,15 +18,106 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 8
   <BuffAmount>k__BackingField: 4
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 51eeb388dd2fd1f458dc8a0c04558b07, type: 2}
-  <FSMStates>k__BackingField: []
+  <FSMStates>k__BackingField:
+  - StateName: 'Phase 1: Data Harvesting'
+    MinHPPercent: 50
+    MaxHPPercent: 100
+    Moves:
+    - SkillName: Data Siphon
+      Intent: 2
+      Weight: 4
+      EnergyCost: 2
+      OverrideValue: 7
+      Hits: 1
+      BonusBlock: 6
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Memory Cache
+      Intent: 1
+      Weight: 3
+      EnergyCost: 2
+      OverrideValue: 10
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: System Index
+      Intent: 3
+      Weight: 2
+      EnergyCost: 2
+      OverrideValue: 3
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+  - StateName: 'Phase 2: Memory Overflow'
+    MinHPPercent: 0
+    MaxHPPercent: 49
+    Moves:
+    - SkillName: Memory Dump
+      Intent: 0
+      Weight: 3
+      EnergyCost: 3
+      OverrideValue: 16
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Garbage Collector
+      Intent: 0
+      Weight: 3
+      EnergyCost: 2
+      OverrideValue: 6
+      Hits: 2
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
+    - SkillName: Crash Dump Shield
+      Intent: 1
+      Weight: 2
+      EnergyCost: 1
+      OverrideValue: 12
+      Hits: 1
+      BonusBlock: 0
+      BonusStrength: 0
+      ApplyVulnerable: 0
+      LifeDrain: 0
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Data Siphon
+    Intent: 2
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 7
+    Hits: 1
+    BonusBlock: 6
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Memory Cache
+    Intent: 1
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 2
+    OverrideValue: 10
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: System Index
+    Intent: 3
+    Weight: 2
+    EnergyCost: 2
+    OverrideValue: 3
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0

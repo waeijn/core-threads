@@ -18,15 +18,38 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 10
   <BuffAmount>k__BackingField: 3
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 3f5b3ceab0adda14487328caebe56837, type: 2}
   <FSMStates>k__BackingField: []
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Thermal Thrash
+    Intent: 0
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 18
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Voltage Spike
+    Intent: 3
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 1
+    OverrideValue: 3
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Heat Sink
+    Intent: 1
+    Weight: 2
+    EnergyCost: 1
+    OverrideValue: 10
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0

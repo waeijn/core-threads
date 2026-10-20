@@ -18,15 +18,38 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 14
   <BuffAmount>k__BackingField: 4
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 93f0af059ad5d8c46808653b4be57eb8, type: 2}
   <FSMStates>k__BackingField: []
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Arc Discharge
+    Intent: 0
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 8
+    Hits: 2
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: EM Shield
+    Intent: 1
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 2
+    OverrideValue: 15
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Static Charge
+    Intent: 0
+    Weight: 2
+    EnergyCost: 2
+    OverrideValue: 10
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 1
+    LifeDrain: 0

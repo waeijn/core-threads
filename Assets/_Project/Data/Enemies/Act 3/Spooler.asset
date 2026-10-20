@@ -18,15 +18,38 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 15
   <BuffAmount>k__BackingField: 5
   <Scale>k__BackingField: {x: 4, y: 3, z: 3}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 7e7efa28ff5a7a44b921110eba085eef, type: 2}
   <FSMStates>k__BackingField: []
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Task Queue
+    Intent: 1
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 1
+    OverrideValue: 12
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Rapid Discharge
+    Intent: 0
+    Weight: 4
+    EnergyCost: 2
+    OverrideValue: 5
+    Hits: 3
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Buffer Flush
+    Intent: 0
+    Weight: 2
+    EnergyCost: 2
+    OverrideValue: 16
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0

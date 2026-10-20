@@ -18,15 +18,38 @@ MonoBehaviour:
   <BlockPower>k__BackingField: 5
   <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 3, y: 3, z: 3}
+  <MaxEnergy>k__BackingField: 3
+  <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 3f38d3b70b31a0744bb6c509aef67dae, type: 2}
   <FSMStates>k__BackingField: []
   <MovePool>k__BackingField:
-  - Intent: 0
-    Weight: 5
-    OverrideValue: 0
-  - Intent: 1
+  - SkillName: Packet Ping
+    Intent: 0
+    Weight: 4
+    EnergyCost: 1
+    OverrideValue: 5
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Handshake Buffer
+    Intent: 1
     Weight: 3
-    OverrideValue: 0
-  - Intent: 3
-    Weight: 1
-    OverrideValue: 0
+    EnergyCost: 1
+    OverrideValue: 5
+    Hits: 1
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
+  - SkillName: Sync Double-Tap
+    Intent: 0
+    Weight: 2
+    EnergyCost: 2
+    OverrideValue: 4
+    Hits: 2
+    BonusBlock: 0
+    BonusStrength: 0
+    ApplyVulnerable: 0
+    LifeDrain: 0
