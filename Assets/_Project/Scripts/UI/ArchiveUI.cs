@@ -512,14 +512,14 @@ public class ArchiveUI : MonoBehaviour
         statsObj.transform.SetParent(entryObj.transform, false);
         TextMeshProUGUI statsTmp = statsObj.AddComponent<TextMeshProUGUI>();
         if (mainFont != null) statsTmp.font = mainFont;
-        statsTmp.text = $"<color=#FF6666>HP: {enemy.Health}</color>  <color=#FF4444>ATK: {enemy.AttackPower}</color>  <color=#4488FF>BLK: {enemy.BlockPower}</color>  <color=#44FF44>BUFF: {enemy.BuffAmount}</color>";
+        statsTmp.text = $"<color=#FF6666>HP: {enemy.Health}</color>  <color=#FF4444>ATK: {enemy.AttackPower}</color>  <color=#4488FF>BLK: {enemy.BlockPower}</color>  <color=#44FF44>BUFF: {enemy.BuffAmount}</color>  <color=#44FF44>EN: {enemy.GetEffectiveMaxEnergy()}</color>";
         statsTmp.fontSize = 22;
         statsTmp.alignment = TextAlignmentOptions.Left;
         RectTransform statsRT = statsObj.GetComponent<RectTransform>();
-        if (statsRT != null) statsRT.sizeDelta = new Vector2(500, 60);
+        if (statsRT != null) statsRT.sizeDelta = new Vector2(560, 60);
         LayoutElement statsLe = statsObj.AddComponent<LayoutElement>();
-        statsLe.minWidth = 500;
-        statsLe.preferredWidth = 500;
+        statsLe.minWidth = 560;
+        statsLe.preferredWidth = 560;
         statsLe.minHeight = 60;
         statsLe.preferredHeight = 60;
 
@@ -611,7 +611,7 @@ public class ArchiveUI : MonoBehaviour
 
         if (enemyDetailStats != null)
         {
-            enemyDetailStats.text = $"<color=#FF6666>HP: {enemy.Health}</color>\n<color=#FF4444>ATK: {enemy.AttackPower}</color>\n<color=#4488FF>BLK: {enemy.BlockPower}</color>\n<color=#44FF44>BUFF: {enemy.BuffAmount}</color>";
+            enemyDetailStats.text = $"<color=#FF6666>HP: {enemy.Health}</color>\n<color=#FF4444>ATK: {enemy.AttackPower}</color>   <color=#4488FF>BLK: {enemy.BlockPower}</color>\n<color=#44FF44>BUFF: +{enemy.BuffAmount} STR</color>\n<color=#44FF44>MAX EN: {enemy.GetEffectiveMaxEnergy()}</color>\n<color=#44FF44>DRAW: {enemy.GetEffectiveSkillDrawCount()}/TURN</color>";
         }
 
         if (enemyDetailMoves != null)
@@ -621,26 +621,26 @@ public class ArchiveUI : MonoBehaviour
             // FSM States
             if (enemy.FSMStates != null && enemy.FSMStates.Count > 0)
             {
-                moveInfo += "<color=#FFAA00>// BEHAVIOR STATES</color>\n";
+                moveInfo += "<color=#FFAA00>// AI SKILL DECK (BY STATE)</color>\n";
                 foreach (var state in enemy.FSMStates)
                 {
                     moveInfo += $"\n<color=#CCCCCC>{state.StateName}</color> (HP {state.MinHPPercent}%-{state.MaxHPPercent}%):\n";
                     foreach (var move in state.Moves)
                     {
-                        string val = move.OverrideValue > 0 ? $" [{move.OverrideValue}]" : "";
-                        moveInfo += $"  • {move.Intent}{val} (Weight: {move.Weight})\n";
+                        string val = $" [{move.GetEffectSummary(enemy.AttackPower, enemy.BlockPower, enemy.BuffAmount)}]";
+                        moveInfo += $"  • {move.GetDisplayName()}{val} (<color=#44FF44>{move.GetEffectiveEnergyCost()} EN</color>, Copies: {move.Weight})\n";
                     }
                 }
             }
 
-            // Default Move Pool
-            if (enemy.MovePool != null && enemy.MovePool.Count > 0)
+            // Default Move Pool (for enemies without multi-phase FSM states)
+            else if (enemy.MovePool != null && enemy.MovePool.Count > 0)
             {
-                moveInfo += "\n<color=#FFAA00>// DEFAULT MOVE POOL</color>\n";
+                moveInfo += "\n<color=#FFAA00>// AI SKILL DECK</color>\n";
                 foreach (var move in enemy.MovePool)
                 {
-                    string val = move.OverrideValue > 0 ? $" [{move.OverrideValue}]" : "";
-                    moveInfo += $"  • {move.Intent}{val} (Weight: {move.Weight})\n";
+                    string val = $" [{move.GetEffectSummary(enemy.AttackPower, enemy.BlockPower, enemy.BuffAmount)}]";
+                    moveInfo += $"  • {move.GetDisplayName()}{val} (<color=#44FF44>{move.GetEffectiveEnergyCost()} EN</color>, Copies: {move.Weight})\n";
                 }
             }
 
