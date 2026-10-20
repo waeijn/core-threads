@@ -570,7 +570,7 @@ TextureImporter:
     heightScale: 0.25
     normalMapFilter: 0
     flipGreenChannel: 0
-  isReadable: 1
+  isReadable: 0
   streamingMipmaps: 0
   streamingMipmapsPriority: 0
   vTOnly: 0
@@ -664,18 +664,18 @@ TextureImporter:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 862c3242c91952540800000000000000
-      internalID: 4982548662562570856
+      spriteID: 8e549d9885c7a07428c274abfa905aac
+      internalID: -1012776699
       vertices: []
       indices: 
       edges: []
@@ -684,20 +684,20 @@ TextureImporter:
       name: sniffer-Sheet_1
       rect:
         serializedVersion: 2
-        x: 218
+        x: 64
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: f106076d1b9f90cf0800000000000000
-      internalID: -285422559159099361
+      spriteID: 75cf71fcb2eb84348822363f7501a768
+      internalID: 1956600575
       vertices: []
       indices: 
       edges: []
@@ -706,20 +706,20 @@ TextureImporter:
       name: sniffer-Sheet_2
       rect:
         serializedVersion: 2
-        x: 436
+        x: 128
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 5119d5353ab272500800000000000000
-      internalID: 371313474759659797
+      spriteID: fc0ef045d87f14345bc892377c3c0b19
+      internalID: 227330784
       vertices: []
       indices: 
       edges: []
@@ -728,20 +728,20 @@ TextureImporter:
       name: sniffer-Sheet_3
       rect:
         serializedVersion: 2
-        x: 654
+        x: 192
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 3451516f76cdda910800000000000000
-      internalID: 1850377360987460931
+      spriteID: 03893375631a42f4b9650d955db2d729
+      internalID: -1889932732
       vertices: []
       indices: 
       edges: []
@@ -750,20 +750,20 @@ TextureImporter:
       name: sniffer-Sheet_4
       rect:
         serializedVersion: 2
-        x: 872
+        x: 256
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92a97af2d1d177c40800000000000000
-      internalID: 5509904680301861417
+      spriteID: 993af0b24e8a32142942c9ac51694662
+      internalID: -1272137562
       vertices: []
       indices: 
       edges: []
@@ -772,20 +772,20 @@ TextureImporter:
       name: sniffer-Sheet_5
       rect:
         serializedVersion: 2
-        x: 1090
+        x: 320
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: c1e140800e81e4520800000000000000
-      internalID: 2688113378072993308
+      spriteID: e8b9071e694b55e4db7063a8095bb22e
+      internalID: -1591489815
       vertices: []
       indices: 
       edges: []
@@ -794,20 +794,20 @@ TextureImporter:
       name: sniffer-Sheet_6
       rect:
         serializedVersion: 2
-        x: 1308
+        x: 384
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 931b2238ed1485a40800000000000000
-      internalID: 5357104180695839033
+      spriteID: 8da134878944c254e8c351bb01337f50
+      internalID: -685138554
       vertices: []
       indices: 
       edges: []
@@ -816,20 +816,20 @@ TextureImporter:
       name: sniffer-Sheet_7
       rect:
         serializedVersion: 2
-        x: 1526
+        x: 448
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: b3e3a6491b63fdf70800000000000000
-      internalID: 9214143498950426171
+      spriteID: 1af3036da743d2944b7ace3bb295fc01
+      internalID: -1932014856
       vertices: []
       indices: 
       edges: []
@@ -838,20 +838,20 @@ TextureImporter:
       name: sniffer-Sheet_8
       rect:
         serializedVersion: 2
-        x: 1744
+        x: 512
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 92f285d7b18145c70800000000000000
-      internalID: 8958812065092874025
+      spriteID: a9da5227e491e4e4e90b43d2e7eca32e
+      internalID: 2123462068
       vertices: []
       indices: 
       edges: []
@@ -860,20 +860,20 @@ TextureImporter:
       name: sniffer-Sheet_9
       rect:
         serializedVersion: 2
-        x: 1962
+        x: 576
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 9d520c07870a01b00800000000000000
-      internalID: 797313573192738265
+      spriteID: 5beb3891e63763641ad3338c3d9b7553
+      internalID: -2071061991
       vertices: []
       indices: 
       edges: []
@@ -882,20 +882,20 @@ TextureImporter:
       name: sniffer-Sheet_10
       rect:
         serializedVersion: 2
-        x: 2180
+        x: 640
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 0c3ca88d7d2557e60800000000000000
-      internalID: 7959359003451638720
+      spriteID: f1fca7f1a5eb6034ab54b441a454ae0c
+      internalID: 1871017353
       vertices: []
       indices: 
       edges: []
@@ -904,20 +904,20 @@ TextureImporter:
       name: sniffer-Sheet_11
       rect:
         serializedVersion: 2
-        x: 2398
+        x: 704
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ff6f949d9e2b1b220800000000000000
-      internalID: 2499975985609963263
+      spriteID: 4fe5e714d66fc3048a57027f01e29d3c
+      internalID: -1870227415
       vertices: []
       indices: 
       edges: []
@@ -926,20 +926,20 @@ TextureImporter:
       name: sniffer-Sheet_12
       rect:
         serializedVersion: 2
-        x: 2616
+        x: 768
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 69a29e4d7fa0506c0800000000000000
-      internalID: -4177921019771016554
+      spriteID: 4dd15402d45e74844bbb96e633448f3c
+      internalID: 1086547582
       vertices: []
       indices: 
       edges: []
@@ -948,20 +948,20 @@ TextureImporter:
       name: sniffer-Sheet_13
       rect:
         serializedVersion: 2
-        x: 2834
+        x: 832
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 505a5f80ba1b1d3a0800000000000000
-      internalID: -6642332627246930683
+      spriteID: 36fef39ee9ed2dd40be4b3bde86911e6
+      internalID: 545742335
       vertices: []
       indices: 
       edges: []
@@ -970,20 +970,20 @@ TextureImporter:
       name: sniffer-Sheet_14
       rect:
         serializedVersion: 2
-        x: 3052
+        x: 896
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: bc70ce7e34c69f1b0800000000000000
-      internalID: -5622343620885739573
+      spriteID: f1c8b8aeecd644b44b0140039d6ee790
+      internalID: -1195971088
       vertices: []
       indices: 
       edges: []
@@ -992,20 +992,20 @@ TextureImporter:
       name: sniffer-Sheet_15
       rect:
         serializedVersion: 2
-        x: 3270
+        x: 960
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 77fd2d2d94cec0d40800000000000000
-      internalID: 5552072242454781815
+      spriteID: 3f838a6dec525ee44ade1e4db1e50d99
+      internalID: 590911094
       vertices: []
       indices: 
       edges: []
@@ -1014,42 +1014,20 @@ TextureImporter:
       name: sniffer-Sheet_16
       rect:
         serializedVersion: 2
-        x: 3488
+        x: 1024
         y: 0
-        width: 218
-        height: 222
+        width: 64
+        height: 64
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: d50e0ce410bcf1b80800000000000000
-      internalID: -8421789571682869155
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: sniffer-Sheet_17
-      rect:
-        serializedVersion: 2
-        x: 3706
-        y: 0
-        width: 218
-        height: 222
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 1172135e1eabbd720800000000000000
-      internalID: 2872094666754434833
+      spriteID: 05a9885759c4a4d4a91415dd77a65b58
+      internalID: -228261144
       vertices: []
       indices: 
       edges: []
@@ -1068,26 +1046,25 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":18.0,"y":1.0},"gridSpriteSize":{"x":218.0,"y":222.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      sniffer-Sheet_0: 4982548662562570856
-      sniffer-Sheet_1: -285422559159099361
-      sniffer-Sheet_10: 7959359003451638720
-      sniffer-Sheet_11: 2499975985609963263
-      sniffer-Sheet_12: -4177921019771016554
-      sniffer-Sheet_13: -6642332627246930683
-      sniffer-Sheet_14: -5622343620885739573
-      sniffer-Sheet_15: 5552072242454781815
-      sniffer-Sheet_16: -8421789571682869155
-      sniffer-Sheet_17: 2872094666754434833
-      sniffer-Sheet_2: 371313474759659797
-      sniffer-Sheet_3: 1850377360987460931
-      sniffer-Sheet_4: 5509904680301861417
-      sniffer-Sheet_5: 2688113378072993308
-      sniffer-Sheet_6: 5357104180695839033
-      sniffer-Sheet_7: 9214143498950426171
-      sniffer-Sheet_8: 8958812065092874025
-      sniffer-Sheet_9: 797313573192738265
+      sniffer-Sheet_0: -1012776699
+      sniffer-Sheet_1: 1956600575
+      sniffer-Sheet_10: 1871017353
+      sniffer-Sheet_11: -1870227415
+      sniffer-Sheet_12: 1086547582
+      sniffer-Sheet_13: 545742335
+      sniffer-Sheet_14: -1195971088
+      sniffer-Sheet_15: 590911094
+      sniffer-Sheet_16: -228261144
+      sniffer-Sheet_2: 227330784
+      sniffer-Sheet_3: -1889932732
+      sniffer-Sheet_4: -1272137562
+      sniffer-Sheet_5: -1591489815
+      sniffer-Sheet_6: -685138554
+      sniffer-Sheet_7: -1932014856
+      sniffer-Sheet_8: 2123462068
+      sniffer-Sheet_9: -2071061991
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
