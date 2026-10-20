@@ -33,6 +33,39 @@ public static class GameState
     /// <summary>Player's max Energy/Mana.</summary>
     public static int PlayerMaxMana = 3;
 
+    /// <summary>Whether the current run is in Hardcore Mode (Enemy Intents hidden).</summary>
+    public static bool IsHardcoreMode = false;
+
+    /// <summary>PlayerPrefs key storing whether Hardcore Mode has been unlocked by clearing the game once.</summary>
+    private const string HARDCORE_UNLOCKED_KEY = "CoreThreads_HardcoreUnlocked";
+
+    /// <summary>Returns true if the player has cleared the game at least once to unlock Hardcore Mode.</summary>
+    public static bool IsHardcoreUnlocked()
+    {
+        return PlayerPrefs.GetInt(HARDCORE_UNLOCKED_KEY, 0) == 1;
+    }
+
+    /// <summary>Permanently unlocks Hardcore Mode in PlayerPrefs.</summary>
+    public static void UnlockHardcoreMode()
+    {
+        if (!IsHardcoreUnlocked())
+        {
+            PlayerPrefs.SetInt(HARDCORE_UNLOCKED_KEY, 1);
+            PlayerPrefs.Save();
+            Debug.Log("<color=cyan>[GameState]</color> HARDCORE MODE UNLOCKED!");
+        }
+    }
+
+    /// <summary>Toggles the Hardcore Mode unlock state in PlayerPrefs (useful for testing/demos).</summary>
+    public static bool ToggleHardcoreUnlock()
+    {
+        bool newState = !IsHardcoreUnlocked();
+        PlayerPrefs.SetInt(HARDCORE_UNLOCKED_KEY, newState ? 1 : 0);
+        PlayerPrefs.Save();
+        Debug.Log($"<color=yellow>[GameState]</color> Hardcore Mode Unlock Toggled -> {(newState ? "UNLOCKED" : "LOCKED")}");
+        return newState;
+    }
+
     /// <summary>Whether the game has been initialized.</summary>
     public static bool IsInitialized = false;
 
@@ -55,6 +88,7 @@ public static class GameState
         PlayerCurrentHP = -1;
         PlayerMaxHP = -1;
         PlayerMaxMana = 3;
+        IsHardcoreMode = false;
         IsInitialized = false;
         HeroData = null;
         PlayerDeck = null;
@@ -90,7 +124,7 @@ public static class GameState
     /// </summary>
     public static bool PurgeCard(CardData card)
     {
-        if (PlayerDeck == null || card == null) return false;
+        if (PlayerDeck == null || card != null == false) return false;
         if (!CanPurge())
         {
             Debug.LogWarning($"[GameState] Cannot purge — deck is at minimum size ({MIN_DECK_SIZE}).");
@@ -134,7 +168,6 @@ public static class GameState
         return sorted;
     }
 
-
     /// <summary>
     /// Returns how many copies of a specific card are in the deck.
     /// </summary>
@@ -145,7 +178,15 @@ public static class GameState
     }
 
     /// <summary>
-    /// Resets run progress (called on player defeat).
+    /// Returns true if there is an active in-progress run with a generated map that can be continued.
+    /// </summary>
+    public static bool HasActiveRun()
+    {
+        return IsInitialized && GeneratedMap != null && !IsRunComplete() && PlayerCurrentHP != 0;
+    }
+
+    /// <summary>
+    /// Resets run progress so a brand-new map layout, HP, and starter deck are generated.
     /// </summary>
     public static void ResetRun()
     {
@@ -156,6 +197,7 @@ public static class GameState
         PlayerMaxHP = -1;
         PlayerMaxMana = 3;
         PlayerDeck = null;
+        IsInitialized = false;
     }
 
     /// <summary>
@@ -196,4 +238,3 @@ public static class GameState
         return true;
     }
 }
-

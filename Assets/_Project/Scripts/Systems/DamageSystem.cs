@@ -22,6 +22,12 @@ public class DamageSystem : MonoBehaviour
     private IEnumerator DealDamagePerformer(DealDamageGA dealDamageGA)
     {
         AudioSystem.Instance?.PlayAttack();
+
+        var hero = HeroSystem.Instance != null ? HeroSystem.Instance.HeroView : null;
+        if (hero != null && dealDamageGA.Targets.Count > 0 && !dealDamageGA.Targets.Contains(hero))
+        {
+            hero.PlayAttackAnimation();
+        }
         foreach (var target in dealDamageGA.Targets)
         {
             int before = target.CurrentHealth + target.CurrentBlock;
@@ -58,7 +64,7 @@ public class DamageSystem : MonoBehaviour
         AudioSystem.Instance?.PlayDebuff();
         foreach (var target in applyVulnerableGA.Targets)
         {
-            target.ApplyVulnerable(applyVulnerableGA.Amount);
+            target.ApplyVulnerable(applyVulnerableGA.Amount, skipNextTick: target is HeroView);
 
             var feedback = CombatFeedbackSystem.Instance;
             if (feedback != null)

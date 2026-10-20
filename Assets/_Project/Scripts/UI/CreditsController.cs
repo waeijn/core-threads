@@ -14,6 +14,9 @@ public class CreditsController : MonoBehaviour
 
     private void Start()
     {
+        // Ensure Hardcore Mode is unlocked upon reaching the credits
+        GameState.UnlockHardcoreMode();
+
         // Smoothly fade from white (continuing the boss explosion flash)
         Canvas canvas = Object.FindAnyObjectByType<Canvas>();
         if (canvas != null)

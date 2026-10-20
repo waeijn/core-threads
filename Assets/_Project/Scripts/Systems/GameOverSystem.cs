@@ -57,6 +57,8 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
                 if (GameState.CurrentAct >= 3)
                 {
+                    // Unlock Hardcore Mode upon completing the game (Act 3 Boss defeated)
+                    GameState.UnlockHardcoreMode();
                     StartCoroutine(PlayFinalBossSequence());
                 }
                 else
