@@ -5,7 +5,7 @@ using TMPro;
 
 public class AutoBuildSettings : Editor
 {
-    [MenuItem("Tools/Auto-Build Settings UI")]
+    [MenuItem("Tools/Core Threads/UI Builders/Auto-Build Settings UI")]
     public static void BuildUI()
     {
         GameObject settingsPanel = null;

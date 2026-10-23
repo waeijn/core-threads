@@ -7,7 +7,7 @@ using TMPro;
 
 public class BuildArchiveUI : Editor
 {
-    [MenuItem("Tools/Build Archive UI")]
+    [MenuItem("Tools/Core Threads/UI Builders/Build Archive UI")]
     public static void Build()
     {
         // Open MainMenu scene
@@ -350,8 +350,8 @@ public class BuildArchiveUI : Editor
         Image bg = popup.AddComponent<Image>();
         bg.color = new Color(0.08f, 0.08f, 0.12f, 0.98f);
         RectTransform rt = popup.GetComponent<RectTransform>();
-        rt.anchorMin = new Vector2(0.2f, 0.1f);
-        rt.anchorMax = new Vector2(0.8f, 0.9f);
+        rt.anchorMin = new Vector2(0.15f, 0.1f);
+        rt.anchorMax = new Vector2(0.85f, 0.9f);
         rt.sizeDelta = Vector2.zero;
 
         // Card Image (left side)
@@ -361,20 +361,25 @@ public class BuildArchiveUI : Editor
         cardImg.preserveAspect = true;
         RectTransform cardImgRT = cardImgObj.GetComponent<RectTransform>();
         cardImgRT.anchorMin = new Vector2(0.05f, 0.2f);
-        cardImgRT.anchorMax = new Vector2(0.4f, 0.9f);
+        cardImgRT.anchorMax = new Vector2(0.38f, 0.9f);
         cardImgRT.sizeDelta = Vector2.zero;
 
         // Card Title
         GameObject titleObj = new GameObject("CardTitle");
         titleObj.transform.SetParent(popup.transform, false);
         TextMeshProUGUI titleTmp = titleObj.AddComponent<TextMeshProUGUI>();
-        titleTmp.fontSize = 36;
+        titleTmp.fontSize = 32;
+        titleTmp.enableAutoSizing = true;
+        titleTmp.fontSizeMin = 18;
+        titleTmp.fontSizeMax = 32;
+        titleTmp.textWrappingMode = TextWrappingModes.Normal;
+        titleTmp.overflowMode = TextOverflowModes.Ellipsis;
         titleTmp.color = new Color(0.2f, 0.8f, 1f);
         titleTmp.alignment = TextAlignmentOptions.TopLeft;
         if (font != null) titleTmp.font = font;
         RectTransform titleRT = titleObj.GetComponent<RectTransform>();
-        titleRT.anchorMin = new Vector2(0.45f, 0.75f);
-        titleRT.anchorMax = new Vector2(0.95f, 0.9f);
+        titleRT.anchorMin = new Vector2(0.42f, 0.74f);
+        titleRT.anchorMax = new Vector2(0.90f, 0.92f);
         titleRT.sizeDelta = Vector2.zero;
 
         // Card Stats
@@ -382,26 +387,33 @@ public class BuildArchiveUI : Editor
         statsObj.transform.SetParent(popup.transform, false);
         TextMeshProUGUI statsTmp = statsObj.AddComponent<TextMeshProUGUI>();
         statsTmp.fontSize = 22;
+        statsTmp.enableAutoSizing = true;
+        statsTmp.fontSizeMin = 14;
+        statsTmp.fontSizeMax = 22;
+        statsTmp.textWrappingMode = TextWrappingModes.Normal;
         statsTmp.color = Color.white;
         statsTmp.alignment = TextAlignmentOptions.TopLeft;
         if (font != null) statsTmp.font = font;
         RectTransform statsRT = statsObj.GetComponent<RectTransform>();
-        statsRT.anchorMin = new Vector2(0.45f, 0.6f);
-        statsRT.anchorMax = new Vector2(0.95f, 0.75f);
+        statsRT.anchorMin = new Vector2(0.42f, 0.60f);
+        statsRT.anchorMax = new Vector2(0.90f, 0.73f);
         statsRT.sizeDelta = Vector2.zero;
 
         // Card Description
         GameObject descObj = new GameObject("CardDescription");
         descObj.transform.SetParent(popup.transform, false);
         TextMeshProUGUI descTmp = descObj.AddComponent<TextMeshProUGUI>();
-        descTmp.fontSize = 28;
+        descTmp.fontSize = 24;
+        descTmp.enableAutoSizing = true;
+        descTmp.fontSizeMin = 16;
+        descTmp.fontSizeMax = 24;
         descTmp.color = new Color(0.85f, 0.85f, 0.85f);
         descTmp.alignment = TextAlignmentOptions.TopLeft;
-        descTmp.enableWordWrapping = true;
+        descTmp.textWrappingMode = TextWrappingModes.Normal;
         if (font != null) descTmp.font = font;
         RectTransform descRT = descObj.GetComponent<RectTransform>();
-        descRT.anchorMin = new Vector2(0.45f, 0.2f);
-        descRT.anchorMax = new Vector2(0.95f, 0.6f);
+        descRT.anchorMin = new Vector2(0.42f, 0.15f);
+        descRT.anchorMax = new Vector2(0.90f, 0.58f);
         descRT.sizeDelta = Vector2.zero;
 
         // Close Button

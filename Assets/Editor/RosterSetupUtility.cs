@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class RosterSetupUtility : Editor
 {
-    [MenuItem("Tools/Setup Enemy Rosters")]
+    [MenuItem("Tools/Core Threads/Setup/Setup Enemy Rosters")]
     public static void SetupRosters()
     {
         string rosterFolder = "Assets/_Project/Data/Rosters";

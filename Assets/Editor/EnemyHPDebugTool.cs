@@ -3,7 +3,7 @@ using UnityEditor;
 
 public class EnemyHPDebugTool : Editor
 {
-    [MenuItem("Tools/Debug: Set All Enemy HP to 1")]
+    [MenuItem("Tools/Core Threads/Debug/Set All Enemy HP to 1")]
     public static void SetHPToOne()
     {
         string[] guids = AssetDatabase.FindAssets("t:EnemyData");
@@ -29,7 +29,7 @@ public class EnemyHPDebugTool : Editor
         Debug.Log($"[Debug] Set {count} enemies to 1 HP for testing.");
     }
 
-    [MenuItem("Tools/Debug: Restore Placeholder Enemy HP")]
+    [MenuItem("Tools/Core Threads/Debug/Restore Placeholder Enemy HP")]
     public static void RestoreHP()
     {
         // We can just wipe their HP to 0 and let EnemyAnimationSetupUtility restore them!

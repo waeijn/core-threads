@@ -55,7 +55,7 @@ public static class EnemyAnimationSetupUtility
 
     // ── Main Entry Point ───────────────────────────────────────────────────
 
-    [MenuItem("Tools/Setup Enemy Animations")]
+    [MenuItem("Tools/Core Threads/Setup/Setup Enemy Animations")]
     public static void SetupAllEnemyAnimations()
     {
         int processed = 0;

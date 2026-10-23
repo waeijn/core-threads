@@ -540,11 +540,82 @@ public class ArchiveUI : MonoBehaviour
 
     // ── Card Detail Popup ──────────────────────────────────────────────────
 
+    private void FormatCardDetailLayout()
+    {
+        if (cardDetailPanel != null)
+        {
+            var panelRT = cardDetailPanel.GetComponent<RectTransform>();
+            if (panelRT != null)
+            {
+                // Comfortable width matching EnemyDetailPanel (70% screen width, 80% screen height)
+                panelRT.anchorMin = new Vector2(0.15f, 0.10f);
+                panelRT.anchorMax = new Vector2(0.85f, 0.90f);
+                panelRT.offsetMin = Vector2.zero;
+                panelRT.offsetMax = Vector2.zero;
+            }
+        }
+
+        if (cardDetailTitle != null)
+        {
+            cardDetailTitle.enableAutoSizing = true;
+            cardDetailTitle.fontSizeMin = 18f;
+            cardDetailTitle.fontSizeMax = 32f;
+            cardDetailTitle.textWrappingMode = TextWrappingModes.Normal;
+            cardDetailTitle.overflowMode = TextOverflowModes.Ellipsis;
+
+            var titleRT = cardDetailTitle.GetComponent<RectTransform>();
+            if (titleRT != null)
+            {
+                // Generous margins: past card image on left, safe from Close Button on right
+                titleRT.anchorMin = new Vector2(0.42f, 0.74f);
+                titleRT.anchorMax = new Vector2(0.90f, 0.92f);
+                titleRT.offsetMin = Vector2.zero;
+                titleRT.offsetMax = Vector2.zero;
+            }
+        }
+
+        if (cardDetailStats != null)
+        {
+            cardDetailStats.enableAutoSizing = true;
+            cardDetailStats.fontSizeMin = 14f;
+            cardDetailStats.fontSizeMax = 22f;
+            cardDetailStats.textWrappingMode = TextWrappingModes.Normal;
+
+            var statsRT = cardDetailStats.GetComponent<RectTransform>();
+            if (statsRT != null)
+            {
+                statsRT.anchorMin = new Vector2(0.42f, 0.60f);
+                statsRT.anchorMax = new Vector2(0.90f, 0.73f);
+                statsRT.offsetMin = Vector2.zero;
+                statsRT.offsetMax = Vector2.zero;
+            }
+        }
+
+        if (cardDetailDescription != null)
+        {
+            cardDetailDescription.enableAutoSizing = true;
+            cardDetailDescription.fontSizeMin = 16f;
+            cardDetailDescription.fontSizeMax = 24f;
+            cardDetailDescription.textWrappingMode = TextWrappingModes.Normal;
+
+            var descRT = cardDetailDescription.GetComponent<RectTransform>();
+            if (descRT != null)
+            {
+                descRT.anchorMin = new Vector2(0.42f, 0.15f);
+                descRT.anchorMax = new Vector2(0.90f, 0.58f);
+                descRT.offsetMin = Vector2.zero;
+                descRT.offsetMax = Vector2.zero;
+            }
+        }
+    }
+
     private void ShowCardDetail(CardData card)
     {
         if (cardDetailPanel == null) return;
         cardDetailPanel.SetActive(true);
         cardDetailPanel.transform.SetAsLastSibling();
+
+        FormatCardDetailLayout();
 
         if (cardDetailImage != null)
         {

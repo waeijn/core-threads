@@ -4,7 +4,7 @@ using System.Collections.Generic;
 
 public class SpriteSheetImporter : Editor
 {
-    [MenuItem("Tools/Force Slice All Enemy Sprites")]
+    [MenuItem("Tools/Core Threads/Import/Force Slice All Enemy Sprites")]
     public static void SliceAllSprites()
     {
         string rootDir = "Assets/_Project/Sprites/Characters/Enemies";

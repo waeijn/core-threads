@@ -7,7 +7,7 @@ using TMPro;
 
 public class BuildCreditsScene : Editor
 {
-    [MenuItem("Tools/Build Credits Scene")]
+    [MenuItem("Tools/Core Threads/UI Builders/Build Credits Scene")]
     public static void BuildScene()
     {
         Scene scene = EditorSceneManager.NewScene(NewSceneSetup.EmptyScene, NewSceneMode.Single);
