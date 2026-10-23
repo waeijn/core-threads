@@ -155,14 +155,17 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
     private void OnReturnClicked()
     {
-        if (HeroSystem.Instance.HeroView.IsDead)
+        bool wasDead = HeroSystem.Instance.HeroView.IsDead;
+        bool hadActiveRun = GameState.IsInitialized && GameState.GeneratedMap != null;
+
+        if (wasDead)
         {
             // Defeat — full reset
             GameState.ResetRun();
         }
 
-        // Return to map (always)
-        if (GameState.IsInitialized)
+        // Return to map if playing an active run, otherwise reload current scene (for editor testing)
+        if (hadActiveRun || GameState.IsInitialized)
         {
             SceneManager.LoadScene("MapScene");
         }
@@ -216,19 +219,30 @@ public class GameOverSystem : Singleton<GameOverSystem>
 
         // Flash screen white
         GameObject flashObj = new GameObject("WhiteFlash");
-        Canvas canvas = Object.FindAnyObjectByType<Canvas>();
+        Canvas canvas = gameOverPanel != null ? gameOverPanel.GetComponentInParent<Canvas>() : CanvasHelper.GetSceneCanvas(gameObject.scene);
         if (canvas != null)
         {
             flashObj.transform.SetParent(canvas.transform, false);
+            flashObj.transform.SetAsLastSibling();
             Image flashImg = flashObj.AddComponent<Image>();
+            flashImg.raycastTarget = false;
             flashImg.color = new Color(1, 1, 1, 0);
             RectTransform rect = flashObj.GetComponent<RectTransform>();
             rect.anchorMin = Vector2.zero;
             rect.anchorMax = Vector2.one;
             rect.sizeDelta = Vector2.zero;
 
-            flashImg.DOFade(1f, 1.5f).SetEase(Ease.InOutSine);
-            yield return new WaitForSeconds(2.0f);
+            float elapsed = 0f;
+            float duration = 1.5f;
+            while (elapsed < duration)
+            {
+                elapsed += Time.deltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+                flashImg.color = new Color(1, 1, 1, t);
+                yield return null;
+            }
+            flashImg.color = Color.white;
+            yield return new WaitForSeconds(0.5f);
         }
         else
         {

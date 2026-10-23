@@ -5933,7 +5933,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::NewMonoBehaviourScript
   heroData: {fileID: 11400000, guid: 152a6bf5114c9034c8be1ac7b2bea8e7, type: 2}
   fallbackEnemyDatas:
-  - {fileID: 11400000, guid: a95f96165e194f244a8870d2c12fcc46, type: 2}
+  - {fileID: 11400000, guid: ab11784bdc82c7e4b9dce3492c932825, type: 2}
   backgroundRenderer: {fileID: 48862296}
 --- !u!1 &1090185991
 GameObject:

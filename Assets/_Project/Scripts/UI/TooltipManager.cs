@@ -5,6 +5,7 @@ using UnityEngine.UI;
 public class TooltipManager : MonoBehaviour
 {
     private static TooltipManager instance;
+    public static TooltipManager Instance => instance;
     private GameObject tooltipObj;
     private TMP_Text tooltipText;
     private RectTransform rectTransform;
