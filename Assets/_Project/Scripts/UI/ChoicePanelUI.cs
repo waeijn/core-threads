@@ -63,16 +63,10 @@ public class ChoicePanelUI : MonoBehaviour
     private void AddHoverSound(Button button)
     {
         if (button == null) return;
-        var trigger = button.gameObject.GetComponent<UnityEngine.EventSystems.EventTrigger>() ?? button.gameObject.AddComponent<UnityEngine.EventSystems.EventTrigger>();
-        trigger.triggers.RemoveAll(e => e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerEnter || e.eventID == UnityEngine.EventSystems.EventTriggerType.PointerExit);
-        
-        var enterEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerEnter };
-        enterEntry.callback.AddListener((data) => { if (button.interactable) AudioSystem.Instance?.PlayButtonHover(); });
-        trigger.triggers.Add(enterEntry);
-
-        var exitEntry = new UnityEngine.EventSystems.EventTrigger.Entry { eventID = UnityEngine.EventSystems.EventTriggerType.PointerExit };
-        exitEntry.callback.AddListener((data) => { AudioSystem.Instance?.StopHoverSFX(); });
-        trigger.triggers.Add(exitEntry);
+        if (button.gameObject.GetComponent<UIHoverSound>() == null)
+        {
+            button.gameObject.AddComponent<UIHoverSound>();
+        }
     }
 
     private Vector2 optionAOriginalPos;

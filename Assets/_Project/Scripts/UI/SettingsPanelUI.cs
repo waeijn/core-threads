@@ -104,8 +104,18 @@ public class SettingsPanelUI : MonoBehaviour
         }
         else
         {
-            Debug.Log("[Settings] Return to Main Menu");
-            UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+            ConfirmationModalUI.Show(
+                title: "RETURN TO MAIN MENU?",
+                message: "Are you sure you want to return to the Main Menu?\n\nAny unsaved combat progress will be abandoned.",
+                confirmText: "QUIT TO MENU",
+                cancelText: "RESUME GAME",
+                onConfirm: () =>
+                {
+                    Debug.Log("[Settings] Confirmed Return to Main Menu");
+                    UnityEngine.SceneManagement.SceneManager.LoadScene("MainMenu");
+                },
+                isDanger: true
+            );
         }
     }
 

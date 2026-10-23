@@ -140,13 +140,32 @@ public class MainMenuController : MonoBehaviour
 
     public void OnNormalModeClicked()
     {
-        StartNewGameInMode(false);
+        TryStartNewGame(false);
     }
 
     public void OnHardcoreModeClicked()
     {
         if (GameState.IsHardcoreUnlocked())
-            StartNewGameInMode(true);
+            TryStartNewGame(true);
+    }
+
+    private void TryStartNewGame(bool hardcore)
+    {
+        if (GameState.HasActiveRun())
+        {
+            ConfirmationModalUI.Show(
+                title: "OVERWRITE ACTIVE RUN?",
+                message: $"An active run (Act {GameState.CurrentAct}, {(GameState.IsHardcoreMode ? "Hardcore" : "Normal")}) is currently in progress.\n\nStarting a new run will overwrite your existing progress.\nDo you want to proceed?",
+                confirmText: "START NEW RUN",
+                cancelText: "CANCEL",
+                onConfirm: () => StartNewGameInMode(hardcore),
+                isDanger: true
+            );
+        }
+        else
+        {
+            StartNewGameInMode(hardcore);
+        }
     }
 
     private void Update()
@@ -229,7 +248,7 @@ public class MainMenuController : MonoBehaviour
     private void BuildModeSelectionPopup()
     {
         Canvas canvas = GetComponentInParent<Canvas>();
-        if (canvas == null) canvas = Object.FindAnyObjectByType<Canvas>();
+        if (canvas == null) canvas = CanvasHelper.GetSceneCanvas(gameObject.scene);
         if (canvas == null)
         {
             StartNewGameInMode(false);
@@ -554,10 +573,20 @@ public class MainMenuController : MonoBehaviour
     private void OnQuitClicked()
     {
         AudioSystem.Instance?.PlayButtonClick();
-        Debug.Log("[MainMenu] Quit Clicked");
-        Application.Quit();
+        ConfirmationModalUI.Show(
+            title: "TERMINATE APPLICATION?",
+            message: "Are you sure you want to terminate the application and return to desktop?",
+            confirmText: "QUIT TO DESKTOP",
+            cancelText: "CANCEL",
+            onConfirm: () =>
+            {
+                Debug.Log("[MainMenu] Confirmed Quit Clicked");
+                Application.Quit();
 #if UNITY_EDITOR
-        UnityEditor.EditorApplication.isPlaying = false;
+                UnityEditor.EditorApplication.isPlaying = false;
 #endif
+            },
+            isDanger: true
+        );
     }
 }
