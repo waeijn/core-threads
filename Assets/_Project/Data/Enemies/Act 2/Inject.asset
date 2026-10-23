@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Inject
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: 219503078657484551, guid: 2ce01d8f1e0065d4d8b529cb8a34e09b, type: 3}
-  <Health>k__BackingField: 100
-  <AttackPower>k__BackingField: 14
-  <BlockPower>k__BackingField: 12
-  <BuffAmount>k__BackingField: 5
+  <Health>k__BackingField: 75
+  <AttackPower>k__BackingField: 10
+  <BlockPower>k__BackingField: 8
+  <BuffAmount>k__BackingField: 3
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -30,7 +30,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 10
+      OverrideValue: 7
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
       Intent: 1
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 14
+      OverrideValue: 9
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
       Intent: 3
       Weight: 2
       EnergyCost: 2
-      OverrideValue: 4
+      OverrideValue: 2
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 6
+      OverrideValue: 4
       Hits: 3
       BonusBlock: 0
       BonusStrength: 0
@@ -74,17 +74,17 @@ MonoBehaviour:
       Intent: 0
       Weight: 2
       EnergyCost: 2
-      OverrideValue: 12
+      OverrideValue: 8
       Hits: 1
       BonusBlock: 0
-      BonusStrength: 3
+      BonusStrength: 2
       ApplyVulnerable: 0
       LifeDrain: 0
     - SkillName: Zero-Day Exploit
       Intent: 0
       Weight: 2
       EnergyCost: 3
-      OverrideValue: 22
+      OverrideValue: 15
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -95,7 +95,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 10
+    OverrideValue: 7
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 14
+    OverrideValue: 9
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
     Intent: 3
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 4
+    OverrideValue: 2
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

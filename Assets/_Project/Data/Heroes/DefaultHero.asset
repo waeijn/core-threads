@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: DefaultHero
   m_EditorClassIdentifier: Assembly-CSharp::HeroData
   <Image>k__BackingField: {fileID: 1766820177, guid: 6b05799c4993e4c47b3a5aa2e927260c, type: 3}
-  <Health>k__BackingField: 44
+  <Health>k__BackingField: 50
   <Deck>k__BackingField:
   - {fileID: 11400000, guid: 96e2cd19ea389f8459c2db1d21178301, type: 2}
   - {fileID: 11400000, guid: 96e2cd19ea389f8459c2db1d21178301, type: 2}

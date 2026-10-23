@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Kernel
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: 3002207226581056727, guid: 34919e2819015b44db02d2ee0e127bed, type: 3}
-  <Health>k__BackingField: 150
-  <AttackPower>k__BackingField: 20
-  <BlockPower>k__BackingField: 18
-  <BuffAmount>k__BackingField: 6
+  <Health>k__BackingField: 110
+  <AttackPower>k__BackingField: 14
+  <BlockPower>k__BackingField: 12
+  <BuffAmount>k__BackingField: 3
   <Scale>k__BackingField: {x: 5, y: 5, z: 5}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -30,7 +30,7 @@ MonoBehaviour:
       Intent: 1
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 20
+      OverrideValue: 13
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 14
+      OverrideValue: 9
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -50,9 +50,9 @@ MonoBehaviour:
       Intent: 2
       Weight: 3
       EnergyCost: 3
-      OverrideValue: 14
+      OverrideValue: 9
       Hits: 1
-      BonusBlock: 14
+      BonusBlock: 9
       BonusStrength: 0
       ApplyVulnerable: 0
       LifeDrain: 0
@@ -60,7 +60,7 @@ MonoBehaviour:
       Intent: 3
       Weight: 2
       EnergyCost: 2
-      OverrideValue: 4
+      OverrideValue: 2
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -74,9 +74,9 @@ MonoBehaviour:
       Intent: 2
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 8
+      OverrideValue: 5
       Hits: 2
-      BonusBlock: 8
+      BonusBlock: 6
       BonusStrength: 0
       ApplyVulnerable: 0
       LifeDrain: 0
@@ -84,19 +84,19 @@ MonoBehaviour:
       Intent: 0
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 16
+      OverrideValue: 11
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
-      ApplyVulnerable: 2
+      ApplyVulnerable: 1
       LifeDrain: 0
     - SkillName: Clock Boost
       Intent: 3
       Weight: 3
       EnergyCost: 1
-      OverrideValue: 3
+      OverrideValue: 2
       Hits: 1
-      BonusBlock: 10
+      BonusBlock: 7
       BonusStrength: 0
       ApplyVulnerable: 0
       LifeDrain: 0
@@ -104,7 +104,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 2
       EnergyCost: 3
-      OverrideValue: 22
+      OverrideValue: 14
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -118,7 +118,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 3
       EnergyCost: 3
-      OverrideValue: 28
+      OverrideValue: 18
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -128,7 +128,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 8
+      OverrideValue: 5
       Hits: 3
       BonusBlock: 0
       BonusStrength: 0
@@ -138,28 +138,28 @@ MonoBehaviour:
       Intent: 1
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 18
+      OverrideValue: 12
       Hits: 1
       BonusBlock: 0
-      BonusStrength: 4
+      BonusStrength: 2
       ApplyVulnerable: 0
       LifeDrain: 0
     - SkillName: System Halt
       Intent: 0
       Weight: 2
       EnergyCost: 2
-      OverrideValue: 18
+      OverrideValue: 12
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
-      ApplyVulnerable: 2
+      ApplyVulnerable: 1
       LifeDrain: 0
   <MovePool>k__BackingField:
   - SkillName: Ring 0 Firewall
     Intent: 1
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 20
+    OverrideValue: 13
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -169,7 +169,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 14
+    OverrideValue: 9
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -179,9 +179,9 @@ MonoBehaviour:
     Intent: 2
     Weight: 3
     EnergyCost: 3
-    OverrideValue: 14
+    OverrideValue: 9
     Hits: 1
-    BonusBlock: 14
+    BonusBlock: 9
     BonusStrength: 0
     ApplyVulnerable: 0
     LifeDrain: 0
@@ -189,7 +189,7 @@ MonoBehaviour:
     Intent: 3
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 4
+    OverrideValue: 2
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

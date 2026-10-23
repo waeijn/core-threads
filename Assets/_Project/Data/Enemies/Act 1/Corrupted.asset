@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Corrupted
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -1211148416, guid: 562894909ffa5f64ca3ee2e23dd6edc5, type: 3}
-  <Health>k__BackingField: 30
-  <AttackPower>k__BackingField: 8
-  <BlockPower>k__BackingField: 7
-  <BuffAmount>k__BackingField: 3
+  <Health>k__BackingField: 22
+  <AttackPower>k__BackingField: 6
+  <BlockPower>k__BackingField: 5
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 3, y: 3, z: 3}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 8
+    OverrideValue: 6
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 7
+    OverrideValue: 5
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 6
+    OverrideValue: 4
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

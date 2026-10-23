@@ -27,8 +27,12 @@ public static class EncounterPoolManager
             }
         }
 
-        // Sort by layer so we process earliest nodes first
-        combatNodes.Sort((a, b) => a.Layer.CompareTo(b.Layer));
+        // Sort by layer, then column to ensure strictly deterministic left-to-right assignment
+        combatNodes.Sort((a, b) =>
+        {
+            int layerCmp = a.Layer.CompareTo(b.Layer);
+            return layerCmp != 0 ? layerCmp : a.Column.CompareTo(b.Column);
+        });
 
         // 2. Build our pools
         List<EnemyData> nativePool = new List<EnemyData>(roster.StandardEnemies);
@@ -45,6 +49,14 @@ public static class EncounterPoolManager
         foreach (var node in combatNodes)
         {
             node.Enemies = new EnemyData[1];
+
+            // In Act 1, all starting nodes on Layer 0 are guaranteed to be the introductory enemy (Coupler)
+            // so whichever path a beginner selects to start the run, they always begin with Coupler.
+            if (act == 1 && node.Layer == 0)
+            {
+                node.Enemies[0] = roster.StandardEnemies[0];
+                continue;
+            }
 
             // Layer pacing logic:
             // Layer 0-1 (early) has a chance to spawn crossover enemies from the previous act

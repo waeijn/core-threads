@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Surge
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: 2809452819818265120, guid: f46cc10315f57954594fb5c504e75a98, type: 3}
-  <Health>k__BackingField: 65
-  <AttackPower>k__BackingField: 16
-  <BlockPower>k__BackingField: 14
-  <BuffAmount>k__BackingField: 4
+  <Health>k__BackingField: 48
+  <AttackPower>k__BackingField: 11
+  <BlockPower>k__BackingField: 9
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 8
+    OverrideValue: 5
     Hits: 2
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 15
+    OverrideValue: 10
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 10
+    OverrideValue: 7
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

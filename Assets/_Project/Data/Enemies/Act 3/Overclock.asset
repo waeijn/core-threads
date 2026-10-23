@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Overclock
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: 5439290297983213743, guid: 9d8cd934ee839d54e9acca3ee1edb395, type: 3}
-  <Health>k__BackingField: 60
-  <AttackPower>k__BackingField: 18
-  <BlockPower>k__BackingField: 10
-  <BuffAmount>k__BackingField: 3
+  <Health>k__BackingField: 45
+  <AttackPower>k__BackingField: 12
+  <BlockPower>k__BackingField: 7
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 18
+    OverrideValue: 12
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 3
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 3
+    OverrideValue: 2
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 2
     EnergyCost: 1
-    OverrideValue: 10
+    OverrideValue: 7
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

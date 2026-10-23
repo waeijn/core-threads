@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: BadSector
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -8428067206037986590, guid: d5517438c3a9ba14eb07b5696917e5a3, type: 3}
-  <Health>k__BackingField: 55
-  <AttackPower>k__BackingField: 12
-  <BlockPower>k__BackingField: 12
-  <BuffAmount>k__BackingField: 4
+  <Health>k__BackingField: 40
+  <AttackPower>k__BackingField: 8
+  <BlockPower>k__BackingField: 8
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 2, y: 2, z: 2}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 14
+    OverrideValue: 9
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 12
+    OverrideValue: 8
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
     Intent: 2
     Weight: 2
     EnergyCost: 3
-    OverrideValue: 10
+    OverrideValue: 7
     Hits: 1
-    BonusBlock: 10
+    BonusBlock: 7
     BonusStrength: 0
     ApplyVulnerable: 0
     LifeDrain: 0

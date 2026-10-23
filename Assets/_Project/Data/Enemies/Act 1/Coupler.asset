@@ -13,12 +13,12 @@ MonoBehaviour:
   m_Name: Coupler
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -597529968, guid: 761de0d7f9224114ca74448a3d84e85c, type: 3}
-  <Health>k__BackingField: 25
-  <AttackPower>k__BackingField: 6
-  <BlockPower>k__BackingField: 5
+  <Health>k__BackingField: 18
+  <AttackPower>k__BackingField: 4
+  <BlockPower>k__BackingField: 4
   <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 3, y: 3, z: 3}
-  <MaxEnergy>k__BackingField: 3
+  <MaxEnergy>k__BackingField: 2
   <SkillDrawCount>k__BackingField: 3
   <AnimatorController>k__BackingField: {fileID: 9100000, guid: 3f38d3b70b31a0744bb6c509aef67dae, type: 2}
   <FSMStates>k__BackingField: []
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 1
-    OverrideValue: 5
+    OverrideValue: 4
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 5
+    OverrideValue: 4
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 4
+    OverrideValue: 3
     Hits: 2
     BonusBlock: 0
     BonusStrength: 0

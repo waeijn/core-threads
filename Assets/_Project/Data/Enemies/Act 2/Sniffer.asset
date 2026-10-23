@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Sniffer
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -1012776699, guid: d28c2dedd44867e4ea61f143a61752ac, type: 3}
-  <Health>k__BackingField: 40
-  <AttackPower>k__BackingField: 10
-  <BlockPower>k__BackingField: 6
+  <Health>k__BackingField: 30
+  <AttackPower>k__BackingField: 7
+  <BlockPower>k__BackingField: 5
   <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 2, y: 2, z: 2}
   <MaxEnergy>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 7
+    OverrideValue: 5
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -39,15 +39,15 @@ MonoBehaviour:
     EnergyCost: 2
     OverrideValue: 2
     Hits: 1
-    BonusBlock: 8
+    BonusBlock: 6
     BonusStrength: 0
-    ApplyVulnerable: 2
+    ApplyVulnerable: 1
     LifeDrain: 0
   - SkillName: Exploit Flaw
     Intent: 0
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 14
+    OverrideValue: 9
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

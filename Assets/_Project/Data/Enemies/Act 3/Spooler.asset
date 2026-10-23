@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Spooler
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -8507366506062722956, guid: 63cf996068352d94489abba983995129, type: 3}
-  <Health>k__BackingField: 50
-  <AttackPower>k__BackingField: 12
-  <BlockPower>k__BackingField: 15
-  <BuffAmount>k__BackingField: 5
+  <Health>k__BackingField: 38
+  <AttackPower>k__BackingField: 9
+  <BlockPower>k__BackingField: 9
+  <BuffAmount>k__BackingField: 3
   <Scale>k__BackingField: {x: 4, y: 3, z: 3}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 12
+    OverrideValue: 8
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 5
+    OverrideValue: 3
     Hits: 3
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 16
+    OverrideValue: 11
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Bloat
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -8127121173029171233, guid: ea2b3c9884fcfd146b0d7d09285037bb, type: 3}
-  <Health>k__BackingField: 55
-  <AttackPower>k__BackingField: 14
-  <BlockPower>k__BackingField: 12
-  <BuffAmount>k__BackingField: 4
+  <Health>k__BackingField: 42
+  <AttackPower>k__BackingField: 10
+  <BlockPower>k__BackingField: 9
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 4, y: 3, z: 3}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 16
+    OverrideValue: 11
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 15
+    OverrideValue: 10
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,9 +47,9 @@ MonoBehaviour:
     Intent: 2
     Weight: 2
     EnergyCost: 3
-    OverrideValue: 12
+    OverrideValue: 8
     Hits: 1
-    BonusBlock: 12
+    BonusBlock: 8
     BonusStrength: 0
     ApplyVulnerable: 0
     LifeDrain: 0

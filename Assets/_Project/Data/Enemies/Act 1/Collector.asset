@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Collector
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: 1406574772, guid: f323917c088e5cf4bb9fb3a9a0934f39, type: 3}
-  <Health>k__BackingField: 60
-  <AttackPower>k__BackingField: 10
-  <BlockPower>k__BackingField: 8
-  <BuffAmount>k__BackingField: 4
+  <Health>k__BackingField: 45
+  <AttackPower>k__BackingField: 8
+  <BlockPower>k__BackingField: 6
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 4, y: 4, z: 4}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -30,9 +30,9 @@ MonoBehaviour:
       Intent: 2
       Weight: 4
       EnergyCost: 2
-      OverrideValue: 7
+      OverrideValue: 5
       Hits: 1
-      BonusBlock: 6
+      BonusBlock: 4
       BonusStrength: 0
       ApplyVulnerable: 0
       LifeDrain: 0
@@ -40,7 +40,7 @@ MonoBehaviour:
       Intent: 1
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 10
+      OverrideValue: 8
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -50,7 +50,7 @@ MonoBehaviour:
       Intent: 3
       Weight: 2
       EnergyCost: 2
-      OverrideValue: 3
+      OverrideValue: 2
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -64,7 +64,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 3
       EnergyCost: 3
-      OverrideValue: 16
+      OverrideValue: 11
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
       Intent: 0
       Weight: 3
       EnergyCost: 2
-      OverrideValue: 6
+      OverrideValue: 4
       Hits: 2
       BonusBlock: 0
       BonusStrength: 0
@@ -84,7 +84,7 @@ MonoBehaviour:
       Intent: 1
       Weight: 2
       EnergyCost: 1
-      OverrideValue: 12
+      OverrideValue: 8
       Hits: 1
       BonusBlock: 0
       BonusStrength: 0
@@ -95,9 +95,9 @@ MonoBehaviour:
     Intent: 2
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 7
+    OverrideValue: 5
     Hits: 1
-    BonusBlock: 6
+    BonusBlock: 4
     BonusStrength: 0
     ApplyVulnerable: 0
     LifeDrain: 0
@@ -105,7 +105,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 2
-    OverrideValue: 10
+    OverrideValue: 8
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -115,7 +115,7 @@ MonoBehaviour:
     Intent: 3
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 3
+    OverrideValue: 2
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0

@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: Leech
   m_EditorClassIdentifier: Assembly-CSharp::EnemyData
   <Image>k__BackingField: {fileID: -3568818173856501073, guid: e25a3e5e713d8a74f98860d7725d5647, type: 3}
-  <Health>k__BackingField: 35
-  <AttackPower>k__BackingField: 8
-  <BlockPower>k__BackingField: 8
-  <BuffAmount>k__BackingField: 3
+  <Health>k__BackingField: 28
+  <AttackPower>k__BackingField: 6
+  <BlockPower>k__BackingField: 6
+  <BuffAmount>k__BackingField: 2
   <Scale>k__BackingField: {x: 3, y: 3, z: 3}
   <MaxEnergy>k__BackingField: 3
   <SkillDrawCount>k__BackingField: 3
@@ -27,7 +27,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 4
     EnergyCost: 2
-    OverrideValue: 8
+    OverrideValue: 6
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -37,7 +37,7 @@ MonoBehaviour:
     Intent: 1
     Weight: 3
     EnergyCost: 1
-    OverrideValue: 8
+    OverrideValue: 6
     Hits: 1
     BonusBlock: 0
     BonusStrength: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
     Intent: 0
     Weight: 2
     EnergyCost: 2
-    OverrideValue: 5
+    OverrideValue: 3
     Hits: 2
     BonusBlock: 0
     BonusStrength: 0

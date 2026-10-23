@@ -74,6 +74,20 @@ public class EnemyView : CombatantView
             }
         }
 
+        if (data == null)
+        {
+            Debug.LogError($"[EnemyView] Setup called with null EnemyData on {gameObject.name}! Using safe fallback values.");
+            AttackPower = 6;
+            BlockPower = 5;
+            BuffAmount = 2;
+            MaxEnergy = 3;
+            SkillDrawCount = 3;
+            CurrentEnergy = MaxEnergy;
+            if (SpriteTransform != null) SpriteTransform.localScale = Vector3.one * 3f;
+            SetupBase(25, null);
+            return;
+        }
+
         enemyData = data;
         AttackPower = data.AttackPower;
         BlockPower = data.BlockPower;
@@ -97,10 +111,11 @@ public class EnemyView : CombatantView
             Animator.runtimeAnimatorController = data.AnimatorController;
         }
 
-        // Apply custom scale for this enemy type
-        if (SpriteTransform != null && data.Scale != Vector3.zero)
+        // Apply custom scale for this enemy type (fallback to 3.0f if unspecified)
+        if (SpriteTransform != null)
         {
-            SpriteTransform.localScale = data.Scale;
+            Vector3 targetScale = (data.Scale != Vector3.zero) ? data.Scale : (Vector3.one * 3f);
+            SpriteTransform.localScale = targetScale;
         }
 
         RollNextIntent();
