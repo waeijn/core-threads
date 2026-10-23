@@ -81,7 +81,7 @@ public class RewardSystem : Singleton<RewardSystem>
         choicePanel.Show(
             "CRITICAL SYSTEM FORK",
             "OVERCLOCK CORE\n<size=60%>(+1 Max Energy)</size>",
-            "EXPANDED SECTOR\n<size=60%>(+25 Max HP & Purge 1)</size>",
+            "EXPANDED BUS\n<size=60%>(+1 Draw/Turn & Purge 1)</size>",
             onA: () =>
             {
                 // Option A: +1 Energy (capped at 4)
@@ -90,8 +90,8 @@ public class RewardSystem : Singleton<RewardSystem>
             },
             onB: () =>
             {
-                // Option B: +25 HP and Purge
-                GameState.PlayerMaxHP += 25;
+                // Option B: +1 Card Draw per turn (capped at 7) & Purge 1
+                GameState.PlayerDrawPerTurn = Mathf.Min(GameState.PlayerDrawPerTurn + 1, 7);
                 
                 // Show purge UI
                 if (GameState.CanPurge())
@@ -102,8 +102,22 @@ public class RewardSystem : Singleton<RewardSystem>
                         "PURGE CORRUPTED DATA", 
                         onSelect: (cardToPurge) =>
                         {
-                            GameState.PurgeCard(cardToPurge);
-                            StartPhase3SystemRestore();
+                            ConfirmationModalUI.Show(
+                                title: "PURGE CARD?",
+                                message: $"Permanently remove '{cardToPurge.Title}' from your deck?",
+                                confirmText: "PURGE",
+                                cancelText: "CANCEL",
+                                onConfirm: () =>
+                                {
+                                    GameState.PurgeCard(cardToPurge);
+                                    StartPhase3SystemRestore();
+                                },
+                                onCancel: () =>
+                                {
+                                    ShowBossReward();
+                                },
+                                isDanger: true
+                            );
                         },
                         onClose: () =>
                         {
@@ -125,9 +139,12 @@ public class RewardSystem : Singleton<RewardSystem>
     private void StartPhase3SystemRestore()
     {
         // --- PHASE 3: SYSTEM RESTORE & ACT TRANSITION ---
-        // 1. Full System Restore (100% Heal, including any new Max HP)
+        // 1. Automatic Act Progression: +25 Max HP for conquering the Act (50 -> 75 -> 100)!
+        GameState.PlayerMaxHP += 25;
+
+        // 2. Full System Restore (100% Heal, up to the new Max HP)
         GameState.PlayerCurrentHP = GameState.PlayerMaxHP;
-        Debug.Log($"[RewardSystem] Boss sequence complete! Full heal applied. HP: {GameState.PlayerCurrentHP}/{GameState.PlayerMaxHP}. Mana: {GameState.PlayerMaxMana}");
+        Debug.Log($"[RewardSystem] Boss sequence complete! +25 Max HP progression applied. HP: {GameState.PlayerCurrentHP}/{GameState.PlayerMaxHP}. Mana: {GameState.PlayerMaxMana}. Draw: {GameState.PlayerDrawPerTurn}/turn.");
 
         // 2. Advance Act state so when they return to map, it generates the next act
         if (GameState.CurrentAct >= 3)
@@ -192,8 +209,22 @@ public class RewardSystem : Singleton<RewardSystem>
             "PURGE — RANDOM SELECTION", 
             onSelect: (card) =>
             {
-                GameState.PurgeCard(card);
-                ReturnToMap();
+                ConfirmationModalUI.Show(
+                    title: "PURGE CARD?",
+                    message: $"Permanently remove '{card.Title}' from your deck?",
+                    confirmText: "PURGE",
+                    cancelText: "CANCEL",
+                    onConfirm: () =>
+                    {
+                        GameState.PurgeCard(card);
+                        ReturnToMap();
+                    },
+                    onCancel: () =>
+                    {
+                        OnPurgeSelected();
+                    },
+                    isDanger: true
+                );
             }, 
             onClose: () => { ReturnToMap(); },
             showCounts: false

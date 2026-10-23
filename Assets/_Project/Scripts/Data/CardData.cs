@@ -56,7 +56,25 @@ public class CardData : ScriptableObject
 
     public string GetFormattedTitle()
     {
-        return $"{Title.ToUpper()}{GetExtension().ToUpper()}";
+        if (string.IsNullOrEmpty(Title)) return string.Empty;
+        string t = Title.Trim();
+
+        // Strip any existing file extension(s) from the title (e.g. "Execute.exe" or "Execute.exe.exe" -> "Execute")
+        while (true)
+        {
+            int dot = t.LastIndexOf('.');
+            if (dot > 0 && dot >= t.Length - 6)
+            {
+                t = t.Substring(0, dot);
+            }
+            else
+            {
+                break;
+            }
+        }
+
+        string ext = GetExtension();
+        return $"{t.ToUpper()}{ext.ToUpper()}";
     }
 }
 

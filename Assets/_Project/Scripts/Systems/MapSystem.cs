@@ -342,8 +342,26 @@ public class MapSystem : MonoBehaviour
         List<CardData> cards = GameState.GetDistinctCards();
         nodeCardSelection.Show(cards, "SELECT A CARD TO PURGE", (card) =>
         {
-            GameState.PurgeCard(card);
-            CompleteNodeAndRefresh();
+            ConfirmationModalUI.Show(
+                title: "PURGE CARD?",
+                message: $"Permanently remove '{card.Title}' from your deck?\n\nThis card cannot be recovered.",
+                confirmText: "PURGE",
+                cancelText: "CANCEL",
+                onConfirm: () =>
+                {
+                    GameState.PurgeCard(card);
+                    CompleteNodeAndRefresh();
+                },
+                onCancel: () =>
+                {
+                    OnRestPurge();
+                },
+                isDanger: true
+            );
+        },
+        onClose: () =>
+        {
+            HandleRestNode();
         });
     }
 
@@ -385,6 +403,10 @@ public class MapSystem : MonoBehaviour
         {
             GameState.DuplicateCard(card);
             CompleteNodeAndRefresh();
+        },
+        onClose: () =>
+        {
+            HandleTreasureNode();
         });
     }
 
@@ -402,7 +424,12 @@ public class MapSystem : MonoBehaviour
         {
             GameState.PlayerDeck.Add(card);
             CompleteNodeAndRefresh();
-        }, showCounts: false);
+        },
+        onClose: () =>
+        {
+            HandleTreasureNode();
+        },
+        showCounts: false);
     }
 
     // ── Helpers ─────────────────────────────────────────────────────────────

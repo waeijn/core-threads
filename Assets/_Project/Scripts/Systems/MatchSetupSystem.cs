@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -75,12 +76,26 @@ public class MatchSetupSystem : MonoBehaviour
             HeroSystem.Instance.HeroView.SetCurrentHP(GameState.PlayerCurrentHP);
         }
 
+        // Guard against null or empty enemy lists
+        if (enemiesToSpawn != null)
+        {
+            enemiesToSpawn = enemiesToSpawn.Where(e => e != null).ToList();
+        }
+        if (enemiesToSpawn == null || enemiesToSpawn.Count == 0)
+        {
+            if (fallbackEnemyDatas != null)
+            {
+                enemiesToSpawn = fallbackEnemyDatas.Where(e => e != null).ToList();
+            }
+        }
+
         EnemySystem.Instance.Setup(enemiesToSpawn);
         CardsSystem.Instance.Setup(GameState.PlayerDeck ?? heroData.Deck);
         
         AudioSystem.Instance?.PlayStartTurn();
         
-        DrawCardsGA drawCardsGA = new(5);
+        int drawCount = GameState.PlayerDrawPerTurn > 0 ? GameState.PlayerDrawPerTurn : 5;
+        DrawCardsGA drawCardsGA = new(drawCount);
         ActionSystem.Instance.Perform(drawCardsGA);
     }
 }

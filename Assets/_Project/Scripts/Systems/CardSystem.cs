@@ -185,7 +185,8 @@ public class CardsSystem : Singleton<CardsSystem>
         // Reset player block at start of player turn
         HeroSystem.Instance.HeroView.ResetBlock();
         AudioSystem.Instance?.PlayStartTurn();
-        DrawCardsGA drawCardsGA = new(5);
+        int drawCount = GameState.PlayerDrawPerTurn > 0 ? GameState.PlayerDrawPerTurn : 5;
+        DrawCardsGA drawCardsGA = new(drawCount);
         ActionSystem.Instance.AddReaction(drawCardsGA);
     }
 

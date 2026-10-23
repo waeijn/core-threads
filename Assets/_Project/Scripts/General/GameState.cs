@@ -33,6 +33,9 @@ public static class GameState
     /// <summary>Player's max Energy/Mana.</summary>
     public static int PlayerMaxMana = 3;
 
+    /// <summary>Number of cards drawn at the start of each player turn.</summary>
+    public static int PlayerDrawPerTurn = 5;
+
     /// <summary>Whether the current run is in Hardcore Mode (Enemy Intents hidden).</summary>
     public static bool IsHardcoreMode = false;
 
@@ -88,6 +91,7 @@ public static class GameState
         PlayerCurrentHP = -1;
         PlayerMaxHP = -1;
         PlayerMaxMana = 3;
+        PlayerDrawPerTurn = 5;
         IsHardcoreMode = false;
         IsInitialized = false;
         HeroData = null;
@@ -131,6 +135,14 @@ public static class GameState
             return false;
         }
         bool removed = PlayerDeck.Remove(card);
+        if (!removed)
+        {
+            var match = PlayerDeck.Find(c => c != null && c.Title == card.Title);
+            if (match != null)
+            {
+                removed = PlayerDeck.Remove(match);
+            }
+        }
         if (removed)
         {
             Debug.Log($"<color=red>[GameState]</color> Purged '{card.Title}'. Deck size: {PlayerDeck.Count}");
@@ -196,6 +208,7 @@ public static class GameState
         PlayerCurrentHP = -1;
         PlayerMaxHP = -1;
         PlayerMaxMana = 3;
+        PlayerDrawPerTurn = 5;
         PlayerDeck = null;
         IsInitialized = false;
     }
